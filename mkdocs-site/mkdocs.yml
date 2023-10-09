@@ -1,5 +1,5 @@
 site_name: Xpm_Robot
-site_url: https://xiepm.github.io/mkdocs-site/
+site_url: https://xiepm.github.io/mkdocs-site/docs
 site_author: xpm
 theme:
   palette: 
