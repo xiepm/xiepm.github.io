@@ -9,7 +9,7 @@ comments: true
 ---
 
 <script src="https://giscus.app/client.js"
-        data-repo="Wcowin/Wcowin.github.io"
+        data-repo="xiepm/xiepm.github.io"
         data-repo-id="R_kgDOIQ3gUQ"
         data-category="General"
         data-category-id="DIC_kwDOIQ3gUc4CTHCj"
