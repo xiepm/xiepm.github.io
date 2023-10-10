@@ -1,7 +1,7 @@
 #[Info]
-site_name: xpm's Web
-site_url: https://xiepm.github.io/
-site_author: xpm
+site_name: Wcowin's Web
+site_url: http://xiepm.github.io/
+site_author: 王科文(Wcowin)
 #[UI]
 theme:
   name: material
