@@ -68,7 +68,7 @@ repo_name: xiepm.github.io # 右上角的名字
 
 # [Navigtion]
 nav:
-  # - 主页: index.md
+  - 主页: index.md
   - 博文:
     - 好用/好玩网站分享: blog/Webplay.md
     - Mac/windows软件网站汇总: blog/macsoft.md
@@ -255,32 +255,32 @@ copyright: Copyright &copy; 2022~2023 xiepm/All Rights Reserved. # 左下角的�
 extra:
   generator: true  #删除页脚显示“使用 MkDocs 材料制造”
   social:
-    - icon: fontawesome/brands/x-twitter 
-      link: https://twitter.com/
+    # - icon: fontawesome/brands/x-twitter 
+    #   link: https://twitter.com/
     - icon: fontawesome/brands/github
       link: https://github.com/xiepm
     
     - icon: fontawesome/regular/envelope
-      link: mailto:<wangkewen821@gmail.com> #联系方式
+      link: mailto:<xpm0_0@163.com> #联系方式
     - icon: fontawesome/brands/bilibili
-      link: https://space.bilibili.com/1407028951?spm_id_from=333.1007.0.0
-  analytics: 
-    provider: google
-    property: G-29HZMNR0KG
-    feedback:
-      title: 此页面有帮助吗？
-      ratings:
-        - icon: material/thumb-up-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            谢谢你的反馈！
-        - icon: material/thumb-down-outline
-          name: This page could be improved
-          data: 0
-          note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+      link: https://space.bilibili.com/453156065?spm_id_from=333.1007.0.0
+  # analytics: 
+  #   provider: google
+  #   property: G-29HZMNR0KG
+  #   feedback:
+  #     title: 此页面有帮助吗？
+  #     ratings:
+  #       - icon: material/thumb-up-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           谢谢你的反馈！
+  #       - icon: material/thumb-down-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >- 
+  #           Thanks for your feedback! Help us improve this page by
+  #           using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
   
   # consent:
   #   title: Cookie consent

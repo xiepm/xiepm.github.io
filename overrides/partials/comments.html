@@ -28,7 +28,7 @@
 {% if page.meta.comments %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
+  <!-- <script src="https://giscus.app/client.js"
   data-repo="Wcowin/hexo-site-comments"
   data-repo-id="R_kgDOIl9OJA"
   data-category="Announcements"
@@ -42,7 +42,25 @@
   data-lang="zh-CN"
   crossorigin="anonymous"
   async>
+</script> -->
+
+<script src="https://giscus.app/client.js"
+        data-repo="xiepm/mkdocs-comments"
+        data-repo-id="R_kgDOKe9wBQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKe9wBc4CaCg3"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
 </script>
+
+
   <!-- Synchronize Giscus theme with palette -->
   <script>
     var giscus = document.querySelector("script[src*=giscus]")

@@ -8,30 +8,6 @@ comments: false
 ---
 
 
-<!-- <center><font  color= #518FC1 size=6>“循此苦旅，以达星辰”</font></center> -->
-<center><font  color= #518FC1 size=6 class="ml3">“循此苦旅，以达星辰”</font></center>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-
-<center>
-<font  color= #608DBD size=3>
-<p id="hitokoto">
-  <a href="#" id="hitokoto_text" target="_blank"></a>
-</p>
-<!-- 本例不能添加链接内容，放在此处只是因为此接口比较方便，也许能够解决大部分的需求-->
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.querySelector('#hitokoto_text')
-      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
-</script>
-</font>
-</center>
-
 
 <div id="rcorners2" >
   <div id="rcorners1">
@@ -108,8 +84,8 @@ comments: false
 { .annotate }
 
 1. 点击右下角与我在线交谈.
-2. 18939533255
-***  
+2. 15625169776
+***
 
 <strong>推荐文章:material-book:</strong>
 
