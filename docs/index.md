@@ -80,12 +80,12 @@ comments: false
     </li>
   </ul>
 </div> 
-快速谈话(1) 联系我(2)
-{ .annotate }
+<!-- 快速谈话(1) 联系我(2)
+{ .annotate } -->
 
-1. 点击右下角与我在线交谈.
-2. 15625169776
-***
+<!-- 1. 点击右下角与我在线交谈.
+2. 15625169776 -->
+<!-- *** -->
 
 <strong>推荐文章:material-book:</strong>
 
@@ -121,7 +121,7 @@ e.src='https://static.howxm.com/sdk.js';
 t.parentNode.insertBefore(e,t)}})();
 </script>
 <!-- End of Howxm client code snippet -->
-<script src="//code.tidio.co/6jmawe9m5wy4ahvlhub2riyrnujz7xxi.js" async></script>
+<!-- <script src="//code.tidio.co/6jmawe9m5wy4ahvlhub2riyrnujz7xxi.js" async></script> -->
 </head>
 
 

@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://xiepm.github.io/Robot%20Operating%20System/ROS2/base/</loc>
+         <lastmod>2023-10-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://xiepm.github.io/about/404/</loc>
          <lastmod>2023-10-11</lastmod>
          <changefreq>daily</changefreq>
