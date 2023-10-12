@@ -67,7 +67,7 @@ repo_name: xiepm.github.io # 右上角的名字
 
 # [Navigtion]
 nav:
-  - 主页: index.md
+  - Home: index.md
   - ROS:
     - ROS2:
       - 学习大纲: Robot Operating System/ROS2/learning-plan.md
