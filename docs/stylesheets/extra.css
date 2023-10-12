@@ -1,19 +1,19 @@
 :root > * {
-    --md-primary-fg-color:        #518FC1;
-    --md-primary-fg-color--light:#518FC1;
-    --md-primary-fg-color--dark:  #518FC1;
+    --md-primary-fg-color:        #6d14d3;
+    --md-primary-fg-color--light:#6d14d3;
+    --md-primary-fg-color--dark:  #6d14d3;
       
   }
   /* 给所有元素加上边框 */
   /* * {
-    outline: 1px solid #518FC1;
+    outline: 1px solid #6d14d3;
   }  */
 
   button.md-top {
     font-family: LXGW WenKai; /* 修改字体 */
     font-size: 16px; /* 修改字体大小 */
     font-weight: bold; /* 修改字体粗细 */
-    color: #518FC1; /* 修改字体颜色 */
+    color: #6d14d3; /* 修改字体颜色 */
   }
   
 
