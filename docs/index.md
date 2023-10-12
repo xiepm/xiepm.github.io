@@ -6,10 +6,13 @@ hide:
   - feedback
 comments: false
 ---
+<div class="image-container">
+
 <div id="ww_3f2a595f7ca21" v='1.3' loc='auto'
   a='{"t":"horizontal","lang":"zh","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
   <a href="https://weatherwidget.org/zh/" id="ww_3f2a595f7ca21_u" target="_blank">天气插件</a></div>
 <script async src="https://app2.weatherwidget.org/js/?id=ww_3f2a595f7ca21"></script>
+</div>
 
 <div id="rcorners2" >
   <div id="rcorners1">
