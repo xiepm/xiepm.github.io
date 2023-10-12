@@ -69,21 +69,33 @@ repo_name: xiepm.github.io # 右上角的名字
 # [Navigtion]
 nav:
   - 主页: index.md
-  - Robot Operating System:
+  - ROS:
     - ROS2:
-      - 基本模板: Robot Operating System/ROS2/base.md
-  #     - micro-ros: Robot Operating System/ROS2/base.md
-  # - LINUX: Robot Operating System/ROS2/base.md
-  # - 嵌入式开发: Robot Operating System/ROS2/base.md
-  # - 机器人相关知识: Robot Operating System/ROS2/base.md
-  # - 开源项目: Robot Operating System/ROS2/base.md
-  # - 数学: Robot Operating System/ROS2/base.md
-  # - 编程能力: Robot Operating System/ROS2/base.md
-  # - 智能算法: Robot Operating System/ROS2/base.md
-  # - 差生文具多: Robot Operating System/ROS2/base.md
-  # - 论文: Robot Operating System/ROS2/base.md
-  # - 计算机网络: Robot Operating System/ROS2/base.md
-  # - 操作系统: Robot Operating System/ROS2/base.md
+      - 学习大纲: Robot Operating System/ROS2/learning-plan.md
+    - micro-ros: 
+      - 学习大纲: Robot Operating System/micro-ros/learning-plan.md
+  - LINUX: 
+    - 学习大纲: LINUX/learning-plan.md
+  - 嵌入式:  
+    - 学习大纲: Embedded development/learning-plan.md
+  - 机器人学:  
+    - 学习大纲: Robotics/learning-plan.md
+  - 开源项目:  
+    - 学习大纲: Open-source/learning-plan.md
+  - 数学:  
+    - 学习大纲: MATH/learning-plan.md
+  - 编程:  
+    - 学习大纲: Programming/learning-plan.md
+  - AI:  
+    - 学习大纲: AI/learning-plan.md
+  - 差生文具多:  
+    - 学习大纲: TOOLS/learning-plan.md
+  - 论文:  
+    - 学习大纲: PAPER/learning-plan.md
+  - 网络:  
+    - 学习大纲: Network/learning-plan.md
+  - OS:  
+    - 学习大纲: Operating-System/learning-plan.md
 
 
   - 博文:

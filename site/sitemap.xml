@@ -21,7 +21,67 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://xiepm.github.io/Robot%20Operating%20System/ROS2/base/</loc>
+         <loc>http://xiepm.github.io/AI/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Embedded%20development/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/LINUX/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/MATH/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Network/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Open-source/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Operating-System/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/PAPER/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Programming/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Robot%20Operating%20System/ROS2/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Robot%20Operating%20System/micro-ros/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/Robotics/learning-plan/</loc>
+         <lastmod>2023-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/learning-plan/</loc>
          <lastmod>2023-10-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
