@@ -69,9 +69,9 @@ repo_name: xiepm.github.io # 右上角的名字
 # [Navigtion]
 nav:
   - 主页: index.md
-  # - Robot Operating System:
-  #   - ROS2:
-  #     - 基本模板: Robot Operating System/ROS2/base.md
+  - Robot Operating System:
+    - ROS2:
+      - 基本模板: Robot Operating System/ROS2/base.md
   #     - micro-ros: Robot Operating System/ROS2/base.md
   # - LINUX: Robot Operating System/ROS2/base.md
   # - 嵌入式开发: Robot Operating System/ROS2/base.md
