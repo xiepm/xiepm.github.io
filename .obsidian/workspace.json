@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e3eef931db4a1b17",
+        "id": "bb5435c043d7ffe1",
         "type": "tabs",
         "children": [
           {
-            "id": "ad9302bcc9f23ec3",
+            "id": "68ed8026542b89ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/TOOLS/MarkDown.md",
+                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "dd6b79f2446ee321",
@@ -85,13 +85,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/TOOLS/MarkDown.md",
+                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/TOOLS/MarkDown.md",
+                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/TOOLS/MarkDown.md"
+                "file": "万法之法--学习的方法/万法之法--学习的方法.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,21 +145,19 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ad9302bcc9f23ec3",
+  "active": "68ed8026542b89ba",
   "lastOpenFiles": [
-    "site/fonts/aller_bd-webfont.woff",
-    "site/fonts/aller_bd-webfontd41d.eot",
-    "site/fonts/aller_bd-webfont.ttf",
-    "site/fonts/aller_bd-webfont.svg",
-    "site/fonts/aller_bd-webfont.eot",
-    "site/fonts",
-    "万法之法--学习的方法/万法之法--学习的方法.md",
     "site/search/search_index.json",
     "site/search",
     "site/blog/category/hello/index.html",
     "site/blog/category/hello",
     "site/blog/category/网站更新记录/index.html",
     "site/blog/category/网站更新记录",
+    "site/blog/category",
+    "site/blog/archive/2022/index.html",
+    "site/blog/archive/2022",
+    "site/blog/archive/2023/index.html",
+    "site/blog/archive/2023",
     "site/trip/tripmedias/LH2.jpeg",
     "site/trip/tripmedias/LH1.jpeg",
     "site/relax/wkwMath/image-1.png",
@@ -170,6 +167,11 @@
     "site/javascripts/fancyBox-2/blank.gif",
     "site/img/faxian.png",
     "site/img/my.jpeg",
+    "site/img/apple-line.png",
+    "未命名.canvas",
+    "万法之法--学习的方法/万法之法--学习的方法.md",
+    "费曼学习.png.md",
+    "docs/TOOLS/MarkDown.md",
     "万法之法--学习的方法.md",
     "docs/Robot Operating System/ROS2/未命名.md",
     "docs/Robot Operating System/micro-ros/learning-plan.md",
@@ -187,7 +189,6 @@
     "docs/TOOLS/gdb.md",
     "docs/TOOLS/Gitlab cicd.md",
     "docs/TOOLS/vscode.md",
-    "docs/TOOLS/MarkDown.md",
     "docs/TOOLS/learning-plan.md",
     "docs/index.md"
   ]
