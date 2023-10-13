@@ -5,12 +5,12 @@ hide:
   - feedback
 comments: true
 ---
-# 知足且上进，温柔且坚定
+# 仰望星空，脚踏实地
 <div>
-  <img src="https://cn.mcecy.com/image/20231006/a05f708fb7b0426e7a5786669d5b1386.png" width="170" height="200" alt="个人头像" align="left" style="margin-right: 10px;" />
-  <p style="font-size: 2.5em"><strong>Wcowin</strong></p>
-  <p style="font-size: 1.2em">Free and diffuse</p>
-  <p style="font-size: 1.2em">A college student</p>
+  <img src="https://cn.mcecy.com/image/20231013/ce7316a6f9627845e175c1ca97925f2f.jpg" width="170" height="200" alt="个人头像" align="left" style="margin-right: 10px;" />
+  <p style="font-size: 2.5em"><strong>xiepm</strong></p>
+  <p style="font-size: 1.2em">为天地立心，为生民立命，为往圣继绝学，为万世开太平</p>
+  <p style="font-size: 1.2em">A PHD candidate</p>
 </div>
 
 

@@ -71,6 +71,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://xiepm.github.io/Robot%20Operating%20System/ROS2/%E6%9C%AA%E5%91%BD%E5%90%8D/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://xiepm.github.io/Robot%20Operating%20System/micro-ros/learning-plan/</loc>
          <lastmod>2023-10-13</lastmod>
          <changefreq>daily</changefreq>
@@ -81,7 +86,82 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://xiepm.github.io/TOOLS/Github%20%26%20gitlab%20%26%20git%20%26%20gitee/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/Gitlab%20cicd/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/MarkDown/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/Source%20insight/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/Understand%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/cmake%20%26%20gcc/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/docker/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/eigen%E5%BA%93/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/gdb/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/jupyter/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/latex/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://xiepm.github.io/TOOLS/learning-plan/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/matlab/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/vscode/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/</loc>
+         <lastmod>2023-10-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://xiepm.github.io/TOOLS/%E7%94%B5%E5%AD%90%E4%B9%A6/</loc>
          <lastmod>2023-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>

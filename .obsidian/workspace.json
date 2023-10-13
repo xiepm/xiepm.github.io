@@ -1,0 +1,194 @@
+{
+  "main": {
+    "id": "d18e1965e728f0a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "e3eef931db4a1b17",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad9302bcc9f23ec3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/TOOLS/MarkDown.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7f5f224560d382b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "02e5190109e8f5cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "156671e45d8d0121",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8b0804785e096841",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2e44679ef47a5962",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dd6b79f2446ee321",
+    "type": "split",
+    "children": [
+      {
+        "id": "6899a43507703dd3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "338cd40b10d58b02",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/TOOLS/MarkDown.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3aea1049b214d299",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/TOOLS/MarkDown.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "70d0c781b29598af",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "78902f81830de9e7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/TOOLS/MarkDown.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "ad9302bcc9f23ec3",
+  "lastOpenFiles": [
+    "site/fonts/aller_bd-webfont.woff",
+    "site/fonts/aller_bd-webfontd41d.eot",
+    "site/fonts/aller_bd-webfont.ttf",
+    "site/fonts/aller_bd-webfont.svg",
+    "site/fonts/aller_bd-webfont.eot",
+    "site/fonts",
+    "万法之法--学习的方法/万法之法--学习的方法.md",
+    "site/search/search_index.json",
+    "site/search",
+    "site/blog/category/hello/index.html",
+    "site/blog/category/hello",
+    "site/blog/category/网站更新记录/index.html",
+    "site/blog/category/网站更新记录",
+    "site/trip/tripmedias/LH2.jpeg",
+    "site/trip/tripmedias/LH1.jpeg",
+    "site/relax/wkwMath/image-1.png",
+    "site/javascripts/fancyBox-2/helpers/fancybox_buttons.png",
+    "site/javascripts/fancyBox-2/preloader.gif",
+    "site/javascripts/fancyBox-2/fancybox_sprite.png",
+    "site/javascripts/fancyBox-2/blank.gif",
+    "site/img/faxian.png",
+    "site/img/my.jpeg",
+    "万法之法--学习的方法.md",
+    "docs/Robot Operating System/ROS2/未命名.md",
+    "docs/Robot Operating System/micro-ros/learning-plan.md",
+    "docs/TOOLS/docker.md",
+    "docs/TOOLS/jupyter.md",
+    "docs/TOOLS/latex.md",
+    "docs/TOOLS/杂七杂八的奇淫技巧.md",
+    "docs/TOOLS/Github & gitlab & git & gitee.md",
+    "docs/TOOLS/cmake & gcc.md",
+    "docs/TOOLS/eigen库.md",
+    "docs/TOOLS/电子书.md",
+    "docs/TOOLS/Source insight.md",
+    "docs/TOOLS/Understand代码解析.md",
+    "docs/TOOLS/matlab.md",
+    "docs/TOOLS/gdb.md",
+    "docs/TOOLS/Gitlab cicd.md",
+    "docs/TOOLS/vscode.md",
+    "docs/TOOLS/MarkDown.md",
+    "docs/TOOLS/learning-plan.md",
+    "docs/index.md"
+  ]
+}
