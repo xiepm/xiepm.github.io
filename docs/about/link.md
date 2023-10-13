@@ -119,7 +119,24 @@ hide:
                         <div class="info">这是一个分享技术的小站。</div>
                     </div>
                 </div>
-
+                <div class="card">
+                    <img class="ava" src="https://cn.mcecy.com/image/20231013/837b11932c18929bf9aceaf9783134a8.png" />
+                    <div class="card-header">
+                        <div>
+                            <a href="https://www.openeuler.org/zh/" target=“_blank”>欧拉系统</a>
+                        </div>
+                        <div class="info">欢迎讨论留言</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="ava" src="https://cn.mcecy.com/image/20231013/72f3ec97396378ee28d94a0763cb4a3f.png" />
+                    <div class="card-header">
+                        <div>
+                            <a href="https://www.harmonyos.com/" target=“_blank”>鸿蒙系统</a>
+                        </div>
+                        <div class="info">欢迎讨论留言</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
