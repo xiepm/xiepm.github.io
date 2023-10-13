@@ -95,7 +95,8 @@ nav:
     - 学习d大纲: Network/learning-plan.md
   - OS:  
     - 学习大纲: Operating-System/learning-plan.md
-
+  - 友链: about/link.md
+    # - 如何给MKdocs添加友链: blog/Mkdocs/linktech.md
 
   - 博文:
     - 好用/好玩网站分享: blog/Webplay.md
