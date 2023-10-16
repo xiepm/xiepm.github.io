@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
+                "file": "docs/Open-source/learning-plan.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
+                "file": "docs/Open-source/learning-plan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "万法之法--学习的方法/万法之法--学习的方法.md",
+                "file": "docs/Open-source/learning-plan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "万法之法--学习的方法/万法之法--学习的方法.md"
+                "file": "docs/Open-source/learning-plan.md"
               }
             }
           }
@@ -133,7 +133,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,8 +169,14 @@
     "site/img/faxian.png",
     "site/img/my.jpeg",
     "site/img/apple-line.png",
-    "未命名.canvas",
+    "docs/Open-source/learning-plan.md",
+    "imgs/hello-glgo.png.md",
     "万法之法--学习的方法/万法之法--学习的方法.md",
+    "docs/Open-source/project-recommendation.md",
+    "docs/TOOLS/hotchpotch/system-design.md",
+    "docs/TOOLS/hotchpotch/杂七杂八的奇淫技巧.md",
+    "docs/TOOLS/新建文件夹/杂七杂八的奇淫技巧.md",
+    "未命名.canvas",
     "费曼学习.png.md",
     "docs/TOOLS/MarkDown.md",
     "万法之法--学习的方法.md",
@@ -187,9 +194,6 @@
     "docs/TOOLS/Understand代码解析.md",
     "docs/TOOLS/matlab.md",
     "docs/TOOLS/gdb.md",
-    "docs/TOOLS/Gitlab cicd.md",
-    "docs/TOOLS/vscode.md",
-    "docs/TOOLS/learning-plan.md",
-    "docs/index.md"
+    "docs/TOOLS/Gitlab cicd.md"
   ]
 }

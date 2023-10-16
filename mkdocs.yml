@@ -81,6 +81,7 @@ nav:
     - 学习大纲: Robotics/learning-plan.md
   - 开源项目:  
     - 学习大纲: Open-source/learning-plan.md
+    - 项目推荐: Open-source/project-recommendation
   - 数学:  
     - 学习大纲: MATH/learning-plan.md
   - 编程:  
@@ -89,6 +90,8 @@ nav:
     - 学习大纲: AI/learning-plan.md
   - 差生文具多:  
     - 学习大纲: TOOLS/learning-plan.md
+    - 杂七杂八的奇淫技巧: 
+      - 系统架构设计: TOOLS/hotchpotch/system-design
   - 论文:  
     - 学习大纲: PAPER/learning-plan.md
   - 网络:  
