@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Open-source/learning-plan.md",
+                "file": "万法之法--学习的方法/写论文的过程.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Open-source/learning-plan.md",
+                "file": "万法之法--学习的方法/写论文的过程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Open-source/learning-plan.md",
+                "file": "万法之法--学习的方法/写论文的过程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Open-source/learning-plan.md"
+                "file": "万法之法--学习的方法/写论文的过程.md"
               }
             }
           }
@@ -159,6 +159,7 @@
     "site/blog/archive/2022",
     "site/blog/archive/2023/index.html",
     "site/blog/archive/2023",
+    "site/assets/images/favicon.png",
     "site/trip/tripmedias/LH2.jpeg",
     "site/trip/tripmedias/LH1.jpeg",
     "site/relax/wkwMath/image-1.png",
@@ -168,32 +169,31 @@
     "site/javascripts/fancyBox-2/blank.gif",
     "site/img/faxian.png",
     "site/img/my.jpeg",
-    "site/img/apple-line.png",
+    "万法之法--学习的方法/学术论文的introduction.md",
+    "万法之法--学习的方法/写论文的过程.md",
+    "万法之法--学习的方法/万法之法--学习的方法.md",
+    "万法之法--学习的方法/审稿意见.md",
+    "万法之法--学习的方法/提高英文写作.md",
+    "万法之法--学习的方法/20张图说明科研.md",
+    "万法之法--学习的方法/阅读英文文献.md",
+    "万法之法--学习的方法/研究生指南.md",
+    "万法之法--学习的方法/科研思维.md",
+    "万法之法--学习的方法/科研灵感.md",
+    "万法之法--学习的方法/如何提高科研能力.md",
+    "万法之法--学习的方法/科研全局观.md",
+    "万法之法--学习的方法/讲故事能力.md",
+    "万法之法--学习的方法/找创新点.md",
+    "万法之法--学习的方法/可以训练的科研思维.md",
+    "万法之法--学习的方法/科研笔记.md",
+    "万法之法--学习的方法/Literature Review写法.md",
+    "万法之法--学习的方法/一张图说明科研.md",
     "docs/Open-source/learning-plan.md",
     "imgs/hello-glgo.png.md",
-    "万法之法--学习的方法/万法之法--学习的方法.md",
     "docs/Open-source/project-recommendation.md",
     "docs/TOOLS/hotchpotch/system-design.md",
     "docs/TOOLS/hotchpotch/杂七杂八的奇淫技巧.md",
     "docs/TOOLS/新建文件夹/杂七杂八的奇淫技巧.md",
     "未命名.canvas",
-    "费曼学习.png.md",
-    "docs/TOOLS/MarkDown.md",
-    "万法之法--学习的方法.md",
-    "docs/Robot Operating System/ROS2/未命名.md",
-    "docs/Robot Operating System/micro-ros/learning-plan.md",
-    "docs/TOOLS/docker.md",
-    "docs/TOOLS/jupyter.md",
-    "docs/TOOLS/latex.md",
-    "docs/TOOLS/杂七杂八的奇淫技巧.md",
-    "docs/TOOLS/Github & gitlab & git & gitee.md",
-    "docs/TOOLS/cmake & gcc.md",
-    "docs/TOOLS/eigen库.md",
-    "docs/TOOLS/电子书.md",
-    "docs/TOOLS/Source insight.md",
-    "docs/TOOLS/Understand代码解析.md",
-    "docs/TOOLS/matlab.md",
-    "docs/TOOLS/gdb.md",
-    "docs/TOOLS/Gitlab cicd.md"
+    "费曼学习.png.md"
   ]
 }
