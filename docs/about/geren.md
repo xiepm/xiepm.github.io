@@ -16,19 +16,19 @@ comments: true
 
 !!! pied-piper1 "About me"
     
-    - [x] Hey, I'm [Wcowin](https://bento.me/wcowin){target=“_blank”}!
-    - [x] Bilibili电子信息工程专业本科在读  :star2:
-    - [x] CV工程师 ++ctrl+c++  (  ++v++  ) 🧑‍💻
-    - [x] 咖啡重度爱好者 :coffee:
-    - [x] 痴迷Math/致力于高阶微分方程的研究 :pencil2:
-    - [x] 热爱(xiā)折腾技术,读书明智 :computer: 
-    - [x] 喜欢村上春树📖，擅长羽毛球 :badminton: 
+    - [x] Hey, I'm [Xiepm](https://gitee.com/xpm00){target=“_blank”}!
+    - [x] 致力于机器人与人工智能发展  :star2:
+    - [x] [机器人学版块版主](https://fishros.org.cn/forum/category/5/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90){target=“_blank”}! 🧑‍💻
+    - [x] 数学爱好者 :pencil2:
+    - [x] 热爱新鲜技术,好奇宝宝 :baby: 
+    - [x] 喜欢历史与商业📖
+    - [x] 喜欢羽毛球 :badminton: ,游泳 :man_swimming:  ,健身
      
 
 <!-- - [x] <a href="https://github.com/Wcowin" target="_blank"><button class="buttonxuan3">找到我:simple-github:</button></a>:material-arrow-right:&#x1F4A1;  -->
 
 
-<img class="img1" src="https://cn.mcecy.com/image/20230220/f10604560a2119667fb3aca1da299e1a.jpeg">
+<img class="img1" src="https://cn.mcecy.com/image/20231024/ba5ffe8745c8b9e3d89e72bfe5ee0654.png">
 
 ## 我的名片
 

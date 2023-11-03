@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "万法之法--学习的方法/写论文的过程.md",
+                "file": "docs/about/oldsaying.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "万法之法--学习的方法/写论文的过程.md",
+                "file": "docs/about/oldsaying.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "万法之法--学习的方法/写论文的过程.md",
+                "file": "docs/about/oldsaying.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "万法之法--学习的方法/写论文的过程.md"
+                "file": "docs/about/oldsaying.md"
               }
             }
           }
@@ -148,29 +148,30 @@
   },
   "active": "68ed8026542b89ba",
   "lastOpenFiles": [
-    "site/search/search_index.json",
-    "site/search",
-    "site/blog/category/hello/index.html",
-    "site/blog/category/hello",
-    "site/blog/category/网站更新记录/index.html",
-    "site/blog/category/网站更新记录",
-    "site/blog/category",
-    "site/blog/archive/2022/index.html",
-    "site/blog/archive/2022",
-    "site/blog/archive/2023/index.html",
-    "site/blog/archive/2023",
-    "site/assets/images/favicon.png",
-    "site/trip/tripmedias/LH2.jpeg",
-    "site/trip/tripmedias/LH1.jpeg",
-    "site/relax/wkwMath/image-1.png",
-    "site/javascripts/fancyBox-2/helpers/fancybox_buttons.png",
-    "site/javascripts/fancyBox-2/preloader.gif",
-    "site/javascripts/fancyBox-2/fancybox_sprite.png",
-    "site/javascripts/fancyBox-2/blank.gif",
-    "site/img/faxian.png",
-    "site/img/my.jpeg",
-    "万法之法--学习的方法/学术论文的introduction.md",
+    "万法之法--学习的方法/船舶动力定位（DP）系统知识简介.md",
+    "docs/about/oldsaying.md",
     "万法之法--学习的方法/写论文的过程.md",
+    "docs/images/guowang9.png",
+    "docs/images/guowang13.webp",
+    "docs/images/guowang14.jpg",
+    "docs/images/guowang14.jpg.crdownload",
+    "docs/images/guowang12.webp",
+    "docs/images/guowang12.webp.crdownload",
+    "docs/images/guowang11.webp",
+    "docs/images/guowang10.webp",
+    "docs/images/guowang9.webp",
+    "docs/images/guowang8.webp",
+    "docs/images/guowang7.webp",
+    "docs/images/guowang6.webp",
+    "docs/images/guowang4.webp.crdownload",
+    "docs/images/guowang4.png.crdownload",
+    "docs/images/guowang3.jpg.crdownload",
+    "docs/images/guowang2.jpg.crdownload",
+    "docs/images/yinhun9.jpg.crdownload",
+    "docs/images/yinhun8.jpg.crdownload",
+    "docs/images/yinghun8.jpg.crdownload",
+    "docs/images/yinghun7.jpg.crdownload",
+    "万法之法--学习的方法/学术论文的introduction.md",
     "万法之法--学习的方法/万法之法--学习的方法.md",
     "万法之法--学习的方法/审稿意见.md",
     "万法之法--学习的方法/提高英文写作.md",
@@ -193,7 +194,6 @@
     "docs/TOOLS/hotchpotch/system-design.md",
     "docs/TOOLS/hotchpotch/杂七杂八的奇淫技巧.md",
     "docs/TOOLS/新建文件夹/杂七杂八的奇淫技巧.md",
-    "未命名.canvas",
-    "费曼学习.png.md"
+    "未命名.canvas"
   ]
 }
