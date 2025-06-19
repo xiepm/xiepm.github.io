@@ -9,7 +9,7 @@ if you_love_me or (not you_love_me):
     me_love_you += 1
     me_love_you -= 1
 
-#但你的：一句明天见
+#但你的：一句明天见ok
 you_say = input()
 while you_say =="I love you":
     #偷走了我
