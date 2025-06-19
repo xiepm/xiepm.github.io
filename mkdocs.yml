@@ -377,8 +377,8 @@ markdown_extensions:
       linenums: true # 显示行号
       # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.twemoji
+      # emoji_index: !!python/name:material.extensions.emoji.twemoji
+      # emoji_generator: !!python/name:material.extensions.emoji.twemoji
 
   - pymdownx.tabbed:
       alternate_style: true
