@@ -50,18 +50,22 @@ var modal = document.getElementById('myModal');
 var img = document.getElementById('myImg');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
+if (img && modal && modalImg && captionText) {
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
 }
  
 // 获取 <span> 元素，设置关闭按钮
 var span = document.getElementsByClassName("close")[0];
  
 // 当点击 (x), 关闭弹窗
-span.onclick = function() { 
-  modal.style.display = "none";
+if (span && modal) {
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
 }
 
 
@@ -660,7 +664,7 @@ span.onclick = function() {
 // window.$crisp=[];window.CRISP_WEBSITE_ID="89ded6c2-1a10-47e3-af5d-f12e6a378547";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
 //全屏视频
-var video = document.getElementById("video1");
+var video = document.getElementById("video1") || { style: {}, muted: false, volume: 0 };
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
@@ -673,7 +677,7 @@ if (isMobile) {
 // 在页面加载完成后执行以下代码
 document.addEventListener("DOMContentLoaded", function() {
   // 获取刷新按钮
-  var refreshButton = document.getElementById("refreshButton");
+  var refreshButton = document.getElementById("refreshButton") || { addEventListener: function() {} };
 
   // 添加点击事件处理程序
   refreshButton.addEventListener("click", function() {
@@ -682,7 +686,131 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+(function () {
+  var navItems = [
+    { href: "/", label: "首页" },
+    { href: "/projects/", label: "项目" },
+    { href: "/study/", label: "学习" },
+    { href: "/connect/", label: "交流" },
+    { href: "/about/", label: "关于" }
+  ];
+
+  function normalizePath(path) {
+    return (path || "/").replace(/index\.html$/, "").replace(/\/+$/, "") || "/";
+  }
+
+  function isActive(href) {
+    var current = normalizePath(window.location.pathname);
+    var target = normalizePath(href);
+    if (target === "/") {
+      return current === "/";
+    }
+    return current === target || current.indexOf(target + "/") === 0;
+  }
+
+  function createLink(item, className) {
+    var link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.label;
+    link.className = className || "";
+    if (isActive(item.href)) {
+      link.classList.add("is-active");
+    }
+    return link;
+  }
+
+  function mountShell() {
+    if (document.body.classList.contains("lab-standalone")) {
+      return;
+    }
+
+    var header = document.querySelector(".md-header");
+    if (!header || document.querySelector(".lab-shell")) {
+      return;
+    }
+
+    var shell = document.createElement("div");
+    shell.className = "lab-shell";
+    shell.innerHTML = [
+      '<div class="lab-shell__inner">',
+      '  <a class="lab-shell__brand" href="/">',
+      '    <span class="lab-shell__mark">X</span>',
+      '    <span class="lab-shell__brand-copy">',
+      "      <strong>Xpm's Robot Lab</strong>",
+      '      <span>科技感实验室</span>',
+      '    </span>',
+      '  </a>',
+      '  <nav class="lab-shell__nav" aria-label="主导航"></nav>',
+      '  <div class="lab-shell__actions">',
+      '    <button type="button" class="lab-shell__search" data-lab-search-open>搜索</button>',
+      '    <a class="lab-shell__social" href="https://github.com/xiepm" target="_blank" rel="noopener">GitHub</a>',
+      '  </div>',
+      '</div>'
+    ].join("");
+
+    var nav = shell.querySelector(".lab-shell__nav");
+    navItems.forEach(function (item) {
+      nav.appendChild(createLink(item, "lab-shell__link"));
+    });
+
+    shell.querySelector(".lab-shell__search").addEventListener("click", function () {
+      var toggle = document.querySelector("[data-md-toggle='search']");
+      if (toggle) {
+        toggle.checked = true;
+      } else {
+        window.location.href = "/blog/";
+      }
+    });
+
+    header.insertAdjacentElement("afterend", shell);
+  }
+
+  function mountDrawerLinks() {
+    if (document.body.classList.contains("lab-standalone")) {
+      return;
+    }
+
+    var primaryInner = document.querySelector(".md-sidebar--primary .md-sidebar__inner");
+    if (!primaryInner || primaryInner.querySelector(".lab-drawer-links")) {
+      return;
+    }
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "lab-drawer-links";
+    wrapper.innerHTML = '<p class="lab-drawer-links__title">快速入口</p>';
+
+    var list = document.createElement("div");
+    list.className = "lab-drawer-links__list";
+    navItems.forEach(function (item) {
+      list.appendChild(createLink(item, "lab-drawer-links__link"));
+    });
+    wrapper.appendChild(list);
+    primaryInner.insertAdjacentElement("afterbegin", wrapper);
+  }
+
+  function decorateBody() {
+    var current = normalizePath(window.location.pathname);
+    document.body.classList.add("lab-theme");
+    if (current === "/") {
+      document.body.classList.add("lab-page-home");
+    } else if (/^\/(projects|study|connect|about)$/.test(current)) {
+      document.body.classList.add("lab-page-landing");
+    } else {
+      document.body.classList.add("lab-page-content");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    decorateBody();
+    mountShell();
+    mountDrawerLinks();
+  });
+})();
+
 document.addEventListener("DOMContentLoaded", function() {
+  if (!(window.twikoo && typeof window.twikoo.init === "function")) {
+    return;
+  }
   twikoo.init({
       // Twikoo配置选项
   });
