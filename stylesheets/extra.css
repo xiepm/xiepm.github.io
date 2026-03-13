@@ -1588,8 +1588,41 @@ body.lab-standalone {
 /* Portal36 media theme */
 .md-banner,
 .md-tabs,
-.md-header__source {
+.md-header__source,
+.md-sidebar--primary .md-nav,
+.md-sidebar--primary [data-md-component="navigation"],
+.md-sidebar--secondary [data-md-component="toc"] {
   display: none;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "SimSun", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+}
+
+body,
+body[data-md-color-scheme],
+.md-typeset,
+.md-header,
+.md-sidebar,
+.md-footer,
+.md-nav,
+.md-search__input {
+  font-family: "SimSun", "Songti SC", "STSong", "Noto Serif CJK SC", serif !important;
+}
+
+code,
+pre,
+kbd,
+samp,
+.md-typeset code,
+.md-typeset pre,
+.md-typeset pre > code {
+  font-family: "Roboto Mono", "Consolas", "Courier New", monospace !important;
 }
 
 body.portal36-theme {
@@ -1602,7 +1635,7 @@ body.portal36-theme {
   --portal36-bg: #f5f7fb;
   background: var(--portal36-bg);
   color: var(--portal36-ink);
-  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Roboto", sans-serif;
+  font-family: "SimSun", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
 }
 
 body.portal36-theme::before,
@@ -1631,16 +1664,17 @@ body.portal36-theme .portal36-topbar {
 }
 
 body.portal36-theme .md-header__inner {
-  min-height: 4.25rem;
+  min-height: 3.85rem;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  column-gap: 1.5rem;
+  column-gap: 1.1rem;
 }
 
 body.portal36-theme .md-header__topic,
 body.portal36-theme .md-header__button.md-logo {
   color: #1f2937;
+  font-family: "SimSun", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
 }
 
 body.portal36-theme .md-header__button.md-logo img,
@@ -1651,6 +1685,7 @@ body.portal36-theme .md-header__button.md-logo svg {
 body.portal36-theme .md-header__title {
   margin-left: 0;
   min-width: 0;
+  font-size: 1rem;
 }
 
 body.portal36-theme .md-header__button.md-logo {
@@ -1673,7 +1708,7 @@ body.portal36-theme .md-search {
 }
 
 body.portal36-theme .md-search__form {
-  min-width: 190px;
+  min-width: 170px;
 }
 
 body.portal36-theme .md-tabs {
@@ -1730,9 +1765,18 @@ body.portal36-theme .md-content__inner::before {
 body.portal36-theme .md-typeset h1 {
   margin: 0 0 1.2rem;
   color: #161d2f;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0;
+}
+
+body.portal36-theme .md-typeset,
+body.portal36-theme .md-typeset p,
+body.portal36-theme .md-typeset li,
+body.portal36-theme .md-typeset td,
+body.portal36-theme .md-typeset th {
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 body.portal36-theme .md-typeset a {
@@ -1758,7 +1802,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-header-nav__link {
   color: #475467;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -1779,11 +1823,11 @@ body.portal36-theme .md-search__form {
   display: block;
   margin: 0 0 1.1rem;
   color: var(--portal36-accent);
-  font-size: 2rem;
+  font-size: 1.2rem;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .portal36-channels__list {
@@ -1793,11 +1837,11 @@ body.portal36-theme .md-search__form {
 
 .portal36-channels__link {
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.45rem 0.7rem;
   color: #475467;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 500;
 }
 
@@ -1826,7 +1870,7 @@ body.portal36-theme .md-search__form {
   min-height: 2.4rem;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   cursor: pointer;
 }
 
@@ -1860,7 +1904,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-rail__title {
   margin: 0 0 0.85rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #192132;
 }
@@ -1949,21 +1993,21 @@ body.portal36-theme .md-search__form {
   padding: 0.18rem 0.55rem;
   border-radius: 999px;
   background: rgba(47, 107, 255, 0.92);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
 }
 
 .portal36-hero__overlay h2 {
   margin: 0.7rem 0 0.45rem;
   color: #fff;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   line-height: 1.22;
 }
 
 .portal36-hero__overlay p {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .portal36-hero__side {
@@ -2012,7 +2056,7 @@ body.portal36-theme .md-search__form {
 .portal36-feed__head h2 {
   margin: 0;
   color: #111827;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 .portal36-feed__head a {
@@ -2063,7 +2107,7 @@ body.portal36-theme .md-search__form {
 .portal36-feed__body h3 {
   margin: 0 0 0.5rem;
   color: #101828;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   line-height: 1.35;
 }
 
@@ -2122,7 +2166,7 @@ body.portal36-theme .md-post__content {
 body.portal36-theme .md-post__header h2,
 body.portal36-theme .md-post__header h3 {
   margin: 0 0 0.6rem;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   line-height: 1.35;
 }
 

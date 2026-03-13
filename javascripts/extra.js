@@ -819,30 +819,31 @@ document.addEventListener("DOMContentLoaded", function() {
 (function () {
   var serviceLinks = [
     { href: "/", label: "首页" },
-    { href: "/blog/", label: "最新文章" },
-    { href: "/blog/2023/10/05/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/", label: "更新记录" },
-    { href: "/waline/", label: "留言板" },
-    { href: "/about/geren/", label: "关于我" }
+    { href: "/projects/", label: "项目" },
+    { href: "/study/", label: "学习" },
+    { href: "/waline/", label: "留言" },
+    { href: "/about/geren/", label: "关于" }
   ];
 
   var channelLinks = [
     { href: "/", label: "首页" },
-    { href: "/blog/", label: "快讯" },
+    { href: "/projects/", label: "项目" },
     { href: "/Robotics/learning-plan/", label: "机器人" },
     { href: "/Robot%20Operating%20System/ROS2/learning-plan/", label: "ROS" },
     { href: "/AI/learning-plan/", label: "AI" },
     { href: "/Programming/learning-plan/", label: "编程" },
     { href: "/TOOLS/learning-plan/", label: "工具" },
+    { href: "/waline/", label: "留言" },
     { href: "/about/geren/", label: "关于" }
   ];
 
   var railBlocks = [
     {
-      title: "最近更新",
+      title: "站点导览",
       items: [
-        { href: "/blog/2023/10/05/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/", label: "网站更新记录" },
-        { href: "/blog/Mkdocs/mkdocs1/", label: "利用 MkDocs 部署静态网页至 GitHub Pages" },
-        { href: "/blog/Webplay/", label: "好用 / 好玩网站分享" }
+        { href: "/projects/", label: "项目入口" },
+        { href: "/study/", label: "学习入口" },
+        { href: "/about/geren/", label: "关于 Xpm" }
       ]
     },
     {
@@ -850,55 +851,55 @@ document.addEventListener("DOMContentLoaded", function() {
       items: [
         { href: "/develop/ChatGPT/", label: "如何注册 ChatGPT" },
         { href: "/Open-source/project-recommendation/", label: "开源项目推荐" },
-        { href: "/trip/InCQ/CQ/", label: "重庆旅游推荐路线" }
+        { href: "/blog/Mkdocs/mkdocs1/", label: "个人网站搭建记录" }
       ]
     }
   ];
 
   var homepageData = {
     main: {
-      href: "/blog/Mkdocs/mkdocs1/",
+      href: "/projects/",
       image: "/images/blog-article-image-large.jpg",
-      title: "把个人技术内容做成自己的科技媒体站",
-      text: "从知识库到资讯门户，让内容呈现更接近 36kr 式的科技媒体首页。"
+      title: "把项目实践和学习积累整理成自己的个人网站",
+      text: "这里集中展示我的项目、学习专题与长期沉淀下来的技术内容。"
     },
     side: [
-      { href: "/develop/ChatGPT/", image: "/images/blog-post-image.jpg", title: "ChatGPT 注册与体验" },
-      { href: "/blog/Webplay/", image: "/images/blog-post-image2.jpg", title: "好用 / 好玩网站分享" },
-      { href: "/Open-source/project-recommendation/", image: "/images/case-study-image2.jpg", title: "开源项目推荐" },
-      { href: "/trip/InCQ/CQ/", image: "/images/case-study-image3.jpg", title: "重庆旅游推荐路线" }
+      { href: "/Open-source/project-recommendation/", image: "/images/case-study-image2.jpg", title: "项目推荐" },
+      { href: "/blog/Mkdocs/mkdocs1/", image: "/images/blog-post-image2.jpg", title: "建站学习记录" },
+      { href: "/develop/ChatGPT/", image: "/images/blog-post-image.jpg", title: "实用工具体验" },
+      { href: "/waline/", image: "/images/case-study-image3.jpg", title: "留言交流入口" }
     ],
     latest: [
       {
         href: "/blog/Mkdocs/mkdocs1/",
         image: "/images/blog-post-image.jpg",
-        category: "建站",
+        category: "学习专题",
         title: "利用 MkDocs 部署静态网页至 GitHub Pages",
-        excerpt: "把知识内容整理成结构化站点，是这个网站长期积累的核心方法。",
+        excerpt: "把学习内容整理成结构化站点，是这个个人网站长期积累的核心方法。",
         meta: "GitHub Pages / MkDocs / 个人站"
       },
       {
         href: "/develop/ChatGPT/",
         image: "/images/blog-post-image2.jpg",
-        category: "AI",
+        category: "实用内容",
         title: "如何注册 ChatGPT",
-        excerpt: "从热门工具切入，补齐注册、使用和入门体验。",
+        excerpt: "从常用工具切入，记录更容易被实际用到的内容。",
         meta: "AI 工具 / 入门体验"
       },
       {
         href: "/Open-source/project-recommendation/",
         image: "/images/case-study-image.jpg",
-        category: "开源",
-        title: "项目推荐",
-        excerpt: "把值得关注的开源方向集中整理，保留真正长期有价值的内容。",
+        category: "项目实践",
+        title: "开源项目推荐",
+        excerpt: "整理值得关注的开源方向，把灵感、资源和项目线索沉淀下来。",
         meta: "Open Source / 推荐"
       },
       {
         href: "/blog/Webplay/",
         image: "/images/blog-post-image3.jpg",
-        category: "资源",
+        category: "学习补充",
         title: "好用 / 好玩网站分享",
-        excerpt: "除了技术文章，也把有趣和好用的网站沉淀在这个内容流里。",
+        excerpt: "除了技术内容，也保留一些能提升效率和启发思路的网站收藏。",
         meta: "网站收藏 / 效率工具"
       }
     ]
@@ -1041,7 +1042,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var intro = document.createElement("section");
     intro.className = "portal36-rail__block portal36-rail__block--intro";
-    intro.innerHTML = '<h3 class="portal36-rail__title">站点说明</h3><p>这是一个以技术文章和学习内容为主的个人科技媒体站，项目和生活内容作为辅助入口存在。</p><a class="portal36-rail__cta" href="/waline/">进入留言板</a>';
+    intro.innerHTML = '<h3 class="portal36-rail__title">站点说明</h3><p>这是一个以项目展示、学习积累和留言交流为主的个人网站，重点放在长期有价值的内容沉淀上。</p><a class="portal36-rail__cta" href="/waline/">进入留言板</a>';
     rail.appendChild(intro);
 
     secondaryInner.innerHTML = "";
@@ -1056,7 +1057,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var hero = document.createElement("section");
     hero.className = "portal36-home";
-    hero.innerHTML = '<section class="portal36-hero"><a class="portal36-hero__main" href="' + homepageData.main.href + '"><img src="' + homepageData.main.image + '" alt="' + homepageData.main.title + '"><div class="portal36-hero__overlay"><span class="portal36-hero__tag">头条</span><h2>' + homepageData.main.title + '</h2><p>' + homepageData.main.text + '</p></div></a><div class="portal36-hero__side"></div></section><section class="portal36-feed"><div class="portal36-feed__head"><h2>最新文章</h2><a href="/blog/">查看全部</a></div><div class="portal36-feed__list"></div></section>';
+    hero.innerHTML = '<section class="portal36-hero"><a class="portal36-hero__main" href="' + homepageData.main.href + '"><img src="' + homepageData.main.image + '" alt="' + homepageData.main.title + '"><div class="portal36-hero__overlay"><span class="portal36-hero__tag">精选项目</span><h2>' + homepageData.main.title + '</h2><p>' + homepageData.main.text + '</p></div></a><div class="portal36-hero__side"></div></section><section class="portal36-feed"><div class="portal36-feed__head"><h2>精选文章</h2><a href="/blog/">查看全部</a></div><div class="portal36-feed__list"></div></section>';
 
     var side = hero.querySelector(".portal36-hero__side");
     homepageData.side.forEach(function (item) {
