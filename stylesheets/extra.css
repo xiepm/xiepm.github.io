@@ -2359,3 +2359,271 @@ body.portal36-theme .md-source-file {
     padding: 1rem;
   }
 }
+
+/* Unified lab palette */
+html {
+  background: #eef2f3;
+}
+
+body.portal36-theme,
+body.lab-standalone {
+  --labui-bg: #eef2f3;
+  --labui-surface: #f8fbfb;
+  --labui-surface-strong: #ffffff;
+  --labui-header: #2e4350;
+  --labui-header-deep: #253844;
+  --labui-accent: #198392;
+  --labui-accent-soft: rgba(25, 131, 146, 0.12);
+  --labui-accent-line: rgba(25, 131, 146, 0.18);
+  --labui-text: #163844;
+  --labui-text-soft: #6f8791;
+  --labui-shadow: 0 18px 38px rgba(34, 58, 66, 0.08);
+  --labui-radius-xl: 28px;
+  --labui-radius-lg: 22px;
+  --portal36-accent: var(--labui-accent);
+  --portal36-accent-soft: var(--labui-accent-soft);
+  --portal36-ink: var(--labui-text);
+  --portal36-muted: var(--labui-text-soft);
+  --portal36-line: var(--labui-accent-line);
+  --portal36-surface: var(--labui-surface);
+  --portal36-bg: var(--labui-bg);
+  background: var(--labui-bg);
+  color: var(--labui-text);
+}
+
+.md-header,
+body.portal36-theme .md-header,
+.lab-site-header {
+  background: linear-gradient(135deg, var(--labui-header) 0%, var(--labui-header-deep) 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(135, 193, 199, 0.16);
+}
+
+.md-main,
+body.portal36-theme .md-main,
+body.lab-standalone {
+  background:
+    radial-gradient(circle at top, rgba(65, 153, 164, 0.10), transparent 20%),
+    linear-gradient(180deg, #eef2f3 0%, #edf1f2 100%);
+}
+
+body.portal36-theme .md-header__topic,
+body.portal36-theme .md-header__button.md-logo,
+.portal36-header-nav__link,
+.lab-site-header__nav a,
+.lab-site-header__brand-copy strong,
+.lab-site-header__brand-copy span {
+  color: rgba(240, 248, 248, 0.94);
+}
+
+.portal36-header-nav__link:hover,
+.portal36-header-nav__link.is-active,
+.lab-site-header__nav a.is-active,
+.lab-site-header__nav a:hover {
+  color: #ffffff;
+  background: rgba(104, 166, 173, 0.16);
+}
+
+body.portal36-theme .md-search__form,
+.portal36-channels__search,
+.lab-shell__search,
+.lab-site-header__action,
+.lab-button--ghost {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: inset 0 0 0 1px rgba(25, 131, 146, 0.14);
+  color: var(--labui-text);
+}
+
+body.portal36-theme .md-search__input,
+body.portal36-theme .md-search__input::placeholder {
+  color: #a8b8be;
+}
+
+body.portal36-theme .md-content__inner,
+body.portal36-theme .md-post--excerpt,
+body.portal36-page-content .md-content__inner,
+.portal36-feed,
+.portal36-rail__block,
+.portal36-channels,
+.lab-hero-panel,
+.lab-panel,
+.lab-metric,
+.lab-card {
+  background: linear-gradient(180deg, var(--labui-surface-strong) 0%, var(--labui-surface) 100%);
+  border: 1px solid var(--labui-accent-line);
+  box-shadow: var(--labui-shadow);
+}
+
+body.portal36-theme .md-content__inner,
+body.portal36-theme .md-post--excerpt,
+body.portal36-page-content .md-content__inner,
+.portal36-feed,
+.portal36-rail__block,
+.portal36-channels {
+  border-radius: var(--labui-radius-lg);
+}
+
+body.portal36-theme .md-typeset h1,
+body.portal36-theme .md-post__header a,
+body.portal36-theme .md-typeset,
+body.portal36-theme .md-typeset p,
+body.portal36-theme .md-typeset li,
+.portal36-rail__title,
+.portal36-feed__head h2,
+.portal36-feed__body h3,
+.portal36-rail__item,
+.lab-hero-panel h1,
+.lab-panel h2,
+.lab-card h3,
+.lab-metric strong {
+  color: var(--labui-text);
+}
+
+body.portal36-theme .md-typeset a,
+.portal36-feed__head a,
+.portal36-rail__item:hover,
+.portal36-rail__cta,
+.portal36-feed__category,
+.lab-kicker,
+.lab-card__tag,
+.lab-card__cta {
+  color: var(--labui-accent);
+}
+
+body.portal36-theme .md-typeset p,
+body.portal36-theme .md-typeset li,
+body.portal36-theme .md-post__meta,
+.portal36-feed__body p,
+.portal36-feed__meta,
+.portal36-rail__block--intro p,
+.portal36-rail__item,
+.portal36-channels__link,
+.lab-lead,
+.lab-panel p,
+.lab-list li,
+.lab-metric span {
+  color: var(--labui-text-soft);
+}
+
+.portal36-channels {
+  padding: 1rem 0.9rem;
+}
+
+.portal36-channels__brand {
+  color: var(--labui-text);
+}
+
+.portal36-channels__link {
+  border-radius: 14px;
+}
+
+.portal36-channels__link:hover {
+  color: var(--labui-text);
+  background: var(--labui-accent-soft);
+}
+
+.portal36-channels__link.is-active {
+  background: rgba(52, 87, 96, 0.10);
+  color: var(--labui-accent);
+}
+
+.portal36-channels__post,
+.portal36-rail__cta,
+.lab-button--primary,
+.lab-site-header__action--primary {
+  background: linear-gradient(135deg, #1a7582 0%, #1f909c 100%);
+  color: #f7ffff;
+  border: 1px solid rgba(24, 126, 139, 0.16);
+  box-shadow: 0 12px 24px rgba(25, 131, 146, 0.16);
+}
+
+.portal36-hero__main,
+.portal36-hero__mini {
+  border-radius: var(--labui-radius-lg);
+  box-shadow: var(--labui-shadow);
+}
+
+.portal36-hero__overlay {
+  background: linear-gradient(180deg, rgba(28, 60, 69, 0.04) 0%, rgba(21, 50, 58, 0.72) 100%);
+}
+
+.portal36-hero__tag {
+  background: rgba(25, 131, 146, 0.92);
+}
+
+.portal36-hero__overlay h2,
+.portal36-hero__mini span {
+  color: #f7ffff;
+}
+
+.portal36-feed__item {
+  border-top-color: rgba(25, 131, 146, 0.10);
+}
+
+body.portal36-theme .md-post--excerpt .md-post__content > a:first-child,
+body.portal36-theme .md-post--excerpt .md-post__content > p > a:first-child,
+body.portal36-theme .md-typeset a:hover,
+.portal36-feed__head a:hover,
+.lab-card__cta:hover {
+  color: #0f6d79;
+}
+
+body.portal36-theme .md-footer,
+body.portal36-theme .md-footer-meta,
+body.lab-standalone .md-footer,
+body.lab-standalone .md-footer-meta {
+  background: transparent;
+}
+
+body.portal36-theme .md-footer-meta__inner,
+body.portal36-theme .md-footer__inner,
+body.portal36-theme .md-footer-meta,
+body.lab-standalone .md-footer-meta {
+  color: var(--labui-text-soft);
+}
+
+body.lab-standalone {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--labui-text);
+}
+
+.lab-site-header {
+  background: linear-gradient(135deg, var(--labui-header) 0%, var(--labui-header-deep) 100%);
+}
+
+.lab-site-header__nav a {
+  min-height: 3.1rem;
+  padding: 0.72rem 1.05rem;
+}
+
+.lab-page {
+  padding: 2.2rem 0 3rem;
+}
+
+.lab-hero-panel,
+.lab-panel {
+  border-radius: var(--labui-radius-xl);
+}
+
+.lab-button--ghost {
+  border: 1px solid var(--labui-accent-line);
+}
+
+.lab-hero-panel h1,
+.lab-panel h2,
+.lab-card h3 {
+  font-family: "Times New Roman", "FangSong", "STFangsong", "FangSong_GB2312", serif;
+}
+
+body.portal36-page-home .portal36-feed,
+body.portal36-page-home .portal36-rail__block,
+body.portal36-page-home .portal36-channels {
+  background: linear-gradient(180deg, var(--labui-surface-strong) 0%, var(--labui-surface) 100%);
+}
+
+@media screen and (max-width: 76.2344em) {
+  .portal36-channels {
+    padding: 0.9rem;
+  }
+}
