@@ -2,6 +2,7 @@
     --md-primary-fg-color:        #ac76ea;
     --md-primary-fg-color--light:#6d14d3;
     --md-primary-fg-color--dark:  #6d14d3;
+    --md-text-font: "SimSun";
       
   }
   /* 给所有元素加上边框 */
@@ -10,7 +11,7 @@
   }  */
 
   button.md-top {
-    font-family: LXGW WenKai; /* 修改字体 */
+    font-family: "SimSun", "Songti SC", "STSong", serif; /* 修改字体 */
     font-size: 16px; /* 修改字体大小 */
     font-weight: bold; /* 修改字体粗细 */
     color: #518FC1; /* 修改字体颜色 */
@@ -22,7 +23,7 @@
 
 
 :root {
-  --md-text-font: "LXGW WenKai"; 
+  --md-text-font: "SimSun"; 
 } /* 字体 */
 
 
@@ -1595,6 +1596,20 @@ body.lab-standalone {
   display: none;
 }
 
+.md-header {
+  top: 0;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
+}
+
+.md-header__inner {
+  min-height: 3.85rem;
+}
+
+.md-main {
+  background: #f5f7fb;
+}
+
 html,
 body,
 button,
@@ -1765,7 +1780,7 @@ body.portal36-theme .md-content__inner::before {
 body.portal36-theme .md-typeset h1 {
   margin: 0 0 1.2rem;
   color: #161d2f;
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -1802,7 +1817,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-header-nav__link {
   color: #475467;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -1823,7 +1838,7 @@ body.portal36-theme .md-search__form {
   display: block;
   margin: 0 0 1.1rem;
   color: var(--portal36-accent);
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 700;
   text-decoration: none;
@@ -1841,8 +1856,9 @@ body.portal36-theme .md-search__form {
   color: #475467;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 500;
+  line-height: 1.3;
 }
 
 .portal36-channels__link:hover {
@@ -1870,7 +1886,7 @@ body.portal36-theme .md-search__form {
   min-height: 2.4rem;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
@@ -1904,7 +1920,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-rail__title {
   margin: 0 0 0.85rem;
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #192132;
 }
@@ -2056,7 +2072,7 @@ body.portal36-theme .md-search__form {
 .portal36-feed__head h2 {
   margin: 0;
   color: #111827;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
 }
 
 .portal36-feed__head a {
@@ -2107,7 +2123,7 @@ body.portal36-theme .md-search__form {
 .portal36-feed__body h3 {
   margin: 0 0 0.5rem;
   color: #101828;
-  font-size: 1.15rem;
+  font-size: 1rem;
   line-height: 1.35;
 }
 

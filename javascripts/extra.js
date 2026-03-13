@@ -801,9 +801,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    decorateBody();
-    mountShell();
-    mountDrawerLinks();
+    return;
   });
 })();
 
@@ -1102,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initPortal36() {
     removeOldShell();
     decorateBody();
     mountHeaderNav();
@@ -1111,5 +1109,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (currentPath() === "/") {
       buildHomepage();
     }
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPortal36);
+  } else {
+    initPortal36();
+  }
 })();
