@@ -1586,6 +1586,12 @@ body.lab-standalone {
 }
 
 /* Portal36 media theme */
+.md-banner,
+.md-tabs,
+.md-header__source {
+  display: none;
+}
+
 body.portal36-theme {
   --portal36-accent: #2f6bff;
   --portal36-accent-soft: #ebf2ff;
@@ -1607,7 +1613,7 @@ body.portal36-theme .lab-drawer-links {
 }
 
 body.portal36-theme .md-header {
-  top: 2.5rem;
+  top: 0;
   background: #fff;
   box-shadow: 0 1px 0 rgba(15, 23, 42, 0.08);
 }
@@ -1616,6 +1622,20 @@ body.portal36-theme .md-header__inner,
 body.portal36-theme .md-main__inner {
   width: min(1360px, calc(100vw - 32px));
   max-width: none;
+}
+
+body.portal36-theme .md-banner,
+body.portal36-theme .md-header__source,
+body.portal36-theme .portal36-topbar {
+  display: none !important;
+}
+
+body.portal36-theme .md-header__inner {
+  min-height: 4.25rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 1.5rem;
 }
 
 body.portal36-theme .md-header__topic,
@@ -1630,6 +1650,30 @@ body.portal36-theme .md-header__button.md-logo svg {
 
 body.portal36-theme .md-header__title {
   margin-left: 0;
+  min-width: 0;
+}
+
+body.portal36-theme .md-header__button.md-logo {
+  margin: 0;
+}
+
+body.portal36-theme .md-header__ellipsis,
+body.portal36-theme .md-header__topic {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.portal36-theme .md-header__button[for="__drawer"] {
+  display: none;
+}
+
+body.portal36-theme .md-search {
+  justify-self: end;
+}
+
+body.portal36-theme .md-search__form {
+  min-width: 190px;
 }
 
 body.portal36-theme .md-tabs {
@@ -1705,53 +1749,29 @@ body.portal36-theme .md-search__form {
   box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.28);
 }
 
-.portal36-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #2f2f31;
-  color: #fff;
-}
-
-.portal36-topbar__inner {
-  width: min(1360px, calc(100vw - 32px));
-  margin: 0 auto;
-  min-height: 2.5rem;
+.portal36-header-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1.4rem;
+  min-width: 0;
 }
 
-.portal36-topbar__nav,
-.portal36-topbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.portal36-topbar__link,
-.portal36-topbar__search,
-.portal36-topbar__login {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.86rem;
+.portal36-header-nav__link {
+  color: #475467;
+  font-size: 0.98rem;
+  font-weight: 600;
   text-decoration: none;
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
-.portal36-topbar__link:hover,
-.portal36-topbar__search:hover,
-.portal36-topbar__login:hover,
-.portal36-topbar__link.is-active {
-  color: #fff;
+.portal36-header-nav__link:hover,
+.portal36-header-nav__link.is-active {
+  color: #111827;
 }
 
 .portal36-channels {
   position: sticky;
-  top: 5.8rem;
+  top: 5rem;
   background: transparent;
 }
 
@@ -1825,7 +1845,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-rail {
   position: sticky;
-  top: 5.8rem;
+  top: 5rem;
   display: grid;
   gap: 1rem;
 }
@@ -2164,12 +2184,21 @@ body.portal36-theme .md-source-file {
 }
 
 @media screen and (max-width: 76.2344em) {
-  .portal36-topbar {
-    position: static;
-  }
-
   body.portal36-theme .md-header {
     top: 0;
+  }
+
+  body.portal36-theme .md-header__button[for="__drawer"] {
+    display: inline-flex;
+  }
+
+  body.portal36-theme .md-header__inner {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    column-gap: 0.9rem;
+  }
+
+  .portal36-header-nav {
+    display: none;
   }
 
   body.portal36-theme .md-sidebar--primary {
@@ -2187,12 +2216,6 @@ body.portal36-theme .md-source-file {
 }
 
 @media screen and (max-width: 900px) {
-  .portal36-topbar__nav {
-    gap: 0.8rem;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
   .portal36-hero__main {
     min-height: 300px;
   }
@@ -2212,21 +2235,16 @@ body.portal36-theme .md-source-file {
 
 @media screen and (max-width: 720px) {
   body.portal36-theme .md-header__inner,
-  body.portal36-theme .md-main__inner,
-  .portal36-topbar__inner {
+  body.portal36-theme .md-main__inner {
     width: min(100vw - 20px, 100%);
-  }
-
-  .portal36-topbar__inner {
-    min-height: 2.8rem;
-  }
-
-  .portal36-topbar__actions {
-    gap: 0.8rem;
   }
 
   .portal36-channels__list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  body.portal36-theme .md-search__form {
+    min-width: 0;
   }
 
   .portal36-hero__overlay h2,

@@ -948,44 +948,26 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.classList.remove("lab-theme", "lab-page-home", "lab-page-landing", "lab-page-content");
   }
 
-  function mountTopbar() {
-    if (document.querySelector(".portal36-topbar")) {
+  function mountHeaderNav() {
+    var headerInner = document.querySelector(".md-header__inner");
+    if (!headerInner || headerInner.querySelector(".portal36-header-nav")) {
       return;
     }
-    var topbar = document.createElement("div");
-    topbar.className = "portal36-topbar";
-
-    var inner = document.createElement("div");
-    inner.className = "portal36-topbar__inner";
 
     var nav = document.createElement("nav");
-    nav.className = "portal36-topbar__nav";
+    nav.className = "portal36-header-nav";
+    nav.setAttribute("aria-label", "主导航");
+
     serviceLinks.forEach(function (item) {
-      nav.appendChild(createLink(item, "portal36-topbar__link"));
+      nav.appendChild(createLink(item, "portal36-header-nav__link"));
     });
 
-    var actions = document.createElement("div");
-    actions.className = "portal36-topbar__actions";
-
-    var search = document.createElement("button");
-    search.type = "button";
-    search.className = "portal36-topbar__search";
-    search.textContent = "搜索";
-    search.addEventListener("click", openSearch);
-    actions.appendChild(search);
-
-    var github = document.createElement("a");
-    github.className = "portal36-topbar__login";
-    github.href = "https://github.com/xiepm";
-    github.target = "_blank";
-    github.rel = "noopener";
-    github.textContent = "GitHub";
-    actions.appendChild(github);
-
-    inner.appendChild(nav);
-    inner.appendChild(actions);
-    topbar.appendChild(inner);
-    document.body.insertAdjacentElement("afterbegin", topbar);
+    var anchor = headerInner.querySelector(".md-header__source");
+    if (anchor) {
+      anchor.insertAdjacentElement("beforebegin", nav);
+    } else {
+      headerInner.appendChild(nav);
+    }
   }
 
   function mountChannels() {
@@ -1122,7 +1104,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("DOMContentLoaded", function () {
     removeOldShell();
     decorateBody();
-    mountTopbar();
+    mountHeaderNav();
     mountChannels();
     mountRightRail();
     if (currentPath() === "/") {
