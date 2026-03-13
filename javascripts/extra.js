@@ -1111,9 +1111,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  initPortal36();
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initPortal36);
-  } else {
-    initPortal36();
   }
 })();
