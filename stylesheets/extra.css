@@ -1712,6 +1712,12 @@ body.portal36-theme .portal36-topbar {
   display: none !important;
 }
 
+body.portal36-theme .md-source-file,
+body.portal36-theme .md-content__button,
+body.portal36-theme .md-content__action {
+  display: none !important;
+}
+
 body.portal36-theme .md-header__inner {
   min-height: 3.85rem;
   display: grid;
@@ -1775,16 +1781,19 @@ body.portal36-theme .md-main__inner {
 
 body.portal36-theme .md-content {
   order: 2;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
 }
 
 body.portal36-theme .md-sidebar--primary {
   order: 1;
-  width: 170px;
+  width: 150px;
 }
 
 body.portal36-theme .md-sidebar--secondary {
   order: 3;
-  width: 290px;
+  width: 240px;
   margin-left: 0;
 }
 
@@ -2005,9 +2014,35 @@ body.portal36-theme .md-search__form {
   gap: 1.6rem;
 }
 
+.portal36-reading-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--portal36-line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(248, 251, 251, 0.9), rgba(242, 247, 247, 0.88));
+  box-shadow: var(--labui-shadow);
+}
+
+.portal36-reading-bar__label,
+.portal36-reading-bar__value {
+  color: var(--labui-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.portal36-reading-bar__slider {
+  width: min(240px, 100%);
+  accent-color: var(--labui-accent);
+}
+
 .portal36-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.78fr);
+  grid-template-columns: minmax(0, 2.15fr) minmax(180px, 0.72fr);
   gap: 1rem;
 }
 
@@ -2127,7 +2162,7 @@ body.portal36-theme .md-search__form {
 
 .portal36-feed__item {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: minmax(160px, 188px) minmax(0, 1fr);
   gap: 1rem;
   padding: 1rem 0;
   text-decoration: none;
@@ -2165,6 +2200,7 @@ body.portal36-theme .md-search__form {
   color: #effaf8;
   font-size: 0.96rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .portal36-feed__body p {
@@ -2172,6 +2208,7 @@ body.portal36-theme .md-search__form {
   color: #aac0bb;
   line-height: 1.7;
   font-size: 0.88rem;
+  overflow-wrap: anywhere;
 }
 
 .portal36-feed__meta {
@@ -2192,6 +2229,35 @@ body.portal36-page-home .md-typeset > h1,
 body.portal36-page-home .md-path,
 body.portal36-page-home .md-source-file {
   display: none !important;
+}
+
+body.portal36-theme {
+  --portal36-reading-scale: 1;
+}
+
+body.portal36-theme .md-typeset,
+body.portal36-theme .md-typeset p,
+body.portal36-theme .md-typeset li,
+body.portal36-theme .md-typeset td,
+body.portal36-theme .md-typeset th,
+body.portal36-theme .md-typeset blockquote,
+body.portal36-page-content .md-typeset > h2,
+body.portal36-page-content .md-typeset > h3,
+body.portal36-page-content .md-typeset > h4,
+body.portal36-page-content .md-typeset > h5,
+body.portal36-page-content .md-typeset > h6,
+.portal36-hero__overlay h2,
+.portal36-hero__overlay p,
+.portal36-feed__head h2,
+.portal36-feed__body h3,
+.portal36-feed__body p,
+.portal36-feed__meta,
+.portal36-feed__category {
+  font-size: calc(1em * var(--portal36-reading-scale));
+}
+
+body.portal36-page-content .md-typeset > h1 {
+  font-size: calc(1.35rem * var(--portal36-reading-scale));
 }
 
 body.portal36-theme .md-post--excerpt {
@@ -2272,15 +2338,19 @@ body.portal36-theme .md-source-file {
   }
 
   body.portal36-theme .md-sidebar--secondary {
-    display: none;
+    width: 212px;
   }
 
   .portal36-hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1.85fr) minmax(170px, 0.7fr);
   }
 
   .portal36-hero__side {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .portal36-feed__item {
+    grid-template-columns: minmax(148px, 172px) minmax(0, 1fr);
   }
 }
 
@@ -2306,6 +2376,10 @@ body.portal36-theme .md-source-file {
     width: 100%;
   }
 
+  body.portal36-theme .md-sidebar--secondary {
+    display: none;
+  }
+
   .portal36-channels {
     position: static;
     margin-bottom: 1rem;
@@ -2313,6 +2387,10 @@ body.portal36-theme .md-source-file {
 
   .portal36-channels__list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .portal36-reading-bar {
+    justify-content: space-between;
   }
 }
 
@@ -2357,6 +2435,15 @@ body.portal36-theme .md-source-file {
   .portal36-feed,
   body.portal36-theme .md-post--excerpt {
     padding: 1rem;
+  }
+
+  .portal36-reading-bar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .portal36-reading-bar__slider {
+    width: 100%;
   }
 }
 

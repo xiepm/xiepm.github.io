@@ -1043,6 +1043,55 @@ document.addEventListener("DOMContentLoaded", function() {
     applyThemeMode(document.body.classList.contains("portal36-mode-night") ? "day" : "night");
   }
 
+  var readingScaleKey = "portal36-reading-scale";
+
+  function clampReadingScale(value) {
+    var number = Number(value);
+    if (!Number.isFinite(number)) {
+      return 100;
+    }
+    return Math.min(116, Math.max(92, Math.round(number)));
+  }
+
+  function getStoredReadingScale() {
+    try {
+      return clampReadingScale(window.localStorage.getItem(readingScaleKey));
+    } catch (error) {
+      return 100;
+    }
+  }
+
+  function applyReadingScale(value) {
+    var scale = clampReadingScale(value);
+    document.body.style.setProperty("--portal36-reading-scale", String(scale / 100));
+    document.querySelectorAll("[data-portal36-reading-output]").forEach(function (output) {
+      output.textContent = scale + "%";
+    });
+    document.querySelectorAll("[data-portal36-reading-slider]").forEach(function (input) {
+      if (input.value !== String(scale)) {
+        input.value = String(scale);
+      }
+    });
+    try {
+      window.localStorage.setItem(readingScaleKey, String(scale));
+    } catch (error) {
+      // Ignore storage failures and keep the in-memory scale.
+    }
+  }
+
+  function createReadingControls() {
+    var wrap = document.createElement("div");
+    wrap.className = "portal36-reading-bar";
+    wrap.innerHTML = '<span class="portal36-reading-bar__label">阅读字号</span><input class="portal36-reading-bar__slider" data-portal36-reading-slider="true" type="range" min="92" max="116" step="2" value="' + getStoredReadingScale() + '" aria-label="阅读字号调节"><span class="portal36-reading-bar__value" data-portal36-reading-output="true"></span>';
+
+    var slider = wrap.querySelector("[data-portal36-reading-slider]");
+    slider.addEventListener("input", function (event) {
+      applyReadingScale(event.target.value);
+    });
+
+    return wrap;
+  }
+
   function openSearch() {
     var toggle = document.querySelector("[data-md-toggle='search']");
     if (toggle) {
@@ -1263,6 +1312,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  function mountReadingControls() {
+    var article = document.querySelector(".md-content__inner.md-typeset");
+    if (!article || article.querySelector(".portal36-reading-bar")) {
+      return;
+    }
+
+    var controls = createReadingControls();
+    var marker = article.querySelector(".portal36-home") || article.querySelector("h1") || article.firstElementChild;
+    if (marker) {
+      marker.insertAdjacentElement("beforebegin", controls);
+    } else {
+      article.insertAdjacentElement("afterbegin", controls);
+    }
+    applyReadingScale(getStoredReadingScale());
+  }
+
   function decorateBody() {
     document.body.classList.add("portal36-theme");
     if (currentPath() === "/") {
@@ -1284,6 +1349,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (currentPath() === "/") {
       buildHomepage();
     }
+    mountReadingControls();
   }
 
   initPortal36();
