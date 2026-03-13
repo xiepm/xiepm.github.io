@@ -49,6 +49,7 @@ nav:
       - 项目总览: projects/index.md
       - 设计与项目总览: projects/design-overview.md
       - 开源项目推荐: projects/open-source.md
+      - 图片视频示例: projects/media-demo.md
   - 学习:
       - 学习总览: study/index.md
       - 机器人: study/robotics.md
@@ -62,3 +63,4 @@ nav:
   - 关于:
       - 个人介绍: about/index.md
       - 关于 Xpm: about/xpm.md
+      - 上传说明: about/upload-guide.md

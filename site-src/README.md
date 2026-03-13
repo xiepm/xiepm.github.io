@@ -28,6 +28,11 @@
 
 5. 提交并推送当前仓库
 
+## 常用提醒
+
+- 上传说明：`docs/about/upload-guide.md`
+- 插入示例：`docs/projects/media-demo.md`
+
 ## 目录说明
 
 - `docs/index.md`：首页
