@@ -816,4 +816,317 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+(function () {
+  var serviceLinks = [
+    { href: "/", label: "首页" },
+    { href: "/blog/", label: "最新文章" },
+    { href: "/blog/2023/10/05/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/", label: "更新记录" },
+    { href: "/waline/", label: "留言板" },
+    { href: "/about/geren/", label: "关于我" }
+  ];
 
+  var channelLinks = [
+    { href: "/", label: "首页" },
+    { href: "/blog/", label: "快讯" },
+    { href: "/Robotics/learning-plan/", label: "机器人" },
+    { href: "/Robot%20Operating%20System/ROS2/learning-plan/", label: "ROS" },
+    { href: "/AI/learning-plan/", label: "AI" },
+    { href: "/Programming/learning-plan/", label: "编程" },
+    { href: "/TOOLS/learning-plan/", label: "工具" },
+    { href: "/about/geren/", label: "关于" }
+  ];
+
+  var railBlocks = [
+    {
+      title: "最近更新",
+      items: [
+        { href: "/blog/2023/10/05/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/", label: "网站更新记录" },
+        { href: "/blog/Mkdocs/mkdocs1/", label: "利用 MkDocs 部署静态网页至 GitHub Pages" },
+        { href: "/blog/Webplay/", label: "好用 / 好玩网站分享" }
+      ]
+    },
+    {
+      title: "推荐阅读",
+      items: [
+        { href: "/develop/ChatGPT/", label: "如何注册 ChatGPT" },
+        { href: "/Open-source/project-recommendation/", label: "开源项目推荐" },
+        { href: "/trip/InCQ/CQ/", label: "重庆旅游推荐路线" }
+      ]
+    }
+  ];
+
+  var homepageData = {
+    main: {
+      href: "/blog/Mkdocs/mkdocs1/",
+      image: "/images/blog-article-image-large.jpg",
+      title: "把个人技术内容做成自己的科技媒体站",
+      text: "从知识库到资讯门户，让内容呈现更接近 36kr 式的科技媒体首页。"
+    },
+    side: [
+      { href: "/develop/ChatGPT/", image: "/images/blog-post-image.jpg", title: "ChatGPT 注册与体验" },
+      { href: "/blog/Webplay/", image: "/images/blog-post-image2.jpg", title: "好用 / 好玩网站分享" },
+      { href: "/Open-source/project-recommendation/", image: "/images/case-study-image2.jpg", title: "开源项目推荐" },
+      { href: "/trip/InCQ/CQ/", image: "/images/case-study-image3.jpg", title: "重庆旅游推荐路线" }
+    ],
+    latest: [
+      {
+        href: "/blog/Mkdocs/mkdocs1/",
+        image: "/images/blog-post-image.jpg",
+        category: "建站",
+        title: "利用 MkDocs 部署静态网页至 GitHub Pages",
+        excerpt: "把知识内容整理成结构化站点，是这个网站长期积累的核心方法。",
+        meta: "GitHub Pages / MkDocs / 个人站"
+      },
+      {
+        href: "/develop/ChatGPT/",
+        image: "/images/blog-post-image2.jpg",
+        category: "AI",
+        title: "如何注册 ChatGPT",
+        excerpt: "从热门工具切入，补齐注册、使用和入门体验。",
+        meta: "AI 工具 / 入门体验"
+      },
+      {
+        href: "/Open-source/project-recommendation/",
+        image: "/images/case-study-image.jpg",
+        category: "开源",
+        title: "项目推荐",
+        excerpt: "把值得关注的开源方向集中整理，保留真正长期有价值的内容。",
+        meta: "Open Source / 推荐"
+      },
+      {
+        href: "/blog/Webplay/",
+        image: "/images/blog-post-image3.jpg",
+        category: "资源",
+        title: "好用 / 好玩网站分享",
+        excerpt: "除了技术文章，也把有趣和好用的网站沉淀在这个内容流里。",
+        meta: "网站收藏 / 效率工具"
+      }
+    ]
+  };
+
+  function normalizePath(path) {
+    return (path || "/").replace(/index\.html$/, "").replace(/\/+$/, "") || "/";
+  }
+
+  function currentPath() {
+    return normalizePath(window.location.pathname);
+  }
+
+  function isActive(href) {
+    var current = currentPath();
+    var target = normalizePath(href);
+    if (target === "/") {
+      return current === "/";
+    }
+    return current === target || current.indexOf(target + "/") === 0;
+  }
+
+  function createLink(item, className) {
+    var link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.label;
+    if (className) {
+      link.className = className;
+    }
+    if (isActive(item.href)) {
+      link.classList.add("is-active");
+    }
+    return link;
+  }
+
+  function openSearch() {
+    var toggle = document.querySelector("[data-md-toggle='search']");
+    if (toggle) {
+      toggle.checked = true;
+    }
+  }
+
+  function removeOldShell() {
+    document.querySelectorAll(".lab-shell, .lab-drawer-links").forEach(function (node) {
+      node.remove();
+    });
+    document.body.classList.remove("lab-theme", "lab-page-home", "lab-page-landing", "lab-page-content");
+  }
+
+  function mountTopbar() {
+    if (document.querySelector(".portal36-topbar")) {
+      return;
+    }
+    var topbar = document.createElement("div");
+    topbar.className = "portal36-topbar";
+
+    var inner = document.createElement("div");
+    inner.className = "portal36-topbar__inner";
+
+    var nav = document.createElement("nav");
+    nav.className = "portal36-topbar__nav";
+    serviceLinks.forEach(function (item) {
+      nav.appendChild(createLink(item, "portal36-topbar__link"));
+    });
+
+    var actions = document.createElement("div");
+    actions.className = "portal36-topbar__actions";
+
+    var search = document.createElement("button");
+    search.type = "button";
+    search.className = "portal36-topbar__search";
+    search.textContent = "搜索";
+    search.addEventListener("click", openSearch);
+    actions.appendChild(search);
+
+    var github = document.createElement("a");
+    github.className = "portal36-topbar__login";
+    github.href = "https://github.com/xiepm";
+    github.target = "_blank";
+    github.rel = "noopener";
+    github.textContent = "GitHub";
+    actions.appendChild(github);
+
+    inner.appendChild(nav);
+    inner.appendChild(actions);
+    topbar.appendChild(inner);
+    document.body.insertAdjacentElement("afterbegin", topbar);
+  }
+
+  function mountChannels() {
+    var primaryInner = document.querySelector(".md-sidebar--primary .md-sidebar__inner");
+    if (!primaryInner || primaryInner.querySelector(".portal36-channels")) {
+      return;
+    }
+
+    var wrap = document.createElement("div");
+    wrap.className = "portal36-channels";
+
+    var brand = document.createElement("a");
+    brand.className = "portal36-channels__brand";
+    brand.href = "/";
+    brand.textContent = "Xpm";
+    wrap.appendChild(brand);
+
+    var list = document.createElement("div");
+    list.className = "portal36-channels__list";
+    channelLinks.forEach(function (item) {
+      list.appendChild(createLink(item, "portal36-channels__link"));
+    });
+    wrap.appendChild(list);
+
+    var tools = document.createElement("div");
+    tools.className = "portal36-channels__tools";
+
+    var search = document.createElement("button");
+    search.type = "button";
+    search.className = "portal36-channels__search";
+    search.textContent = "搜索";
+    search.addEventListener("click", openSearch);
+    tools.appendChild(search);
+
+    var leave = document.createElement("a");
+    leave.className = "portal36-channels__post";
+    leave.href = "/waline/";
+    leave.textContent = "去留言";
+    tools.appendChild(leave);
+
+    wrap.appendChild(tools);
+    primaryInner.insertAdjacentElement("afterbegin", wrap);
+  }
+
+  function mountRightRail() {
+    var secondaryInner = document.querySelector(".md-sidebar--secondary .md-sidebar__inner");
+    if (!secondaryInner || secondaryInner.querySelector(".portal36-rail")) {
+      return;
+    }
+
+    var rail = document.createElement("aside");
+    rail.className = "portal36-rail";
+
+    railBlocks.forEach(function (block) {
+      var section = document.createElement("section");
+      section.className = "portal36-rail__block";
+      section.innerHTML = '<h3 class="portal36-rail__title">' + block.title + '</h3>';
+
+      var list = document.createElement("div");
+      list.className = "portal36-rail__list";
+      block.items.forEach(function (item) {
+        var link = document.createElement("a");
+        link.className = "portal36-rail__item";
+        link.href = item.href;
+        link.textContent = item.label;
+        list.appendChild(link);
+      });
+      section.appendChild(list);
+      rail.appendChild(section);
+    });
+
+    var intro = document.createElement("section");
+    intro.className = "portal36-rail__block portal36-rail__block--intro";
+    intro.innerHTML = '<h3 class="portal36-rail__title">站点说明</h3><p>这是一个以技术文章和学习内容为主的个人科技媒体站，项目和生活内容作为辅助入口存在。</p><a class="portal36-rail__cta" href="/waline/">进入留言板</a>';
+    rail.appendChild(intro);
+
+    secondaryInner.innerHTML = "";
+    secondaryInner.appendChild(rail);
+  }
+
+  function buildHomepage() {
+    var article = document.querySelector(".md-content__inner.md-typeset");
+    if (!article || article.querySelector(".portal36-home")) {
+      return;
+    }
+
+    var hero = document.createElement("section");
+    hero.className = "portal36-home";
+    hero.innerHTML = '<section class="portal36-hero"><a class="portal36-hero__main" href="' + homepageData.main.href + '"><img src="' + homepageData.main.image + '" alt="' + homepageData.main.title + '"><div class="portal36-hero__overlay"><span class="portal36-hero__tag">头条</span><h2>' + homepageData.main.title + '</h2><p>' + homepageData.main.text + '</p></div></a><div class="portal36-hero__side"></div></section><section class="portal36-feed"><div class="portal36-feed__head"><h2>最新文章</h2><a href="/blog/">查看全部</a></div><div class="portal36-feed__list"></div></section>';
+
+    var side = hero.querySelector(".portal36-hero__side");
+    homepageData.side.forEach(function (item) {
+      var card = document.createElement("a");
+      card.className = "portal36-hero__mini";
+      card.href = item.href;
+      card.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '"><span>' + item.title + '</span>';
+      side.appendChild(card);
+    });
+
+    var list = hero.querySelector(".portal36-feed__list");
+    homepageData.latest.forEach(function (item) {
+      var entry = document.createElement("a");
+      entry.className = "portal36-feed__item";
+      entry.href = item.href;
+      entry.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '"><div class="portal36-feed__body"><span class="portal36-feed__category">' + item.category + '</span><h3>' + item.title + '</h3><p>' + item.excerpt + '</p><span class="portal36-feed__meta">' + item.meta + '</span></div>';
+      list.appendChild(entry);
+    });
+
+    var existingHome = article.querySelector(".home-portal");
+    if (existingHome) {
+      existingHome.setAttribute("hidden", "hidden");
+    }
+
+    var h1 = article.querySelector("h1");
+    if (h1) {
+      h1.textContent = "首页";
+      h1.insertAdjacentElement("afterend", hero);
+    } else {
+      article.insertAdjacentElement("afterbegin", hero);
+    }
+  }
+
+  function decorateBody() {
+    document.body.classList.add("portal36-theme");
+    if (currentPath() === "/") {
+      document.body.classList.add("portal36-page-home");
+    } else if (currentPath() === "/blog") {
+      document.body.classList.add("portal36-page-blog");
+    } else {
+      document.body.classList.add("portal36-page-content");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    removeOldShell();
+    decorateBody();
+    mountTopbar();
+    mountChannels();
+    mountRightRail();
+    if (currentPath() === "/") {
+      buildHomepage();
+    }
+  });
+})();
