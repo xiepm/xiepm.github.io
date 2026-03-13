@@ -817,30 +817,80 @@ document.addEventListener("DOMContentLoaded", function() {
 (function () {
   if (document.body) {
     document.body.classList.add("portal36-theme");
+    try {
+      var bootstrapMode = window.localStorage.getItem("xpm-portal-theme");
+      if (bootstrapMode !== "day" && bootstrapMode !== "night") {
+        bootstrapMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+      }
+      document.body.classList.add("portal36-mode-" + bootstrapMode);
+    } catch (error) {
+      document.body.classList.add("portal36-mode-day");
+    }
     if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
       document.body.classList.add("portal36-page-home");
     }
   }
 
-  var serviceLinks = [
-    { href: "/", label: "首页" },
-    { href: "/projects/", label: "项目" },
-    { href: "/study/", label: "学习" },
-    { href: "/waline/", label: "留言" },
-    { href: "/about/geren/", label: "关于" }
+  var themeStorageKey = "xpm-portal-theme";
+  var navSections = [
+    {
+      key: "home",
+      href: "/",
+      label: "首页",
+      children: [
+        { href: "/", label: "首页总览" }
+      ]
+    },
+    {
+      key: "projects",
+      href: "/projects/",
+      label: "项目",
+      matchers: ["/develop/", "/Open-source/"],
+      children: [
+        { href: "/projects/", label: "项目总览" },
+        { href: "/develop/Mywork/design/", label: "设计与项目总览" },
+        { href: "/Open-source/project-recommendation/", label: "开源项目推荐" }
+      ]
+    },
+    {
+      key: "study",
+      href: "/study/",
+      label: "学习",
+      matchers: ["/blog/", "/Robotics/", "/Robot Operating System/", "/AI/", "/Programming/", "/TOOLS/"],
+      children: [
+        { href: "/study/", label: "学习总览" },
+        { href: "/Robotics/learning-plan/", label: "机器人" },
+        { href: "/Robot%20Operating%20System/ROS2/learning-plan/", label: "ROS" },
+        { href: "/AI/learning-plan/", label: "AI" },
+        { href: "/Programming/learning-plan/", label: "编程" },
+        { href: "/TOOLS/learning-plan/", label: "工具" }
+      ]
+    },
+    {
+      key: "connect",
+      href: "/waline/",
+      label: "交流",
+      matchers: ["/waline/", "/about/link/"],
+      children: [
+        { href: "/waline/", label: "留言板" },
+        { href: "/about/link/", label: "友链" }
+      ]
+    },
+    {
+      key: "about",
+      href: "/about/geren/",
+      label: "关于",
+      matchers: ["/about/geren/", "/about/xiepm/"],
+      children: [
+        { href: "/about/geren/", label: "个人介绍" },
+        { href: "/about/xiepm/", label: "关于 Xpm" }
+      ]
+    }
   ];
 
-  var channelLinks = [
-    { href: "/", label: "首页" },
-    { href: "/projects/", label: "项目" },
-    { href: "/Robotics/learning-plan/", label: "机器人" },
-    { href: "/Robot%20Operating%20System/ROS2/learning-plan/", label: "ROS" },
-    { href: "/AI/learning-plan/", label: "AI" },
-    { href: "/Programming/learning-plan/", label: "编程" },
-    { href: "/TOOLS/learning-plan/", label: "工具" },
-    { href: "/waline/", label: "留言" },
-    { href: "/about/geren/", label: "关于" }
-  ];
+  var serviceLinks = navSections.map(function (section) {
+    return { href: section.href, label: section.label };
+  });
 
   var railBlocks = [
     {
@@ -927,6 +977,31 @@ document.addEventListener("DOMContentLoaded", function() {
     return current === target || current.indexOf(target + "/") === 0;
   }
 
+  function itemMatchesPath(item, path) {
+    var current = normalizePath(path || currentPath());
+    if (item.href && isActive(item.href)) {
+      return true;
+    }
+    if (item.matchers && item.matchers.some(function (prefix) {
+      var normalizedPrefix = normalizePath(prefix);
+      return current === normalizedPrefix || current.indexOf(normalizedPrefix + "/") === 0;
+    })) {
+      return true;
+    }
+    if (item.children) {
+      return item.children.some(function (child) {
+        return itemMatchesPath(child, current);
+      });
+    }
+    return false;
+  }
+
+  function getActiveSection() {
+    return navSections.find(function (section) {
+      return itemMatchesPath(section, currentPath());
+    }) || navSections[0];
+  }
+
   function createLink(item, className) {
     var link = document.createElement("a");
     link.href = item.href;
@@ -938,6 +1013,34 @@ document.addEventListener("DOMContentLoaded", function() {
       link.classList.add("is-active");
     }
     return link;
+  }
+
+  function getStoredThemeMode() {
+    try {
+      var stored = window.localStorage.getItem(themeStorageKey);
+      if (stored === "day" || stored === "night") {
+        return stored;
+      }
+    } catch (error) {}
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+  }
+
+  function applyThemeMode(mode) {
+    var nextMode = mode === "night" ? "night" : "day";
+    document.body.classList.remove("portal36-mode-day", "portal36-mode-night");
+    document.body.classList.add("portal36-mode-" + nextMode);
+    document.documentElement.setAttribute("data-xpm-theme", nextMode);
+    try {
+      window.localStorage.setItem(themeStorageKey, nextMode);
+    } catch (error) {}
+    document.querySelectorAll("[data-portal36-theme-toggle]").forEach(function (button) {
+      button.textContent = nextMode === "night" ? "切换至日间模式" : "切换至夜间模式";
+      button.setAttribute("aria-label", button.textContent);
+    });
+  }
+
+  function toggleThemeMode() {
+    applyThemeMode(document.body.classList.contains("portal36-mode-night") ? "day" : "night");
   }
 
   function openSearch() {
@@ -964,8 +1067,15 @@ document.addEventListener("DOMContentLoaded", function() {
     nav.className = "portal36-header-nav";
     nav.setAttribute("aria-label", "主导航");
 
-    serviceLinks.forEach(function (item) {
-      nav.appendChild(createLink(item, "portal36-header-nav__link"));
+    navSections.forEach(function (section) {
+      var link = document.createElement("a");
+      link.href = section.href;
+      link.textContent = section.label;
+      link.className = "portal36-header-nav__link";
+      if (itemMatchesPath(section)) {
+        link.classList.add("is-active");
+      }
+      nav.appendChild(link);
     });
 
     var anchor = headerInner.querySelector(".md-header__source");
@@ -973,6 +1083,20 @@ document.addEventListener("DOMContentLoaded", function() {
       anchor.insertAdjacentElement("beforebegin", nav);
     } else {
       headerInner.appendChild(nav);
+    }
+
+    var search = headerInner.querySelector(".md-search");
+    var themeButton = document.createElement("button");
+    themeButton.type = "button";
+    themeButton.className = "portal36-theme-toggle";
+    themeButton.setAttribute("data-portal36-theme-toggle", "true");
+    themeButton.textContent = document.body.classList.contains("portal36-mode-night") ? "切换至日间模式" : "切换至夜间模式";
+    themeButton.addEventListener("click", toggleThemeMode);
+
+    if (search) {
+      search.insertAdjacentElement("beforebegin", themeButton);
+    } else {
+      headerInner.appendChild(themeButton);
     }
   }
 
@@ -993,8 +1117,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var list = document.createElement("div");
     list.className = "portal36-channels__list";
-    channelLinks.forEach(function (item) {
-      list.appendChild(createLink(item, "portal36-channels__link"));
+
+    navSections.forEach(function (section) {
+      var group = document.createElement("section");
+      group.className = "portal36-channel-group";
+
+      var isSectionActive = itemMatchesPath(section);
+      if (isSectionActive) {
+        group.classList.add("is-open");
+      }
+
+      var head = document.createElement("div");
+      head.className = "portal36-channel-group__head";
+
+      var topLink = createLink({ href: section.href, label: section.label }, "portal36-channels__link portal36-channel-group__link");
+      if (isSectionActive) {
+        topLink.classList.add("is-active");
+      }
+      head.appendChild(topLink);
+
+      if (section.children && section.children.length) {
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "portal36-channel-group__toggle";
+        toggle.setAttribute("aria-expanded", isSectionActive ? "true" : "false");
+        toggle.setAttribute("aria-label", "展开" + section.label);
+        toggle.textContent = "▾";
+        toggle.addEventListener("click", function () {
+          var open = group.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        head.appendChild(toggle);
+      }
+
+      group.appendChild(head);
+
+      if (section.children && section.children.length) {
+        var children = document.createElement("div");
+        children.className = "portal36-channel-group__children";
+        section.children.forEach(function (child) {
+          children.appendChild(createLink(child, "portal36-channel-group__child"));
+        });
+        group.appendChild(children);
+      }
+
+      list.appendChild(group);
     });
     wrap.appendChild(list);
 
@@ -1105,6 +1272,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       document.body.classList.add("portal36-page-content");
     }
+    applyThemeMode(getStoredThemeMode());
   }
 
   function initPortal36() {
