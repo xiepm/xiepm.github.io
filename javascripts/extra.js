@@ -815,6 +815,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 (function () {
+  if (document.body) {
+    document.body.classList.add("portal36-theme");
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      document.body.classList.add("portal36-page-home");
+    }
+  }
+
   var serviceLinks = [
     { href: "/", label: "首页" },
     { href: "/projects/", label: "项目" },
