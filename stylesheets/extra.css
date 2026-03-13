@@ -1718,6 +1718,14 @@ body.portal36-theme .md-content__action {
   display: none !important;
 }
 
+.md-source-file,
+.md-content__button,
+.md-content__action,
+a[href*="icp.gov.moe"],
+.md-footer-meta__inner a[href*="icp.gov.moe"] {
+  display: none !important;
+}
+
 body.portal36-theme .md-header__inner {
   min-height: 3.85rem;
   display: grid;

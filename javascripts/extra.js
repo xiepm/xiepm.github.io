@@ -1106,6 +1106,30 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.classList.remove("lab-theme", "lab-page-home", "lab-page-landing", "lab-page-content");
   }
 
+  function prunePublicMeta() {
+    document.querySelectorAll(".md-source-file, .md-content__button, .md-content__action").forEach(function (node) {
+      node.remove();
+    });
+
+    document.querySelectorAll('a[href*="icp.gov.moe"], a[href*="beian"], a[href*="备案"]').forEach(function (link) {
+      var parent = link.parentElement;
+      link.remove();
+      if (parent && !parent.textContent.replace(/\s+/g, "").trim()) {
+        parent.remove();
+      }
+    });
+
+    document.querySelectorAll(".md-footer-meta__inner, .md-footer__inner, footer, .footer").forEach(function (container) {
+      if (/ICP备|备案/.test(container.textContent || "")) {
+        container.querySelectorAll("*").forEach(function (child) {
+          if (/ICP备|备案/.test(child.textContent || "")) {
+            child.remove();
+          }
+        });
+      }
+    });
+  }
+
   function mountHeaderNav() {
     var headerInner = document.querySelector(".md-header__inner");
     if (!headerInner || headerInner.querySelector(".portal36-header-nav")) {
@@ -1342,6 +1366,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function initPortal36() {
     removeOldShell();
+    prunePublicMeta();
     decorateBody();
     mountHeaderNav();
     mountChannels();
