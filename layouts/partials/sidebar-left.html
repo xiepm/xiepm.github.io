@@ -1,0 +1,28 @@
+{{ $current := partial "current-key.html" . }}
+<div class="sidebar-card sidebar-card--nav">
+  <div class="sidebar-card__brand">
+    <span class="sidebar-card__brand-mark">X</span>
+    <div>
+      <strong>Xpm</strong>
+      <span>Robot Lab</span>
+    </div>
+  </div>
+  <div class="channel-list">
+    {{ range site.Data.navigation.top }}
+      {{ $section := index site.Data.navigation.sections .key }}
+      <section class="channel-group {{ if eq .key $current }}is-active{{ end }}">
+        <a class="channel-group__head" href="{{ .url }}">{{ .name }}</a>
+        {{ with $section }}
+          {{ with index . "children" }}
+            <div class="channel-group__body">
+              {{ range . }}
+                <a class="channel-link {{ if eq $.RelPermalink .url }}is-current{{ end }}" href="{{ .url }}">{{ .name }}</a>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+</div>
+

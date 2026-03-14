@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ partial "hero.html" .Params.hero }}
+  {{ partial "content-blocks.html" .Params.sections }}
+  {{ if .Content }}
+    <section class="content-panel content-panel--prose">
+      <div class="content-prose">
+        {{ .Content }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
+

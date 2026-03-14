@@ -1,0 +1,22 @@
+{{ with . }}
+  {{ range . }}
+    <section class="content-panel">
+      {{ with .kicker }}<span class="content-panel__kicker">{{ . }}</span>{{ end }}
+      <h2>{{ .title }}</h2>
+      {{ with .lead }}<p class="content-panel__lead">{{ . }}</p>{{ end }}
+      {{ with .cards }}
+        <div class="card-grid">
+          {{ range . }}
+            <a class="portal-card" href="{{ .url }}">
+              {{ with .tag }}<span class="portal-card__tag">{{ . }}</span>{{ end }}
+              <h3>{{ .title }}</h3>
+              {{ with .summary }}<p>{{ . }}</p>{{ end }}
+              {{ with .cta }}<span class="portal-card__cta">{{ . }}</span>{{ end }}
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}
+

@@ -1,0 +1,26 @@
+{{ with . }}
+  <section class="hero-panel">
+    <div class="hero-panel__main">
+      {{ with .kicker }}<span class="hero-panel__kicker">{{ . }}</span>{{ end }}
+      <h1>{{ .title }}</h1>
+      {{ with .lead }}<p class="hero-panel__lead">{{ . }}</p>{{ end }}
+      <div class="hero-actions">
+        {{ with .primary }}<a class="button button--primary" href="{{ .url }}">{{ .label }}</a>{{ end }}
+        {{ with .secondary }}<a class="button button--ghost" href="{{ .url }}">{{ .label }}</a>{{ end }}
+      </div>
+    </div>
+    {{ with .metrics }}
+      <div class="hero-panel__side">
+        <div class="metric-grid">
+          {{ range . }}
+            <article class="metric-card">
+              <strong>{{ .title }}</strong>
+              <span>{{ .text }}</span>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </section>
+{{ end }}
+

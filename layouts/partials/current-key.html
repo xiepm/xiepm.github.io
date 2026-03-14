@@ -1,0 +1,9 @@
+{{- $key := "home" -}}
+{{- if .Section -}}
+  {{- $key = .Section -}}
+{{- end -}}
+{{- if eq $key "message" -}}
+  {{- $key = "connect" -}}
+{{- end -}}
+{{- return $key -}}
+

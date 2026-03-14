@@ -1,0 +1,23 @@
+{{ $current := partial "current-key.html" . }}
+{{ $rail := .Params.rail }}
+{{ if not $rail }}
+  {{ with index site.Data.rail.defaults $current }}
+    {{ $rail = index . "blocks" }}
+  {{ end }}
+{{ end }}
+{{ with $rail }}
+  {{ range . }}
+    <section class="sidebar-card sidebar-card--rail">
+      <h3>{{ .title }}</h3>
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
+      {{ with .items }}
+        <ul class="rail-list">
+          {{ range . }}
+            <li><a href="{{ .url }}">{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}
+

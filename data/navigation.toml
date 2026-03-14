@@ -1,0 +1,88 @@
+[[top]]
+key = "home"
+name = "首页"
+url = "/"
+
+[[top]]
+key = "projects"
+name = "项目"
+url = "/projects/"
+
+[[top]]
+key = "study"
+name = "学习"
+url = "/study/"
+
+[[top]]
+key = "connect"
+name = "交流"
+url = "/connect/"
+
+[[top]]
+key = "about"
+name = "关于"
+url = "/about/"
+
+[sections.home]
+title = "首页"
+[[sections.home.children]]
+name = "首页总览"
+url = "/"
+
+[sections.projects]
+title = "项目"
+[[sections.projects.children]]
+name = "项目总览"
+url = "/projects/"
+[[sections.projects.children]]
+name = "设计与项目总览"
+url = "/projects/design-overview/"
+[[sections.projects.children]]
+name = "开源项目推荐"
+url = "/projects/open-source/"
+[[sections.projects.children]]
+name = "图片视频示例"
+url = "/projects/media-demo/"
+
+[sections.study]
+title = "学习"
+[[sections.study.children]]
+name = "学习总览"
+url = "/study/"
+[[sections.study.children]]
+name = "机器人"
+url = "/study/robotics/"
+[[sections.study.children]]
+name = "ROS"
+url = "/study/ros/"
+[[sections.study.children]]
+name = "AI"
+url = "/study/ai/"
+[[sections.study.children]]
+name = "编程"
+url = "/study/programming/"
+[[sections.study.children]]
+name = "工具箱"
+url = "/study/tools/"
+
+[sections.connect]
+title = "交流"
+[[sections.connect.children]]
+name = "交流总览"
+url = "/connect/"
+[[sections.connect.children]]
+name = "友链与交流"
+url = "/connect/links/"
+
+[sections.about]
+title = "关于"
+[[sections.about.children]]
+name = "关于总览"
+url = "/about/"
+[[sections.about.children]]
+name = "关于 Xpm"
+url = "/about/xpm/"
+[[sections.about.children]]
+name = "上传说明"
+url = "/about/upload-guide/"
+

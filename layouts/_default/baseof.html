@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-cn" data-theme="light">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="section-{{ partial "current-key.html" . }}">
+    {{ partial "header.html" . }}
+    <main class="site-shell">
+      <aside class="site-shell__left">
+        {{ partial "sidebar-left.html" . }}
+      </aside>
+      <section class="site-shell__main">
+        {{ block "main" . }}{{ end }}
+      </section>
+      <aside class="site-shell__right">
+        {{ partial "sidebar-right.html" . }}
+      </aside>
+    </main>
+  </body>
+</html>
+

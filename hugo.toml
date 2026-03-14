@@ -1,0 +1,19 @@
+baseURL = "https://xpmrobot.cn/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "Xpm's Robot Lab"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+ignoreFiles = ['(^|/)README\.md$', '(^|/)\.gitkeep$']
+staticDir = ["static", "images", "img"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "一个持续生长的个人科技实验室"
+  github = "https://github.com/xiepm"
+  search = "/search/"
+

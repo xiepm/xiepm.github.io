@@ -1,0 +1,23 @@
+{{ $current := partial "current-key.html" . }}
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand__mark">X</span>
+      <span class="site-brand__copy">
+        <strong>{{ .Site.Title }}</strong>
+        <span>科技感实验室</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="顶部导航">
+      {{ range site.Data.navigation.top }}
+        <a class="{{ if eq .key $current }}is-active{{ end }}" href="{{ .url }}">{{ .name }}</a>
+      {{ end }}
+    </nav>
+    <div class="site-header__tools">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换主题">切换至夜间模式</button>
+      <a class="search-pill" href="{{ .Site.Params.search }}">搜索</a>
+      <a class="site-action" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+

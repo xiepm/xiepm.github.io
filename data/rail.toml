@@ -1,0 +1,115 @@
+[defaults.home]
+[[defaults.home.blocks]]
+title = "站点导览"
+[[defaults.home.blocks.items]]
+label = "项目入口"
+url = "/projects/"
+[[defaults.home.blocks.items]]
+label = "学习入口"
+url = "/study/"
+[[defaults.home.blocks.items]]
+label = "关于 Xpm"
+url = "/about/xpm/"
+
+[[defaults.home.blocks]]
+title = "推荐阅读"
+[[defaults.home.blocks.items]]
+label = "开源项目推荐"
+url = "/projects/open-source/"
+[[defaults.home.blocks.items]]
+label = "AI 学习路线"
+url = "/study/ai/"
+[[defaults.home.blocks.items]]
+label = "上传说明"
+url = "/about/upload-guide/"
+
+[[defaults.home.blocks]]
+title = "站点说明"
+text = "首页负责导航和总览，项目区与知识区通过卡片快速进入，后续新增内容优先通过 Markdown 维护。"
+
+[defaults.projects]
+[[defaults.projects.blocks]]
+title = "项目入口"
+[[defaults.projects.blocks.items]]
+label = "设计与项目总览"
+url = "/projects/design-overview/"
+[[defaults.projects.blocks.items]]
+label = "开源项目推荐"
+url = "/projects/open-source/"
+[[defaults.projects.blocks.items]]
+label = "图片视频示例"
+url = "/projects/media-demo/"
+
+[[defaults.projects.blocks]]
+title = "推荐项目"
+[[defaults.projects.blocks.items]]
+label = "OpenCV 实践"
+url = "/develop/Mywork/opencv/"
+[[defaults.projects.blocks.items]]
+label = "人脸识别"
+url = "/develop/Mywork/face-recognition/"
+[[defaults.projects.blocks.items]]
+label = "Aizhiwu"
+url = "/develop/Mywork/aizhiwu/"
+
+[[defaults.projects.blocks]]
+title = "维护提醒"
+text = "项目区首页负责承接入口和代表项目，具体项目页可以继续逐篇迁进 Hugo。"
+
+[defaults.study]
+[[defaults.study.blocks]]
+title = "学习入口"
+[[defaults.study.blocks.items]]
+label = "机器人"
+url = "/study/robotics/"
+[[defaults.study.blocks.items]]
+label = "ROS"
+url = "/study/ros/"
+[[defaults.study.blocks.items]]
+label = "AI"
+url = "/study/ai/"
+
+[[defaults.study.blocks]]
+title = "推荐先读"
+[[defaults.study.blocks.items]]
+label = "AI 学习路线"
+url = "/study/ai/"
+[[defaults.study.blocks.items]]
+label = "编程基础"
+url = "/study/programming/"
+[[defaults.study.blocks.items]]
+label = "工具箱"
+url = "/study/tools/"
+
+[[defaults.study.blocks]]
+title = "学习说明"
+text = "学习区把专题路线、知识整理和长期积累收进统一入口，不再把所有分类挤在顶栏。"
+
+[defaults.connect]
+[[defaults.connect.blocks]]
+title = "交流入口"
+[[defaults.connect.blocks.items]]
+label = "进入留言板"
+url = "/waline/"
+[[defaults.connect.blocks.items]]
+label = "友链交流"
+url = "/connect/links/"
+
+[[defaults.connect.blocks]]
+title = "留言说明"
+text = "交流页不直接承载评论系统，而是负责说明交流方式、友链入口和留言用途。"
+
+[defaults.about]
+[[defaults.about.blocks]]
+title = "关于入口"
+[[defaults.about.blocks.items]]
+label = "关于 Xpm"
+url = "/about/xpm/"
+[[defaults.about.blocks.items]]
+label = "上传说明"
+url = "/about/upload-guide/"
+
+[[defaults.about.blocks]]
+title = "站点说明"
+text = "关于页汇总个人定位、站点定位和维护方式，帮助后来维护时快速理解整个网站结构。"
+

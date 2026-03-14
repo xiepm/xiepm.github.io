@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="content-panel content-panel--article">
+    <span class="content-panel__kicker">{{ with .Params.kicker }}{{ . }}{{ else }}文章{{ end }}</span>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lead }}<p class="content-panel__lead">{{ . }}</p>{{ end }}
+    <div class="reading-controls" data-reading-controls>
+      <label for="reading-scale">阅读字号</label>
+      <input id="reading-scale" type="range" min="90" max="120" step="5" value="100" data-reading-range>
+      <span data-reading-value>100%</span>
+    </div>
+    <div class="content-prose" data-reading-target>
+      {{ .Content }}
+    </div>
+  </section>
+{{ end }}
+
