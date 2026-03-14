@@ -1,0 +1,1385 @@
+// import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+// mermaid.initialize({ startOnLoad: true });
+
+// function displayDate(){
+// 	document.getElementById("demo").innerHTML=Date();
+// }
+
+// // 时间
+// function showTime() {
+//   var date = new Date();
+
+//   var year = date.getFullYear();
+//   var month = date.getMonth() + 1;
+//   month = month < 10 ? "0" + month : month;
+//   var day = date.getDate();
+//   day = day < 10 ? "0" + day : day;
+//   var week = "日一二三四五六".charAt(date.getDay()); // 使用charAt函数提取相应汉字
+//   var hour = date.getHours();
+//   hour = hour < 10 ? "0" + hour : hour; // 用三目运算符调整数字显示格式
+//   var minute = date.getMinutes();
+//   minute = minute < 10 ? "0" + minute : minute;
+//   var second = date.getSeconds();
+//   second = second < 10 ? "0" + second : second;
+
+//   var current = year + "-" + month + "-" + day + " " + "星期" + week + " " + hour + ":" + minute + ":" + second;
+
+//   document.getElementById("time").innerHTML = current;
+// }
+
+// setInterval("showTime()", 1000);
+
+
+
+// 提示框
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+}
+
+// 获取弹窗
+var modal = document.getElementById('myModal');
+ 
+// 获取图片插入到弹窗 - 使用 "alt" 属性作为文本部分的内容
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+if (img && modal && modalImg && captionText) {
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+}
+ 
+// 获取 <span> 元素，设置关闭按钮
+var span = document.getElementsByClassName("close")[0];
+ 
+// 当点击 (x), 关闭弹窗
+if (span && modal) {
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+}
+
+
+//雪花
+// const fps = 30;
+// const mspf = Math.floor(1000 / fps) ; 
+
+// let width = window.innerWidth || document.documentElement.clientWidth;
+// let height = window.innerHeight || document.documentElement.clientHeight;
+// let canvas;
+// window.addEventListener('resize', () => {
+//   width = window.innerWidth || document.documentElement.clientWidth;
+//   height = window.innerHeight || document.documentElement.clientHeight;
+//   if (canvas) {
+//     canvas.width = width;
+//     canvas.height = height;
+//   }
+// });
+
+// let particles = [];
+// let wind = [0, 0];
+// let cursor = [0, 0];
+
+// function velocity(r) {
+//   return 70 / r + 30;
+// }
+
+// function sine_component(h, a) {
+//   return [2 * Math.PI / h, Math.random() * a, Math.random() * 2 * Math.PI]; // [frequency, amplitude, phase]
+// }
+
+// function calc_sine(components, x) {
+//   let sum = 0;
+//   for (let i = 0; i < components.length; i++) {
+//     const [f, a, p] = components[i];
+//     sum += Math.sin(x * f + p) * a;
+//   }
+//   return sum;
+// }
+
+// function gen_particle() {
+//   let r = Math.random() * 4 + 1;
+//   return {
+//     radius: r,
+//     x: Math.random() * width,
+//     y: -r,
+//     opacity: Math.random(),
+//     sine_components: [sine_component(height, 3), sine_component(height / 2, 2), sine_component(height / 5, 1), sine_component(height / 10, 0.5)],
+//   };
+// }
+
+// function update_pos(dt) {
+//   const n = particles.length;
+//   for (let i = 0; i < n; i++) {
+//     const v = velocity(particles[i].radius);
+//     particles[i].x += calc_sine(particles[i].sine_components, particles[i].y) * v / 5 * dt;
+//     particles[i].y += v * dt;
+    
+//     // const dist = Math.hypot(particles[i].x - cursor[0], particles[i].y - cursor[1]) + 1;
+//     // particles[i].x += wind[0] * dt / dist
+//     // particles[i].y += wind[1] * dt / dist;
+    
+//     if (particles[i].y - particles[i].radius > height) {
+//       particles[i] = gen_particle();  
+//     }
+//   }
+// }
+
+// let context_cache;
+// function get_context() {
+//   if (context_cache)
+//     return context_cache;
+  
+//   canvas = document.createElement('canvas');
+//   canvas.id = 'snow-canvas';
+//   canvas.width = width;
+//   canvas.height = height;
+//   canvas.style = 'position: fixed; top: 0; left: 0; overflow: hidden; pointer-events: none; z-index: 256;';
+//   if ((document.documentElement.dataset.darkreaderMode || "").startsWith('filter'))
+//     canvas.style.filter = 'invert(1)';
+//   document.body.appendChild(canvas);
+  
+//   context_cache = canvas.getContext('2d');
+//   return context_cache;
+// }
+
+// function draw() {
+//   const ctx = get_context();
+  
+//   ctx.clearRect(0, 0, width, height);
+  
+//   const n = particles.length;
+//   for (let i = 0; i < n; i++) {
+//     const p = particles[i];
+//     ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+//     ctx.shadowColor = '#80EDF7';
+//     ctx.shadowBlur = 7;
+//     ctx.beginPath();
+//     ctx.arc(p.x, p.y, p.radius, 0, 2*Math.PI);
+//     ctx.fill();
+//   }
+// }
+
+// let focused = true;
+// let disabled = false;
+// let lastTime = performance.now();
+// const requestFrame = () => setTimeout(loop, mspf);
+// function loop() {
+//   const dt = (performance.now() - lastTime) / 1000;
+  
+//   if (particles.length < 120 && Math.random() < 0.1) {
+//     particles.push(gen_particle());
+//   }
+  
+//   update_pos(dt);
+//   draw();
+  
+//   lastTime = performance.now();
+//   if (focused && !disabled)
+//     requestFrame();
+// }
+
+
+// window.addEventListener('focus', () => {
+//   console.log('snow start');
+//   focused = true;
+//   lastTime = performance.now();
+//   requestFrame();
+// });
+
+// window.addEventListener('blur', () => {
+//   console.log('snow stop');
+//   focused = false;
+// });
+
+// window.addEventListener('keydown', e => {
+//   if (e.ctrlKey && e.key == 's') {
+//     e.preventDefault();
+//     disabled = !disabled;
+//     if (disabled) {
+//       canvas.style.display = 'none';
+//     } else {
+//       canvas.style.display = 'block';
+//       lastTime = performance.now();
+//       requestFrame();
+//     }
+//   }
+// });
+
+// requestFrame();
+//雪花
+
+
+// 线条上
+// !function() {
+//     function o(w, v, i) {
+//         return w.getAttribute(v) || i
+//     }
+//     function j(i) {
+//         return document.getElementsByTagName(i)
+//     }
+//     function l() {
+//         var i = j("script"),
+//         w = i.length,
+//         v = i[w - 1];
+//         return {
+//             l: w,
+//             z: o(v, "zIndex", -1),
+//             o: o(v, "opacity", 0.5),
+//             c: o(v, "color", "0,0,0"),
+//             n: o(v, "count", 99)
+//         }
+//     }
+//     function k() {
+//         r = u.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+//         n = u.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+//     }
+//     function b() {
+//         e.clearRect(0, 0, r, n);
+//         var w = [f].concat(t);
+//         var x, v, A, B, z, y;
+//         t.forEach(function(i) {
+//             i.x += i.xa,
+//             i.y += i.ya,
+//             i.xa *= i.x > r || i.x < 0 ? -1 : 1,
+//             i.ya *= i.y > n || i.y < 0 ? -1 : 1,
+//             e.fillRect(i.x - 0.5, i.y - 0.5, 1, 1);
+//             for (v = 0; v < w.length; v++) {
+//                 x = w[v];
+//                 if (i !== x && null !== x.x && null !== x.y) {
+//                     B = i.x - x.x,
+//                     z = i.y - x.y,
+//                     y = B * B + z * z;
+//                     y < x.max && (x === f && y >= x.max / 2 && (i.x -= 0.03 * B, i.y -= 0.03 * z), A = (x.max - y) / x.max, e.beginPath(), e.lineWidth = A / 2, e.strokeStyle = "rgba(" + s.c + "," + (A + 0.2) + ")", e.moveTo(i.x, i.y), e.lineTo(x.x, x.y), e.stroke())
+//                 }
+//             }
+//             w.splice(w.indexOf(i), 1)
+//         }),
+//         m(b)
+//     }
+//     var u = document.createElement("canvas"),
+//     s = l(),
+//     c = "c_n" + s.l,
+//     e = u.getContext("2d"),
+//     r,
+//     n,
+//     m = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+//     function(i) {
+//         window.setTimeout(i, 1000 / 45)
+//     },
+//     a = Math.random,
+//     f = {
+//         x: null,
+//         y: null,
+//         max: 20000
+//     };
+//     u.id = c;
+//     u.style.cssText = "position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
+//     j("body")[0].appendChild(u);
+//     k(),
+//     window.onresize = k;
+//     window.onmousemove = function(i) {
+//         i = i || window.event,
+//         f.x = i.clientX,
+//         f.y = i.clientY
+//     },
+//     window.onmouseout = function() {
+//         f.x = null,
+//         f.y = null
+//     };
+//     for (var t = [], p = 0; s.n > p; p++) {
+//         var h = a() * r,
+//         g = a() * n,
+//         q = 2 * a() - 1,
+//         d = 2 * a() - 1;
+//         t.push({
+//             x: h,
+//             y: g,
+//             xa: q,
+//             ya: d,
+//             max: 6000
+//         })
+//     }
+//     setTimeout(function() {
+//         b()
+//     },
+//     100)
+// } ();
+//线条下
+
+
+
+//click    
+// function clickEffect() {
+//     let balls = [];
+//     let longPressed = false;
+//     let longPress;
+//     let multiplier = 0;
+//     let width, height;
+//     let origin;
+//     let normal;
+//     let ctx;
+//     const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+//     const canvas = document.createElement("canvas");
+//     document.body.appendChild(canvas);
+//     canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+//     const pointer = document.createElement("span");
+//     pointer.classList.add("pointer");
+//     document.body.appendChild(pointer);
+ 
+//     if (canvas.getContext && window.addEventListener) {
+//         ctx = canvas.getContext("2d");
+//         updateSize();
+//         window.addEventListener('resize', updateSize, false);
+//         loop();
+//         window.addEventListener("mousedown", function(e) {
+//             pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+//             document.body.classList.add("is-pressed");
+//             longPress = setTimeout(function() {
+//                 document.body.classList.add("is-longpress");
+//                 longPressed = true;
+//             }, 500);
+//         }, false);
+//         window.addEventListener("mouseup", function(e) {
+//             clearInterval(longPress);
+//             if (longPressed == true) {
+//                 document.body.classList.remove("is-longpress");
+//                 pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+//                 longPressed = false;
+//             }
+//             document.body.classList.remove("is-pressed");
+//         }, false);
+//         window.addEventListener("mousemove", function(e) {
+//             let x = e.clientX;
+//             let y = e.clientY;
+//             pointer.style.top = y + "px";
+//             pointer.style.left = x + "px";
+//         }, false);
+//     } else {
+//         console.log("canvas or addEventListener is unsupported!");
+//     }
+ 
+ 
+//     function updateSize() {
+//         canvas.width = window.innerWidth * 2;
+//         canvas.height = window.innerHeight * 2;
+//         canvas.style.width = window.innerWidth + 'px';
+//         canvas.style.height = window.innerHeight + 'px';
+//         ctx.scale(2, 2);
+//         width = (canvas.width = window.innerWidth);
+//         height = (canvas.height = window.innerHeight);
+//         origin = {
+//             x: width / 2,
+//             y: height / 2
+//         };
+//         normal = {
+//             x: width / 2,
+//             y: height / 2
+//         };
+//     }
+//     class Ball {
+//         constructor(x = origin.x, y = origin.y) {
+//             this.x = x;
+//             this.y = y;
+//             this.angle = Math.PI * 2 * Math.random();
+//             if (longPressed == true) {
+//                 this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+//             } else {
+//                 this.multiplier = randBetween(6, 12);
+//             }
+//             this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+//             this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+//             this.r = randBetween(8, 12) + 3 * Math.random();
+//             this.color = colours[Math.floor(Math.random() * colours.length)];
+//         }
+//         update() {
+//             this.x += this.vx - normal.x;
+//             this.y += this.vy - normal.y;
+//             normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+//             normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+//             this.r -= 0.3;
+//             this.vx *= 0.9;
+//             this.vy *= 0.9;
+//         }
+//     }
+ 
+//     function pushBalls(count = 1, x = origin.x, y = origin.y) {
+//         for (let i = 0; i < count; i++) {
+//             balls.push(new Ball(x, y));
+//         }
+//     }
+ 
+//     function randBetween(min, max) {
+//         return Math.floor(Math.random() * max) + min;
+//     }
+ 
+//     function loop() {
+//         ctx.fillStyle = "rgba(255, 255, 255, 0)";
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+//         for (let i = 0; i < balls.length; i++) {
+//             let b = balls[i];
+//             if (b.r < 0) continue;
+//             ctx.fillStyle = b.color;
+//             ctx.beginPath();
+//             ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+//             ctx.fill();
+//             b.update();
+//         }
+//         if (longPressed == true) {
+//             multiplier += 0.2;
+//         } else if (!longPressed && multiplier >= 0) {
+//             multiplier -= 0.4;
+//         }
+//         removeBall();
+//         requestAnimationFrame(loop);
+//     }
+ 
+//     function removeBall() {
+//         for (let i = 0; i < balls.length; i++) {
+//             let b = balls[i];
+//             if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+//                 balls.splice(i, 1);
+//             }
+//         }
+//     }
+// }
+// clickEffect();
+
+//click
+
+//樱花
+// Sakura.prototype.draw = function (cxt) {
+//     cxt.save(); var xc = 40 * this.s / 4; cxt.translate(this.x, this.y); cxt.rotate(this.r); cxt.drawImage(img, 0, 0, 40 * this.s, 40 * this.s)
+//     cxt.restore();
+// }
+// Sakura.prototype.update = function () { this.x = this.fn.x(this.x, this.y); this.y = this.fn.y(this.y, this.y); this.r = this.fn.r(this.r); if (this.x > window.innerWidth || this.x < 0 || this.y > window.innerHeight || this.y < 0) { this.r = getRandom('fnr'); if (Math.random() > 0.4) { this.x = getRandom('x'); this.y = 0; this.s = getRandom('s'); this.r = getRandom('r'); } else { this.x = window.innerWidth; this.y = getRandom('y'); this.s = getRandom('s'); this.r = getRandom('r'); } } }
+// SakuraList = function () { this.list = []; }
+// SakuraList.prototype.push = function (sakura) { this.list.push(sakura); }
+// SakuraList.prototype.update = function () { for (var i = 0, len = this.list.length; i < len; i++) { this.list[i].update(); } }
+// SakuraList.prototype.draw = function (cxt) { for (var i = 0, len = this.list.length; i < len; i++) { this.list[i].draw(cxt); } }
+// SakuraList.prototype.get = function (i) { return this.list[i]; }
+// SakuraList.prototype.size = function () { return this.list.length; }
+// function getRandom(option) {
+//     var ret, random; switch (option) {
+//         case 'x': ret = Math.random() * window.innerWidth; break; case 'y': ret = Math.random() * window.innerHeight; break; case 's': ret = Math.random(); break; case 'r': ret = Math.random() * 6; break; case 'fnx': random = -0.5 + Math.random() * 1; ret = function (x, y) { return x + 0.5 * random - 1.7; }; break; case 'fny': random = 1.5 + Math.random() * 0.7
+//             ret = function (x, y) { return y + random; }; break; case 'fnr': random = Math.random() * 0.03; ret = function (r) { return r + random; }; break;
+//     }
+//     return ret;
+// }
+// function startSakura() {
+//     requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame; var canvas = document.createElement('canvas'), cxt; staticx = true; canvas.height = window.innerHeight; canvas.width = window.innerWidth; canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;'); canvas.setAttribute('id', 'canvas_sakura'); document.getElementsByTagName('body')[0].appendChild(canvas); cxt = canvas.getContext('2d'); var sakuraList = new SakuraList(); for (var i = 0; i < 50; i++) { var sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny; randomX = getRandom('x'); randomY = getRandom('y'); randomR = getRandom('r'); randomS = getRandom('s'); randomFnx = getRandom('fnx'); randomFny = getRandom('fny'); randomFnR = getRandom('fnr'); sakura = new Sakura(randomX, randomY, randomS, randomR, { x: randomFnx, y: randomFny, r: randomFnR }); sakura.draw(cxt); sakuraList.push(sakura); }
+//     stop = requestAnimationFrame(function () { cxt.clearRect(0, 0, canvas.width, canvas.height); sakuraList.update(); sakuraList.draw(cxt); stop = requestAnimationFrame(arguments.callee); })
+// }
+// window.onresize = function () { var canvasSnow = document.getElementById('canvas_snow'); }
+// img.onload = function () { startSakura(); }
+//樱花
+
+
+
+ 
+
+//鼠标点击爱心效果
+// (function (window, document, undefined) {
+//   var hearts = [];
+//   window.requestAnimationFrame = (function () {
+//     return window.requestAnimationFrame ||
+//       window.webkitRequestAnimationFrame ||
+//       window.mozRequestAnimationFrame ||
+//       window.oRequestAnimationFrame ||
+//       window.msRequestAnimationFrame ||
+//       function (callback) {
+//         setTimeout(callback, 1000 / 60);
+//       }
+//   })();
+//   init();
+//   function init() {
+//     css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+//     attachEvent();
+//     gameloop();
+//   }
+//   function gameloop() {
+//     for (var i = 0; i < hearts.length; i++) {
+//       if (hearts[i].alpha <= 0) {
+//         document.body.removeChild(hearts[i].el);
+//         hearts.splice(i, 1);
+//         continue;
+//       }
+//       hearts[i].y--;
+//       hearts[i].scale += 0.004;
+//       hearts[i].alpha -= 0.013;
+//       hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+//     }
+//     requestAnimationFrame(gameloop);
+//   }
+//   function attachEvent() {
+//     var old = typeof window.οnclick === "function" && window.onclick;
+//     window.onclick = function (event) {
+//       old && old();
+//       createHeart(event);
+//     }
+//   }
+//   function createHeart(event) {
+//     var d = document.createElement("div");
+//     d.className = "heart";
+//     hearts.push({
+//       el: d,
+//       x: event.clientX - 5,
+//       y: event.clientY - 5,
+//       scale: 1,
+//       alpha: 1,
+//       color: randomColor()
+//     });
+//     document.body.appendChild(d);
+//   }
+//   function css(css) {
+//     var style = document.createElement("style");
+//     style.type = "text/css";
+//     try {
+//       style.appendChild(document.createTextNode(css));
+//     } catch (ex) {
+//       style.styleSheet.cssText = css;
+//     }
+//     document.getElementsByTagName('head')[0].appendChild(style);
+//   }
+//   function randomColor() {
+//     return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+//   }
+// })(window, document);
+// heart
+
+/*鼠标*/
+// var CURSOR;
+
+// Math.lerp = (a, b, n) => (1 - n) * a + n * b;
+
+// const getStyle = (el, attr) => {
+//     try {
+//         return window.getComputedStyle
+//             ? window.getComputedStyle(el)[attr]
+//             : el.currentStyle[attr];
+//     } catch (e) {}
+//     return "";
+// };
+
+// class Cursor {
+//     constructor() {
+//         this.pos = {curr: null, prev: null};
+//         this.pt = [];
+//         this.create();
+//         this.init();
+//         this.render();
+//     }
+
+//     move(left, top) {
+//         this.cursor.style["left"] = `${left}px`;
+//         this.cursor.style["top"] = `${top}px`;
+//     }
+
+//     create() {
+//         if (!this.cursor) {
+//             this.cursor = document.createElement("div");
+//             this.cursor.id = "cursor";
+//             this.cursor.classList.add("hidden");
+//             document.body.append(this.cursor);
+//         }
+
+//         var el = document.getElementsByTagName('*');
+//         for (let i = 0; i < el.length; i++)
+//             if (getStyle(el[i], "cursor") == "pointer")
+//                 this.pt.push(el[i].outerHTML);
+
+//         document.body.appendChild((this.scr = document.createElement("style")));
+//         // 这里改变鼠标指针的颜色 由svg生成
+//         this.scr.innerHTML = `* {cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='1.0' fill='rgb(57, 197, 187)'/></svg>") 4 4, auto}`;
+//     }
+
+//     refresh() {
+//         this.scr.remove();
+//         this.cursor.classList.remove("hover");
+//         this.cursor.classList.remove("active");
+//         this.pos = {curr: null, prev: null};
+//         this.pt = [];
+
+//         this.create();
+//         this.init();
+//         this.render();
+//     }
+
+//     init() {
+//         document.onmouseover  = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.add("hover");
+//         document.onmouseout   = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.remove("hover");
+//         document.onmousemove  = e => {(this.pos.curr == null) && this.move(e.clientX - 8, e.clientY - 8); this.pos.curr = {x: e.clientX - 8, y: e.clientY - 8}; this.cursor.classList.remove("hidden");};
+//         document.onmouseenter = e => this.cursor.classList.remove("hidden");
+//         document.onmouseleave = e => this.cursor.classList.add("hidden");
+//         document.onmousedown  = e => this.cursor.classList.add("active");
+//         document.onmouseup    = e => this.cursor.classList.remove("active");
+//     }
+
+//     render() {
+//         if (this.pos.prev) {
+//             this.pos.prev.x = Math.lerp(this.pos.prev.x, this.pos.curr.x, 0.15);
+//             this.pos.prev.y = Math.lerp(this.pos.prev.y, this.pos.curr.y, 0.15);
+//             this.move(this.pos.prev.x, this.pos.prev.y);
+//         } else {
+//             this.pos.prev = this.pos.curr;
+//         }
+//         requestAnimationFrame(() => this.render());
+//     }
+// }
+
+// (() => {
+//     CURSOR = new Cursor();
+//     // 需要重新获取列表时，使用 CURSOR.refresh()
+// })();
+
+
+
+
+
+// 浩客
+
+// function _howxm(){_howxmQueue.push(arguments)}
+// window._howxmQueue=window._howxmQueue||[];
+// _howxm('setAppID','14429fca-cac1-4551-a472-b046a96ebb75');
+// (function(){var scriptId='howxm_script';
+// if(!document.getElementById(scriptId)){
+// var e=document.createElement('script'),
+// t=document.getElementsByTagName('script')[0];
+// e.setAttribute('id',scriptId);
+// e.type='text/javascript';e.async=!0;
+// e.src='https://static.howxm.com/sdk.js';
+// t.parentNode.insertBefore(e,t)}})();
+
+
+// crisp在线客服
+// window.$crisp=[];window.CRISP_WEBSITE_ID="89ded6c2-1a10-47e3-af5d-f12e6a378547";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+//全屏视频
+var video = document.getElementById("video1") || { style: {}, muted: false, volume: 0 };
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (isMobile) {
+  video.style.display = "none";
+  video.muted = true;
+} else {
+  video.volume = 0; // 或者根据需要设置适当的音量值，例如 0.5 表示 50% 的音量
+}
+
+// 在页面加载完成后执行以下代码
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取刷新按钮
+  var refreshButton = document.getElementById("refreshButton") || { addEventListener: function() {} };
+
+  // 添加点击事件处理程序
+  refreshButton.addEventListener("click", function() {
+      // 使用以下代码来刷新页面
+      location.reload();
+  });
+});
+
+(function () {
+  var navItems = [
+    { href: "/", label: "首页" },
+    { href: "/projects/", label: "项目" },
+    { href: "/study/", label: "学习" },
+    { href: "/connect/", label: "交流" },
+    { href: "/about/", label: "关于" }
+  ];
+
+  function normalizePath(path) {
+    return (path || "/").replace(/index\.html$/, "").replace(/\/+$/, "") || "/";
+  }
+
+  function isActive(href) {
+    var current = normalizePath(window.location.pathname);
+    var target = normalizePath(href);
+    if (target === "/") {
+      return current === "/";
+    }
+    return current === target || current.indexOf(target + "/") === 0;
+  }
+
+  function createLink(item, className) {
+    var link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.label;
+    link.className = className || "";
+    if (isActive(item.href)) {
+      link.classList.add("is-active");
+    }
+    return link;
+  }
+
+  function mountShell() {
+    if (document.body.classList.contains("lab-standalone")) {
+      return;
+    }
+
+    var header = document.querySelector(".md-header");
+    if (!header || document.querySelector(".lab-shell")) {
+      return;
+    }
+
+    var shell = document.createElement("div");
+    shell.className = "lab-shell";
+    shell.innerHTML = [
+      '<div class="lab-shell__inner">',
+      '  <a class="lab-shell__brand" href="/">',
+      '    <span class="lab-shell__mark">X</span>',
+      '    <span class="lab-shell__brand-copy">',
+      "      <strong>Xpm's Robot Lab</strong>",
+      '      <span>科技感实验室</span>',
+      '    </span>',
+      '  </a>',
+      '  <nav class="lab-shell__nav" aria-label="主导航"></nav>',
+      '  <div class="lab-shell__actions">',
+      '    <button type="button" class="lab-shell__search" data-lab-search-open>搜索</button>',
+      '    <a class="lab-shell__social" href="https://github.com/xiepm" target="_blank" rel="noopener">GitHub</a>',
+      '  </div>',
+      '</div>'
+    ].join("");
+
+    var nav = shell.querySelector(".lab-shell__nav");
+    navItems.forEach(function (item) {
+      nav.appendChild(createLink(item, "lab-shell__link"));
+    });
+
+    shell.querySelector(".lab-shell__search").addEventListener("click", function () {
+      var toggle = document.querySelector("[data-md-toggle='search']");
+      if (toggle) {
+        toggle.checked = true;
+      } else {
+        window.location.href = "/blog/";
+      }
+    });
+
+    header.insertAdjacentElement("afterend", shell);
+  }
+
+  function mountDrawerLinks() {
+    if (document.body.classList.contains("lab-standalone")) {
+      return;
+    }
+
+    var primaryInner = document.querySelector(".md-sidebar--primary .md-sidebar__inner");
+    if (!primaryInner || primaryInner.querySelector(".lab-drawer-links")) {
+      return;
+    }
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "lab-drawer-links";
+    wrapper.innerHTML = '<p class="lab-drawer-links__title">快速入口</p>';
+
+    var list = document.createElement("div");
+    list.className = "lab-drawer-links__list";
+    navItems.forEach(function (item) {
+      list.appendChild(createLink(item, "lab-drawer-links__link"));
+    });
+    wrapper.appendChild(list);
+    primaryInner.insertAdjacentElement("afterbegin", wrapper);
+  }
+
+  function decorateBody() {
+    var current = normalizePath(window.location.pathname);
+    document.body.classList.add("lab-theme");
+    if (current === "/") {
+      document.body.classList.add("lab-page-home");
+    } else if (/^\/(projects|study|connect|about)$/.test(current)) {
+      document.body.classList.add("lab-page-landing");
+    } else {
+      document.body.classList.add("lab-page-content");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    return;
+  });
+})();
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (!(window.twikoo && typeof window.twikoo.init === "function")) {
+    return;
+  }
+  twikoo.init({
+      // Twikoo配置选项
+  });
+});
+
+(function () {
+  if (document.body) {
+    document.body.classList.add("portal36-theme");
+    try {
+      var bootstrapMode = window.localStorage.getItem("xpm-portal-theme");
+      if (bootstrapMode !== "day" && bootstrapMode !== "night") {
+        bootstrapMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+      }
+      document.body.classList.add("portal36-mode-" + bootstrapMode);
+    } catch (error) {
+      document.body.classList.add("portal36-mode-day");
+    }
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      document.body.classList.add("portal36-page-home");
+    }
+  }
+
+  var themeStorageKey = "xpm-portal-theme";
+  var navSections = [
+    {
+      key: "home",
+      href: "/",
+      label: "首页",
+      children: [
+        { href: "/", label: "首页总览" }
+      ]
+    },
+    {
+      key: "projects",
+      href: "/projects/",
+      label: "项目",
+      matchers: ["/develop/", "/Open-source/"],
+      children: [
+        { href: "/projects/", label: "项目总览" },
+        { href: "/develop/Mywork/design/", label: "设计与项目总览" },
+        { href: "/Open-source/project-recommendation/", label: "开源项目推荐" }
+      ]
+    },
+    {
+      key: "study",
+      href: "/study/",
+      label: "学习",
+      matchers: ["/blog/", "/Robotics/", "/Robot Operating System/", "/AI/", "/Programming/", "/TOOLS/"],
+      children: [
+        { href: "/study/", label: "学习总览" },
+        { href: "/Robotics/learning-plan/", label: "机器人" },
+        { href: "/Robot%20Operating%20System/ROS2/learning-plan/", label: "ROS" },
+        { href: "/AI/learning-plan/", label: "AI" },
+        { href: "/Programming/learning-plan/", label: "编程" },
+        { href: "/TOOLS/learning-plan/", label: "工具" }
+      ]
+    },
+    {
+      key: "connect",
+      href: "/waline/",
+      label: "交流",
+      matchers: ["/waline/", "/about/link/"],
+      children: [
+        { href: "/waline/", label: "留言板" },
+        { href: "/about/link/", label: "友链" }
+      ]
+    },
+    {
+      key: "about",
+      href: "/about/geren/",
+      label: "关于",
+      matchers: ["/about/geren/", "/about/xiepm/"],
+      children: [
+        { href: "/about/geren/", label: "个人介绍" },
+        { href: "/about/xiepm/", label: "关于 Xpm" }
+      ]
+    }
+  ];
+
+  var serviceLinks = navSections.map(function (section) {
+    return { href: section.href, label: section.label };
+  });
+
+  var railBlocks = [
+    {
+      title: "站点导览",
+      items: [
+        { href: "/projects/", label: "项目入口" },
+        { href: "/study/", label: "学习入口" },
+        { href: "/about/geren/", label: "关于 Xpm" }
+      ]
+    },
+    {
+      title: "推荐阅读",
+      items: [
+        { href: "/develop/ChatGPT/", label: "如何注册 ChatGPT" },
+        { href: "/Open-source/project-recommendation/", label: "开源项目推荐" },
+        { href: "/blog/Mkdocs/mkdocs1/", label: "个人网站搭建记录" }
+      ]
+    }
+  ];
+
+  var homepageData = {
+    main: {
+      href: "/projects/",
+      image: "/images/blog-article-image-large.jpg",
+      title: "把项目实践和学习积累整理成自己的个人网站",
+      text: "这里集中展示我的项目、学习专题与长期沉淀下来的技术内容。"
+    },
+    side: [
+      { href: "/Open-source/project-recommendation/", image: "/images/case-study-image2.jpg", title: "项目推荐" },
+      { href: "/blog/Mkdocs/mkdocs1/", image: "/images/blog-post-image2.jpg", title: "建站学习记录" },
+      { href: "/develop/ChatGPT/", image: "/images/blog-post-image.jpg", title: "实用工具体验" },
+      { href: "/waline/", image: "/images/case-study-image3.jpg", title: "留言交流入口" }
+    ],
+    latest: [
+      {
+        href: "/blog/Mkdocs/mkdocs1/",
+        image: "/images/blog-post-image.jpg",
+        category: "学习专题",
+        title: "利用 MkDocs 部署静态网页至 GitHub Pages",
+        excerpt: "把学习内容整理成结构化站点，是这个个人网站长期积累的核心方法。",
+        meta: "GitHub Pages / MkDocs / 个人站"
+      },
+      {
+        href: "/develop/ChatGPT/",
+        image: "/images/blog-post-image2.jpg",
+        category: "实用内容",
+        title: "如何注册 ChatGPT",
+        excerpt: "从常用工具切入，记录更容易被实际用到的内容。",
+        meta: "AI 工具 / 入门体验"
+      },
+      {
+        href: "/Open-source/project-recommendation/",
+        image: "/images/case-study-image.jpg",
+        category: "项目实践",
+        title: "开源项目推荐",
+        excerpt: "整理值得关注的开源方向，把灵感、资源和项目线索沉淀下来。",
+        meta: "Open Source / 推荐"
+      },
+      {
+        href: "/blog/Webplay/",
+        image: "/images/blog-post-image3.jpg",
+        category: "学习补充",
+        title: "好用 / 好玩网站分享",
+        excerpt: "除了技术内容，也保留一些能提升效率和启发思路的网站收藏。",
+        meta: "网站收藏 / 效率工具"
+      }
+    ]
+  };
+
+  function normalizePath(path) {
+    return (path || "/").replace(/index\.html$/, "").replace(/\/+$/, "") || "/";
+  }
+
+  function currentPath() {
+    return normalizePath(window.location.pathname);
+  }
+
+  function isActive(href) {
+    var current = currentPath();
+    var target = normalizePath(href);
+    if (target === "/") {
+      return current === "/";
+    }
+    return current === target || current.indexOf(target + "/") === 0;
+  }
+
+  function itemMatchesPath(item, path) {
+    var current = normalizePath(path || currentPath());
+    if (item.href && isActive(item.href)) {
+      return true;
+    }
+    if (item.matchers && item.matchers.some(function (prefix) {
+      var normalizedPrefix = normalizePath(prefix);
+      return current === normalizedPrefix || current.indexOf(normalizedPrefix + "/") === 0;
+    })) {
+      return true;
+    }
+    if (item.children) {
+      return item.children.some(function (child) {
+        return itemMatchesPath(child, current);
+      });
+    }
+    return false;
+  }
+
+  function getActiveSection() {
+    return navSections.find(function (section) {
+      return itemMatchesPath(section, currentPath());
+    }) || navSections[0];
+  }
+
+  function createLink(item, className) {
+    var link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.label;
+    if (className) {
+      link.className = className;
+    }
+    if (isActive(item.href)) {
+      link.classList.add("is-active");
+    }
+    return link;
+  }
+
+  function getStoredThemeMode() {
+    try {
+      var stored = window.localStorage.getItem(themeStorageKey);
+      if (stored === "day" || stored === "night") {
+        return stored;
+      }
+    } catch (error) {}
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+  }
+
+  function applyThemeMode(mode) {
+    var nextMode = mode === "night" ? "night" : "day";
+    document.body.classList.remove("portal36-mode-day", "portal36-mode-night");
+    document.body.classList.add("portal36-mode-" + nextMode);
+    document.documentElement.setAttribute("data-xpm-theme", nextMode);
+    try {
+      window.localStorage.setItem(themeStorageKey, nextMode);
+    } catch (error) {}
+    document.querySelectorAll("[data-portal36-theme-toggle]").forEach(function (button) {
+      button.textContent = nextMode === "night" ? "切换至日间模式" : "切换至夜间模式";
+      button.setAttribute("aria-label", button.textContent);
+    });
+  }
+
+  function toggleThemeMode() {
+    applyThemeMode(document.body.classList.contains("portal36-mode-night") ? "day" : "night");
+  }
+
+  var readingScaleKey = "portal36-reading-scale";
+
+  function clampReadingScale(value) {
+    var number = Number(value);
+    if (!Number.isFinite(number)) {
+      return 100;
+    }
+    return Math.min(116, Math.max(92, Math.round(number)));
+  }
+
+  function getStoredReadingScale() {
+    try {
+      return clampReadingScale(window.localStorage.getItem(readingScaleKey));
+    } catch (error) {
+      return 100;
+    }
+  }
+
+  function applyReadingScale(value) {
+    var scale = clampReadingScale(value);
+    document.body.style.setProperty("--portal36-reading-scale", String(scale / 100));
+    document.querySelectorAll("[data-portal36-reading-output]").forEach(function (output) {
+      output.textContent = scale + "%";
+    });
+    document.querySelectorAll("[data-portal36-reading-slider]").forEach(function (input) {
+      if (input.value !== String(scale)) {
+        input.value = String(scale);
+      }
+    });
+    try {
+      window.localStorage.setItem(readingScaleKey, String(scale));
+    } catch (error) {
+      // Ignore storage failures and keep the in-memory scale.
+    }
+  }
+
+  function createReadingControls() {
+    var wrap = document.createElement("div");
+    wrap.className = "portal36-reading-bar";
+    wrap.innerHTML = '<span class="portal36-reading-bar__label">阅读字号</span><input class="portal36-reading-bar__slider" data-portal36-reading-slider="true" type="range" min="92" max="116" step="2" value="' + getStoredReadingScale() + '" aria-label="阅读字号调节"><span class="portal36-reading-bar__value" data-portal36-reading-output="true"></span>';
+
+    var slider = wrap.querySelector("[data-portal36-reading-slider]");
+    slider.addEventListener("input", function (event) {
+      applyReadingScale(event.target.value);
+    });
+
+    return wrap;
+  }
+
+  function openSearch() {
+    var toggle = document.querySelector("[data-md-toggle='search']");
+    if (toggle) {
+      toggle.checked = true;
+    }
+  }
+
+  function removeOldShell() {
+    document.querySelectorAll(".lab-shell, .lab-drawer-links").forEach(function (node) {
+      node.remove();
+    });
+    document.body.classList.remove("lab-theme", "lab-page-home", "lab-page-landing", "lab-page-content");
+  }
+
+  function prunePublicMeta() {
+    document.querySelectorAll(".md-source-file, .md-content__button, .md-content__action").forEach(function (node) {
+      node.remove();
+    });
+
+    document.querySelectorAll('a[href*="icp.gov.moe"], a[href*="beian"], a[href*="备案"]').forEach(function (link) {
+      var parent = link.parentElement;
+      link.remove();
+      if (parent && !parent.textContent.replace(/\s+/g, "").trim()) {
+        parent.remove();
+      }
+    });
+
+    document.querySelectorAll(".md-footer-meta__inner, .md-footer__inner, footer, .footer").forEach(function (container) {
+      if (/ICP备|备案/.test(container.textContent || "")) {
+        container.querySelectorAll("*").forEach(function (child) {
+          if (/ICP备|备案/.test(child.textContent || "")) {
+            child.remove();
+          }
+        });
+      }
+    });
+  }
+
+  function mountHeaderNav() {
+    var headerInner = document.querySelector(".md-header__inner");
+    if (!headerInner || headerInner.querySelector(".portal36-header-nav")) {
+      return;
+    }
+
+    var nav = document.createElement("nav");
+    nav.className = "portal36-header-nav";
+    nav.setAttribute("aria-label", "主导航");
+
+    navSections.forEach(function (section) {
+      var link = document.createElement("a");
+      link.href = section.href;
+      link.textContent = section.label;
+      link.className = "portal36-header-nav__link";
+      if (itemMatchesPath(section)) {
+        link.classList.add("is-active");
+      }
+      nav.appendChild(link);
+    });
+
+    var anchor = headerInner.querySelector(".md-header__source");
+    if (anchor) {
+      anchor.insertAdjacentElement("beforebegin", nav);
+    } else {
+      headerInner.appendChild(nav);
+    }
+
+    var search = headerInner.querySelector(".md-search");
+    var themeButton = document.createElement("button");
+    themeButton.type = "button";
+    themeButton.className = "portal36-theme-toggle";
+    themeButton.setAttribute("data-portal36-theme-toggle", "true");
+    themeButton.textContent = document.body.classList.contains("portal36-mode-night") ? "切换至日间模式" : "切换至夜间模式";
+    themeButton.addEventListener("click", toggleThemeMode);
+
+    if (search) {
+      search.insertAdjacentElement("beforebegin", themeButton);
+    } else {
+      headerInner.appendChild(themeButton);
+    }
+  }
+
+  function mountChannels() {
+    var primaryInner = document.querySelector(".md-sidebar--primary .md-sidebar__inner");
+    if (!primaryInner || primaryInner.querySelector(".portal36-channels")) {
+      return;
+    }
+
+    var wrap = document.createElement("div");
+    wrap.className = "portal36-channels";
+
+    var brand = document.createElement("a");
+    brand.className = "portal36-channels__brand";
+    brand.href = "/";
+    brand.textContent = "Xpm";
+    wrap.appendChild(brand);
+
+    var list = document.createElement("div");
+    list.className = "portal36-channels__list";
+
+    navSections.forEach(function (section) {
+      var group = document.createElement("section");
+      group.className = "portal36-channel-group";
+
+      var isSectionActive = itemMatchesPath(section);
+      if (isSectionActive) {
+        group.classList.add("is-open");
+      }
+
+      var head = document.createElement("div");
+      head.className = "portal36-channel-group__head";
+
+      var topLink = createLink({ href: section.href, label: section.label }, "portal36-channels__link portal36-channel-group__link");
+      if (isSectionActive) {
+        topLink.classList.add("is-active");
+      }
+      head.appendChild(topLink);
+
+      if (section.children && section.children.length) {
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "portal36-channel-group__toggle";
+        toggle.setAttribute("aria-expanded", isSectionActive ? "true" : "false");
+        toggle.setAttribute("aria-label", "展开" + section.label);
+        toggle.textContent = "▾";
+        toggle.addEventListener("click", function () {
+          var open = group.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        head.appendChild(toggle);
+      }
+
+      group.appendChild(head);
+
+      if (section.children && section.children.length) {
+        var children = document.createElement("div");
+        children.className = "portal36-channel-group__children";
+        section.children.forEach(function (child) {
+          children.appendChild(createLink(child, "portal36-channel-group__child"));
+        });
+        group.appendChild(children);
+      }
+
+      list.appendChild(group);
+    });
+    wrap.appendChild(list);
+
+    var tools = document.createElement("div");
+    tools.className = "portal36-channels__tools";
+
+    var search = document.createElement("button");
+    search.type = "button";
+    search.className = "portal36-channels__search";
+    search.textContent = "搜索";
+    search.addEventListener("click", openSearch);
+    tools.appendChild(search);
+
+    var leave = document.createElement("a");
+    leave.className = "portal36-channels__post";
+    leave.href = "/waline/";
+    leave.textContent = "去留言";
+    tools.appendChild(leave);
+
+    wrap.appendChild(tools);
+    primaryInner.insertAdjacentElement("afterbegin", wrap);
+  }
+
+  function mountRightRail() {
+    var secondaryInner = document.querySelector(".md-sidebar--secondary .md-sidebar__inner");
+    if (!secondaryInner || secondaryInner.querySelector(".portal36-rail")) {
+      return;
+    }
+
+    var rail = document.createElement("aside");
+    rail.className = "portal36-rail";
+
+    railBlocks.forEach(function (block) {
+      var section = document.createElement("section");
+      section.className = "portal36-rail__block";
+      section.innerHTML = '<h3 class="portal36-rail__title">' + block.title + '</h3>';
+
+      var list = document.createElement("div");
+      list.className = "portal36-rail__list";
+      block.items.forEach(function (item) {
+        var link = document.createElement("a");
+        link.className = "portal36-rail__item";
+        link.href = item.href;
+        link.textContent = item.label;
+        list.appendChild(link);
+      });
+      section.appendChild(list);
+      rail.appendChild(section);
+    });
+
+    var intro = document.createElement("section");
+    intro.className = "portal36-rail__block portal36-rail__block--intro";
+    intro.innerHTML = '<h3 class="portal36-rail__title">站点说明</h3><p>这是一个以项目展示、学习积累和留言交流为主的个人网站，重点放在长期有价值的内容沉淀上。</p><a class="portal36-rail__cta" href="/waline/">进入留言板</a>';
+    rail.appendChild(intro);
+
+    secondaryInner.innerHTML = "";
+    secondaryInner.appendChild(rail);
+  }
+
+  function buildHomepage() {
+    var article = document.querySelector(".md-content__inner.md-typeset");
+    if (!article || article.querySelector(".portal36-home")) {
+      return;
+    }
+
+    var hero = document.createElement("section");
+    hero.className = "portal36-home";
+    hero.innerHTML = '<section class="portal36-hero"><a class="portal36-hero__main" href="' + homepageData.main.href + '"><img src="' + homepageData.main.image + '" alt="' + homepageData.main.title + '"><div class="portal36-hero__overlay"><span class="portal36-hero__tag">精选项目</span><h2>' + homepageData.main.title + '</h2><p>' + homepageData.main.text + '</p></div></a><div class="portal36-hero__side"></div></section><section class="portal36-feed"><div class="portal36-feed__head"><h2>精选文章</h2><a href="/blog/">查看全部</a></div><div class="portal36-feed__list"></div></section>';
+
+    var side = hero.querySelector(".portal36-hero__side");
+    homepageData.side.forEach(function (item) {
+      var card = document.createElement("a");
+      card.className = "portal36-hero__mini";
+      card.href = item.href;
+      card.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '"><span>' + item.title + '</span>';
+      side.appendChild(card);
+    });
+
+    var list = hero.querySelector(".portal36-feed__list");
+    homepageData.latest.forEach(function (item) {
+      var entry = document.createElement("a");
+      entry.className = "portal36-feed__item";
+      entry.href = item.href;
+      entry.innerHTML = '<img src="' + item.image + '" alt="' + item.title + '"><div class="portal36-feed__body"><span class="portal36-feed__category">' + item.category + '</span><h3>' + item.title + '</h3><p>' + item.excerpt + '</p><span class="portal36-feed__meta">' + item.meta + '</span></div>';
+      list.appendChild(entry);
+    });
+
+    var existingHome = article.querySelector(".home-portal");
+    if (existingHome) {
+      existingHome.setAttribute("hidden", "hidden");
+    }
+
+    var h1 = article.querySelector("h1");
+    if (h1) {
+      h1.textContent = "首页";
+      h1.insertAdjacentElement("afterend", hero);
+    } else {
+      article.insertAdjacentElement("afterbegin", hero);
+    }
+  }
+
+  function mountReadingControls() {
+    var article = document.querySelector(".md-content__inner.md-typeset");
+    if (!article || article.querySelector(".portal36-reading-bar")) {
+      return;
+    }
+
+    var controls = createReadingControls();
+    var marker = article.querySelector(".portal36-home") || article.querySelector("h1") || article.firstElementChild;
+    if (marker) {
+      marker.insertAdjacentElement("beforebegin", controls);
+    } else {
+      article.insertAdjacentElement("afterbegin", controls);
+    }
+    applyReadingScale(getStoredReadingScale());
+  }
+
+  function decorateBody() {
+    document.body.classList.add("portal36-theme");
+    if (currentPath() === "/") {
+      document.body.classList.add("portal36-page-home");
+    } else if (currentPath() === "/blog") {
+      document.body.classList.add("portal36-page-blog");
+    } else {
+      document.body.classList.add("portal36-page-content");
+    }
+    applyThemeMode(getStoredThemeMode());
+  }
+
+  function initPortal36() {
+    removeOldShell();
+    prunePublicMeta();
+    decorateBody();
+    mountHeaderNav();
+    mountChannels();
+    mountRightRail();
+    if (currentPath() === "/") {
+      buildHomepage();
+    }
+    mountReadingControls();
+  }
+
+  initPortal36();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPortal36);
+  }
+})();
