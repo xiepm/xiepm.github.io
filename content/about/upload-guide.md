@@ -6,6 +6,14 @@ aliases:
   - "/about/upload-guide/"
 ---
 
+## 先看哪份说明
+
+如果你想看更完整的中文操作手册，可以直接查看：
+
+- [`README-HUGO.md`](C:\Users\xiepm\Desktop\GITHUB\WEB\xiepm.github.io\README-HUGO.md)
+
+这份页面更适合放在站内做快速提醒，完整版手册放在仓库根目录。
+
 ## 以后怎么新增内容
 
 ### 新增项目
@@ -35,3 +43,21 @@ aliases:
 2. 把素材放到 `assets/` 或页面目录
 3. 本地预览：`powershell -ExecutionPolicy Bypass -File .\serve-hugo.ps1`
 4. 本地生成：`powershell -ExecutionPolicy Bypass -File .\build-hugo.ps1`
+
+## 图片、视频、附件的最简单规则
+
+- 图片：优先放 `assets/images/`
+- 视频：优先放 `assets/videos/`
+- 附件：优先放 `assets/files/`
+- 如果某篇文章素材很多，就给这篇文章建独立目录
+
+## 什么时候不用改网页代码
+
+正常新增或修改文章时，不需要改 HTML、CSS、JS。
+
+只有这几类需求才要改网页代码：
+
+- 改布局
+- 改导航
+- 改主题和样式
+- 改交互功能
