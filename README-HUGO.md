@@ -281,6 +281,36 @@ powershell -ExecutionPolicy Bypass -File .\build-hugo.ps1
 
 - `public/`
 
+### 一键发布到 GitHub Pages
+
+如果你已经改完内容，想直接一键发布到 GitHub Pages，运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\publish-hugo.ps1
+```
+
+如果你想自己写提交说明：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\publish-hugo.ps1 "新增机器人项目文章"
+```
+
+这个脚本会自动做三件事：
+
+1. 先运行 Hugo 构建
+2. 自动提交当前修改
+3. 自动推送到当前分支
+
+然后 GitHub Actions 会继续自动把站点发布到 GitHub Pages。
+
+### GitHub Pages 需要怎样设置
+
+你需要在 GitHub 仓库的 `Settings -> Pages` 里把发布源改成：
+
+- `Source: GitHub Actions`
+
+这样以后你每次运行 `publish-hugo.ps1`，推送到 `hugopage` 分支后，Pages 就会自动更新。
+
 ---
 
 ## 8. 什么时候需要改网页代码

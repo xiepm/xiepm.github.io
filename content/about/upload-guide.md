@@ -44,6 +44,22 @@ aliases:
 3. 本地预览：`powershell -ExecutionPolicy Bypass -File .\serve-hugo.ps1`
 4. 本地生成：`powershell -ExecutionPolicy Bypass -File .\build-hugo.ps1`
 
+## 一键发布到 GitHub Pages
+
+如果你已经改完内容，想直接发布，运行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\publish-hugo.ps1
+```
+
+如果你想自己写提交说明：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\publish-hugo.ps1 "新增学习文章"
+```
+
+这个脚本会自动构建、提交并推送，后续由 GitHub Actions 自动发布到 Pages。
+
 ## 图片、视频、附件的最简单规则
 
 - 图片：优先放 `assets/images/`
