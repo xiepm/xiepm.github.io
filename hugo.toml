@@ -16,4 +16,3 @@ staticDir = ["static", "images", "img"]
   description = "一个持续生长的个人科技实验室"
   github = "https://github.com/xiepm"
   search = "/search/"
-

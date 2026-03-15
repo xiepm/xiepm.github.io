@@ -1,7 +1,7 @@
 ---
 title: "关于 Xpm"
-kicker: "Profile"
-lead: "这里用于集中放个人简介、兴趣方向和网站定位。"
+kicker: "PROFILE"
+lead: "这里集中放个人定位、兴趣方向和网站定位。"
 aliases:
   - "/about/geren/"
   - "/about/xiepm/"
@@ -14,4 +14,3 @@ aliases:
 - 保留一个稳定的交流入口
 
 与其把它做成单纯的博客或文档站，我更希望它像一个可以持续生长的个人科技实验室。
-

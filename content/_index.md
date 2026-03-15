@@ -3,16 +3,16 @@ title: "首页"
 description: "Xpm 的个人科技实验室首页"
 hero:
   kicker: "HOME"
-  title: "首页"
-  lead: "一个持续生长的个人科技实验室。这里把项目实践、知识积累、交流入口和关于信息收进统一门户，既保留三栏阅读节奏，也让后续内容维护回到 Markdown。"
+  title: "一个持续生长的个人科技实验室"
+  lead: "这里把项目实践、知识沉淀、交流入口和关于信息收进统一门户，保留三栏阅读节奏，也让后续内容维护回到 Markdown。"
   primary:
     label: "进入项目区"
     url: "/projects/"
   secondary:
-    label: "进入学习区"
+    label: "进入知识区"
     url: "/study/"
   metrics:
-    - title: "Projects"
+    - title: "Project"
       text: "项目实践与作品沉淀"
     - title: "Study"
       text: "知识整理与路线积累"
@@ -38,9 +38,38 @@ sections:
         summary: "沉淀值得长期关注的开源方向，也保留我自己的推荐标准。"
         cta: "进入页面"
         url: "/projects/open-source/"
+      - tag: "Robot Demo"
+        title: "机器人视觉识别实战"
+        summary: "以 ROS 2 与 OpenCV 为主线，示范如何把机器人视觉项目组织成可复用方案。"
+        cta: "查看项目"
+        url: "/projects/robot-vision-demo/"
+  - kicker: "精选内容"
+    title: "从这里继续看我长期沉淀下来的重点页面"
+    lead: "除了项目和专题入口，也保留一些代表性、实用性和建站过程记录。"
+    cards:
+      - tag: "学习专题"
+        title: "机器人与 ROS 2 学习路线"
+        summary: "把机器人基础、ROS 2、仿真与项目实践连成一条更适合长期推进的路线。"
+        cta: "继续阅读"
+        url: "/study/robotics-roadmap/"
+      - tag: "实用内容"
+        title: "如何注册 ChatGPT"
+        summary: "从常用工具切入，记录更容易被实际用到的内容。"
+        cta: "查看内容"
+        url: "/projects/chatgpt/"
+      - tag: "项目实践"
+        title: "OpenCV 实践"
+        summary: "把图像处理、视觉实验和应用小项目集中整理，方便继续扩展。"
+        cta: "进入页面"
+        url: "/projects/opencv/"
+      - tag: "学习补充"
+        title: "资源推荐"
+        summary: "整理好用、好玩和值得收藏的学习资源、网站与工具。"
+        cta: "去阅读"
+        url: "/study/resources/"
   - kicker: "知识区"
     title: "把学习路线、专题入口和笔记沉淀收进同一层结构"
-    lead: "学习区不再把所有分类都挤进顶栏，而是通过专题卡片整理成清晰入口。"
+    lead: "知识区不再把所有分类都挤进顶栏，而是通过专题卡片整理成清晰入口。"
     cards:
       - tag: "Robotics"
         title: "机器人"
@@ -68,7 +97,7 @@ sections:
         cta: "进入专题"
         url: "/study/tools/"
       - tag: "Study"
-        title: "学习总览"
+        title: "知识区总览"
         summary: "如果想先看全部学习分类和推荐先读内容，可以从这里开始。"
         cta: "查看总览"
         url: "/study/"
@@ -93,5 +122,20 @@ sections:
         url: "/about/upload-guide/"
 ---
 
-首页本身不再依赖运行时脚本拼装正文。以后你只需要修改这份 Markdown 里的卡片文案、链接和说明，再运行 Hugo 构建，页面就会同步变化。
+## 首页现在承担什么
 
+首页负责三件事：
+
+1. 先说明这个站点的核心定位。
+2. 用卡片把项目区、知识区和交流入口分流清楚。
+3. 保留一些长期值得反复回看的重点内容。
+
+## 后续怎么维护首页
+
+以后如果你要更新首页，不需要去手改生成后的 HTML。你只需要修改这份 Markdown 里的：
+
+- `hero`：首页顶部说明和主按钮
+- `sections`：项目区、知识区、精选内容、交流与关于卡片
+- 正文说明：放一些首页用途和维护提示
+
+然后重新运行 Hugo 构建，首页内容就会同步变化。

@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "f16fdf5bb1a20736",
+    "type": "split",
+    "children": [
+      {
+        "id": "876fcb871117858e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aead86beed270f74",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "projects/open-source.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "open-source"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dabdde4aa4ef2740",
+    "type": "split",
+    "children": [
+      {
+        "id": "dda072e0533c35e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed501dba31e288d9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "98cbf3ff6445c485",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "d0649ca17c4d4163",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e3597cf33bc10f39",
+    "type": "split",
+    "children": [
+      {
+        "id": "b86cef629bd5ebc5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "18f485391975c28a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "projects/open-source.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "open-source 的反向链接列表"
+            }
+          },
+          {
+            "id": "83b3261890563b89",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "projects/open-source.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "open-source 的出链列表"
+            }
+          },
+          {
+            "id": "48cdff65e82642b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "d73c45087a6c2b3d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "1ff1e3fcf58df320",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "projects/open-source.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "open-source 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "ed501dba31e288d9",
+  "lastOpenFiles": [
+    "study/robotics-roadmap/index.md",
+    "study/robotics-roadmap",
+    "projects/robot-vision-demo/index.md",
+    "projects/robot-vision-demo",
+    "study/resources.md",
+    "study/embedded.md",
+    "study/linux.md",
+    "study/control-theory.md",
+    "projects/chatgpt.md",
+    "projects/aizhiwu.md",
+    "projects/face-compare.md",
+    "projects/face-recognition.md",
+    "projects/opencv.md",
+    "projects/README.md",
+    "projects/open-source.md",
+    "projects/media-demo.md",
+    "projects/design-overview.md",
+    "projects/_index.md",
+    "README.md",
+    "MIGRATION-NOTES.md",
+    "_index.md"
+  ]
+}

@@ -38,16 +38,22 @@ url = "/projects/"
 name = "设计与项目总览"
 url = "/projects/design-overview/"
 [[sections.projects.children]]
+name = "OpenCV 实践"
+url = "/projects/opencv/"
+[[sections.projects.children]]
+name = "人脸识别"
+url = "/projects/face-recognition/"
+[[sections.projects.children]]
 name = "开源项目推荐"
 url = "/projects/open-source/"
 [[sections.projects.children]]
-name = "图片视频示例"
-url = "/projects/media-demo/"
+name = "机器人视觉识别实战"
+url = "/projects/robot-vision-demo/"
 
 [sections.study]
 title = "学习"
 [[sections.study.children]]
-name = "学习总览"
+name = "知识区总览"
 url = "/study/"
 [[sections.study.children]]
 name = "机器人"
@@ -64,6 +70,9 @@ url = "/study/programming/"
 [[sections.study.children]]
 name = "工具箱"
 url = "/study/tools/"
+[[sections.study.children]]
+name = "机器人与 ROS 2 学习路线"
+url = "/study/robotics-roadmap/"
 
 [sections.connect]
 title = "交流"
@@ -85,4 +94,3 @@ url = "/about/xpm/"
 [[sections.about.children]]
 name = "上传说明"
 url = "/about/upload-guide/"
-
