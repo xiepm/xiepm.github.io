@@ -15,7 +15,7 @@ hero:
   metrics:
     - title: "交流区"
       text: "留言交流与进一步了解"
-      image: "/images/portrait.jpg"
+      image: "/images/guowang9.png"
       alt: "交流区封面"
       url: "/about/"
 sections:
