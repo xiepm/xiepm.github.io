@@ -11,20 +11,11 @@ hero:
   secondary:
     label: "进入知识区"
     url: "/study/"
+  metricsLayout: "feature"
   metrics:
-    - title: "项目区"
-      text: "项目实践与作品沉淀"
-      image: "/images/girl1.jpg"
-      alt: "项目区封面"
-      url: "/projects/"
-    - title: "知识区"
-      text: "知识整理与路线积累"
-      image: "/images/girl2.jpg"
-      alt: "知识区封面"
-      url: "/study/"
     - title: "交流区"
       text: "留言交流与进一步了解"
-      image: "/images/girl3.jpg"
+      image: "/images/portrait.jpg"
       alt: "交流区封面"
       url: "/connect/"
 sections:
@@ -47,11 +38,6 @@ sections:
         summary: "沉淀值得长期关注的开源方向，也保留我自己的推荐标准。"
         cta: "进入页面"
         url: "/projects/open-source/"
-      - tag: "Robot Demo"
-        title: "机器人视觉识别实战"
-        summary: "以 ROS 2 与 OpenCV 为主线，示范如何把机器人视觉项目组织成可复用方案。"
-        cta: "查看项目"
-        url: "/projects/robot-vision-demo/"
   - kicker: "精选内容"
     title: "从这里继续看我长期沉淀下来的重点页面"
     lead: "除了项目和专题入口，也保留一些代表性、实用性和建站过程记录。"
@@ -71,11 +57,6 @@ sections:
         summary: "把图像处理、视觉实验和应用小项目集中整理，方便继续扩展。"
         cta: "进入页面"
         url: "/projects/opencv/"
-      - tag: "学习补充"
-        title: "资源推荐"
-        summary: "整理好用、好玩和值得收藏的学习资源、网站与工具。"
-        cta: "去阅读"
-        url: "/study/resources/"
   - kicker: "知识区"
     title: "把学习路线、专题入口和笔记沉淀收进同一层结构"
     lead: "知识区不再把所有分类都挤进顶栏，而是通过专题卡片整理成清晰入口。"
@@ -90,21 +71,6 @@ sections:
         summary: "围绕 ROS / ROS 2 的系统学习、实践记录和路线整理。"
         cta: "进入专题"
         url: "/study/ros/"
-      - tag: "AI"
-        title: "AI"
-        summary: "从基础到应用的 AI 学习路线与长期补充入口。"
-        cta: "进入专题"
-        url: "/study/ai/"
-      - tag: "Programming"
-        title: "编程"
-        summary: "语言、工程能力和开发经验的持续积累。"
-        cta: "进入专题"
-        url: "/study/programming/"
-      - tag: "Tools"
-        title: "工具箱"
-        summary: "高频开发工具、环境配置和效率方法集合。"
-        cta: "进入专题"
-        url: "/study/tools/"
       - tag: "Study"
         title: "知识区总览"
         summary: "如果想先看全部学习分类和推荐先读内容，可以从这里开始。"
@@ -131,13 +97,13 @@ sections:
         url: "/about/upload-guide/"
 ---
 
-## 首页现在承担什么？
+## 首页现在承担什么
 
 首页负责三件事：
 
 1. 先说明这个站点的核心定位。
 2. 用卡片把项目区、知识区和交流入口分流清楚。
-3. 保留一些长期值得反复回看的重点内容。
+3. 保留一些值得反复回看的重点页面。
 
 ## 后续怎么维护首页
 

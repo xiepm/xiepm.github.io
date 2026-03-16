@@ -90,14 +90,14 @@ text = "知识区把专题路线、知识整理和长期积累收进统一入口
 title = "交流入口"
 [[defaults.connect.blocks.items]]
 label = "进入留言板"
-url = "/waline/"
+url = "/connect/message-board/"
 [[defaults.connect.blocks.items]]
-label = "友链交流"
+label = "友链与交流"
 url = "/connect/links/"
 
 [[defaults.connect.blocks]]
 title = "留言说明"
-text = "交流页不直接承载评论系统，而是负责说明交流方式、友链入口和留言用途。"
+text = "交流页现在负责统一入口和说明，留言板、友链和后续互动内容都从这里分流。"
 
 [defaults.about]
 [[defaults.about.blocks]]

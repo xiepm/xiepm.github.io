@@ -1,7 +1,7 @@
 ---
 title: "友链与交流"
 kicker: "LINKS"
-lead: "这里用于整理友链、交流入口和后续的互动说明。"
+lead: "这里用于整理友链、交流入口和后续互动说明。"
 aliases:
   - "/about/link/"
 ---

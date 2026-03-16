@@ -1,4 +1,5 @@
 {{ with . }}
+  {{ $metricsLayout := .metricsLayout | default "grid" }}
   <section class="hero-panel">
     <div class="hero-panel__main">
       {{ with .kicker }}<span class="hero-panel__kicker">{{ . }}</span>{{ end }}
@@ -11,15 +12,17 @@
     </div>
     {{ with .metrics }}
       <div class="hero-panel__side">
-        <div class="metric-grid">
+        <div class="metric-grid{{ if eq $metricsLayout "feature" }} metric-grid--feature{{ end }}">
           {{ range . }}
             <article class="metric-card{{ if .image }} metric-card--image{{ end }}">
               {{ if .image }}
                 {{ $cardUrl := .url | default "" }}
                 {{ if $cardUrl }}<a class="metric-card__link" href="{{ $cardUrl }}">{{ end }}
                 <img class="metric-card__image" src="{{ .image }}" alt="{{ .alt | default .title }}">
-                {{ with .title }}<strong>{{ . }}</strong>{{ end }}
-                {{ with .text }}<span>{{ . }}</span>{{ end }}
+                {{ if ne $metricsLayout "feature" }}
+                  {{ with .title }}<strong>{{ . }}</strong>{{ end }}
+                  {{ with .text }}<span>{{ . }}</span>{{ end }}
+                {{ end }}
                 {{ if $cardUrl }}</a>{{ end }}
               {{ else }}
                 {{ with .title }}<strong>{{ . }}</strong>{{ end }}

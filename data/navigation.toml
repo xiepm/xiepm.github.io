@@ -80,6 +80,9 @@ title = "交流"
 name = "交流总览"
 url = "/connect/"
 [[sections.connect.children]]
+name = "留言板"
+url = "/connect/message-board/"
+[[sections.connect.children]]
 name = "友链与交流"
 url = "/connect/links/"
 
