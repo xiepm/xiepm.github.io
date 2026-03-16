@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/open-source.md",
+                "file": "projects/robot-vision-demo/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "open-source"
+              "title": "index"
             }
           }
         ]
@@ -185,11 +185,11 @@
   },
   "active": "aead86beed270f74",
   "lastOpenFiles": [
-    "projects/_index.md",
-    "projects/robot-vision-demo/index.md",
     "projects/robot-vision-demo/bilibilitouxiang.jpg",
-    "_index.md",
+    "projects/_index.md",
     "projects/open-source.md",
+    "projects/robot-vision-demo/index.md",
+    "_index.md",
     "study/robotics-roadmap/index.md",
     "study/robotics-roadmap",
     "projects/robot-vision-demo",
