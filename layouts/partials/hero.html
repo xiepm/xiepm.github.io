@@ -13,9 +13,18 @@
       <div class="hero-panel__side">
         <div class="metric-grid">
           {{ range . }}
-            <article class="metric-card">
-              <strong>{{ .title }}</strong>
-              <span>{{ .text }}</span>
+            <article class="metric-card{{ if .image }} metric-card--image{{ end }}">
+              {{ if .image }}
+                {{ $cardUrl := .url | default "" }}
+                {{ if $cardUrl }}<a class="metric-card__link" href="{{ $cardUrl }}">{{ end }}
+                <img class="metric-card__image" src="{{ .image }}" alt="{{ .alt | default .title }}">
+                {{ with .title }}<strong>{{ . }}</strong>{{ end }}
+                {{ with .text }}<span>{{ . }}</span>{{ end }}
+                {{ if $cardUrl }}</a>{{ end }}
+              {{ else }}
+                {{ with .title }}<strong>{{ . }}</strong>{{ end }}
+                {{ with .text }}<span>{{ . }}</span>{{ end }}
+              {{ end }}
             </article>
           {{ end }}
         </div>
@@ -23,4 +32,3 @@
     {{ end }}
   </section>
 {{ end }}
-

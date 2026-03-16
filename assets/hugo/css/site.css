@@ -375,6 +375,31 @@ html[data-theme="dark"] .metric-card {
   line-height: 1.6;
 }
 
+.metric-card--image {
+  padding: 14px;
+  gap: 12px;
+}
+
+.metric-card__link {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric-card__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.metric-card--image strong {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
 .content-panel {
   margin-top: 26px;
   padding: 34px 28px 24px;
@@ -491,4 +516,3 @@ html[data-theme="dark"] .metric-card {
     grid-template-columns: 1fr;
   }
 }
-

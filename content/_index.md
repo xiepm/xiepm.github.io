@@ -14,10 +14,10 @@ hero:
   metrics:
     - title: "Project"
       text: "项目实践与作品沉淀"
-    - title: "Study"
-      text: "知识整理与路线积累"
-    - title: "Connect"
-      text: "留言交流与进一步了解"
+      image: "/images/guowang6.webp"
+      alt: "项目区封面"
+      url: "/projects/"
+
 sections:
   - kicker: "项目区"
     title: "从卡片入口快速看我的项目与产出"

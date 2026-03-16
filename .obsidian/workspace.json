@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/README.md",
+                "file": "content/_index.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "_index"
             }
           }
         ]
@@ -186,10 +186,11 @@
   "active": "096e278c08230d96",
   "lastOpenFiles": [
     "content/MIGRATION-NOTES.md",
+    "content/_index.md",
+    "content/README.md",
     "content/connect/links.md",
     "content/connect/_index.md",
     "content/about/xpm.md",
-    "content/about/upload-guide.md",
-    "content/_index.md"
+    "content/about/upload-guide.md"
   ]
 }
