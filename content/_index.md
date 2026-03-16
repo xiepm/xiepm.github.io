@@ -17,7 +17,7 @@ hero:
       text: "留言交流与进一步了解"
       image: "/images/portrait.jpg"
       alt: "交流区封面"
-      url: "/connect/"
+      url: "/about/"
 sections:
   - kicker: "项目区"
     title: "从卡片入口快速看我的项目与产出"
