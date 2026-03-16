@@ -357,6 +357,7 @@ html[data-theme="dark"] .metric-card {
 
 .metric-grid--feature {
   grid-template-columns: minmax(0, 1fr);
+  width: 100%;
 }
 
 .metric-card {
@@ -440,6 +441,7 @@ html[data-theme="dark"] .metric-card {
 
 .metric-grid--feature .metric-card--image {
   min-height: 575px;
+  width: 100%;
 }
 
 .metric-grid--feature .metric-card__link::before {
@@ -448,6 +450,12 @@ html[data-theme="dark"] .metric-card {
 
 .metric-grid--feature .metric-card__link {
   padding: 0;
+  width: 100%;
+}
+
+.hero-panel__side,
+.metric-grid--feature .metric-card {
+  width: 100%;
 }
 
 .content-panel {
