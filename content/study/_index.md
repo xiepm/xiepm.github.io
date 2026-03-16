@@ -35,7 +35,7 @@ sections:
         url: "/study/robotics/"
       - tag: "ROS"
         title: "ROS"
-        summary: "围绕 ROS / ROS2 的系统学习和长期整理。"
+        summary: "围绕 ROS / ROS 2 的系统学习和长期整理。"
         cta: "进入专题"
         url: "/study/ros/"
       - tag: "System"
@@ -78,7 +78,7 @@ sections:
         url: "/study/"
       - tag: "Route"
         title: "再看机器人与 ROS 2 路线"
-        summary: "这几类内容最能体现学习路线、专题整理和后续项目实践之间的联系。"
+        summary: "这类内容最能体现学习路线、专题整理和后续项目实践之间的联系。"
         cta: "进入文章"
         url: "/study/robotics-roadmap/"
       - tag: "Support"
@@ -94,7 +94,7 @@ sections:
 
 - 把分散的学习分类整理成统一入口
 - 告诉访问者我在学什么、推荐先看什么
-- 为后续专题页迁移进 Hugo 提供稳定导航
+- 为后续专题页迁进 Hugo 提供稳定导航
 
 ## 后续迁移建议
 

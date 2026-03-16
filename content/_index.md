@@ -12,12 +12,21 @@ hero:
     label: "进入知识区"
     url: "/study/"
   metrics:
-    - title: "Project"
+    - title: "项目区"
       text: "项目实践与作品沉淀"
-      image: "/images/guowang6.webp"
+      image: "/images/girl1.jpg"
       alt: "项目区封面"
       url: "/projects/"
-
+    - title: "知识区"
+      text: "知识整理与路线积累"
+      image: "/images/girl2.jpg"
+      alt: "知识区封面"
+      url: "/study/"
+    - title: "交流区"
+      text: "留言交流与进一步了解"
+      image: "/images/girl3.jpg"
+      alt: "交流区封面"
+      url: "/connect/"
 sections:
   - kicker: "项目区"
     title: "从卡片入口快速看我的项目与产出"
@@ -78,7 +87,7 @@ sections:
         url: "/study/robotics/"
       - tag: "ROS"
         title: "ROS"
-        summary: "围绕 ROS / ROS2 的系统学习、实践记录和路线整理。"
+        summary: "围绕 ROS / ROS 2 的系统学习、实践记录和路线整理。"
         cta: "进入专题"
         url: "/study/ros/"
       - tag: "AI"
@@ -122,7 +131,7 @@ sections:
         url: "/about/upload-guide/"
 ---
 
-## 首页现在承担什么
+## 首页现在承担什么？
 
 首页负责三件事：
 

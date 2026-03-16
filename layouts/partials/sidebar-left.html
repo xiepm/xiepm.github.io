@@ -10,19 +10,21 @@
   <div class="channel-list">
     {{ range site.Data.navigation.top }}
       {{ $section := index site.Data.navigation.sections .key }}
-      <section class="channel-group {{ if eq .key $current }}is-active{{ end }}">
+      {{ $active := eq .key $current }}
+      <section class="channel-group {{ if $active }}is-active{{ end }}">
         <a class="channel-group__head" href="{{ .url }}">{{ .name }}</a>
-        {{ with $section }}
-          {{ with index . "children" }}
-            <div class="channel-group__body">
-              {{ range . }}
-                <a class="channel-link {{ if eq $.RelPermalink .url }}is-current{{ end }}" href="{{ .url }}">{{ .name }}</a>
-              {{ end }}
-            </div>
+        {{ if $active }}
+          {{ with $section }}
+            {{ with index . "children" }}
+              <div class="channel-group__body">
+                {{ range . }}
+                  <a class="channel-link {{ if eq $.RelPermalink .url }}is-current{{ end }}" href="{{ .url }}">{{ .name }}</a>
+                {{ end }}
+              </div>
+            {{ end }}
           {{ end }}
         {{ end }}
       </section>
     {{ end }}
   </div>
 </div>
-
