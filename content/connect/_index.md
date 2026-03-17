@@ -21,20 +21,17 @@ sections:
         cta: "进入留言板"
         url: "/connect/message-board/"
       - tag: "About"
-        title: "吃喝玩乐"
-        summary: "如果你想先了解我和这个站点，也可以继续进入关于页。"
-        cta: "人生得意须尽欢，胡吃海喝需尽兴。"
-        url: "/connect/eatandplay/"        
+        title: "人间烟火"
+        summary: "保持对生活的爱与热忱，每天都活得热气腾腾。人间烟火，温暖你我"
+        cta: "人间烟火气，最抚凡人心。"
+        url: "/connect/eatandplay/"      
+        image: "/images/renjianyanhuo.jpg"  
       - tag: "友链"
         title: "友链与交流"
         summary: "整理友链、交流说明，以及后续站点互动相关内容。"
         cta: "查看友链"
         url: "/connect/links/"
-      - tag: "About"
-        title: "关于与联系说明"
-        summary: "如果你想先了解我和这个站点，也可以继续进入关于页。"
-        cta: "进入关于"
-        url: "/about/"
+
 ---
 
 交流页现在负责总览和分流，不再把按钮指到不存在的页面。
