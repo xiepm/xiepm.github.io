@@ -3,9 +3,9 @@
   const storageKey = "xpm-theme";
   const readingKey = "xpm-reading-scale";
   const defaultWeather = {
-    name: "上海",
-    latitude: 31.2304,
-    longitude: 121.4737
+    name: "东莞",
+    latitude: 23.0207,
+    longitude: 113.7518
   };
 
   function weatherLabel(code) {
@@ -72,7 +72,7 @@
     renderWeather({
       temp: "--°C",
       summary: "正在获取天气...",
-      meta: "默认城市：上海"
+      meta: "默认城市：东莞"
     });
 
     if (!navigator.geolocation) {

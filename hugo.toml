@@ -12,7 +12,13 @@ staticDir = ["static", "images", "img"]
     [markup.goldmark.renderer]
       unsafe = true
 
+[frontmatter]
+  date = [":fileModTime", ":default"]
+  lastmod = [":fileModTime", ":default"]
+
 [params]
-  description = "一个持续生长的个人科技实验室"
+  description = "一个持续生长的个人科技实验室。"
   github = "https://github.com/xiepm"
+  email = "mailto:contact@xpmrobot.cn"
+  bilibili = "https://space.bilibili.com/"
   search = "/search/"

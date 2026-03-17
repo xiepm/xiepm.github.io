@@ -5,9 +5,9 @@
   {{ $oldest := cond (gt (len $oldestPages) 0) (index $oldestPages 0) nil }}
   {{ $latest := cond (gt (len $pages) 0) (index $pages 0) nil }}
   {{ $stats := newScratch }}
-  {{ $stats.Set "words" 0 }}
+  {{ $stats.Set "chars" 0 }}
   {{ range $pages }}
-    {{ $stats.Add "words" .WordCount }}
+    {{ $stats.Add "chars" (len .Plain) }}
   {{ end }}
   {{ $daysRunning := 0 }}
   {{ if $oldest }}
@@ -38,7 +38,7 @@
       </div>
       <div>
         <span>字数</span>
-        <strong>{{ printf "%.1fk" (div (float ($stats.Get "words")) 1000) }}</strong>
+        <strong>{{ printf "%.1fk" (div (float ($stats.Get "chars")) 1000) }}</strong>
       </div>
     </div>
 
@@ -46,9 +46,9 @@
 
     <div class="profile-weather__links">
       <a href="{{ site.Params.github }}" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+      <a href="{{ site.Params.email }}" aria-label="邮箱">邮箱</a>
+      <a href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer" aria-label="B站">B站</a>
       <a href="/connect/message-board/" aria-label="留言板">留言板</a>
-      <a href="/connect/links/" aria-label="友链">友链</a>
-      <a href="/about/upload-guide/" aria-label="说明">说明</a>
     </div>
   </section>
 
@@ -58,10 +58,10 @@
       <span>{{ len $pages }}</span>
     </div>
     <div class="archive-list">
-      {{ range $index, $group := first 8 ($pages.GroupByDate "2006-01") }}
+      {{ range $index, $group := first 8 ($pages.GroupByDate "2006-01-02") }}
         <details class="archive-group" {{ if eq $index 0 }}open{{ end }}>
           <summary>
-            <span>{{ (index $group.Pages 0).Lastmod.Format "2006年1月" }}</span>
+            <span>{{ (index $group.Pages 0).Lastmod.Format "2006年1月2日" }}</span>
             <strong>{{ len $group.Pages }}</strong>
           </summary>
           <ul>
@@ -90,7 +90,7 @@
       </div>
       <div>
         <dt>本站总字数</dt>
-        <dd>{{ printf "%.1fk" (div (float ($stats.Get "words")) 1000) }}</dd>
+        <dd>{{ printf "%.1fk" (div (float ($stats.Get "chars")) 1000) }}</dd>
       </div>
       <div>
         <dt>栏目数量</dt>
