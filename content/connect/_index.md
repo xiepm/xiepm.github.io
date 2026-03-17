@@ -25,7 +25,7 @@ sections:
         summary: "保持对生活的爱与热忱，每天都活得热气腾腾。人间烟火，温暖你我"
         cta: "人间烟火气，最抚凡人心。"
         url: "/connect/eatandplay/"      
-        image: "/images/renjianyanhuo.jpg"  
+        image: "/images/renjian.jpg"  
       - tag: "友链"
         title: "友链与交流"
         summary: "整理友链、交流说明，以及后续站点互动相关内容。"
