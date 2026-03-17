@@ -19,6 +19,7 @@ sections:
         summary: "如果你想留言、交流、提建议或打个招呼，现在统一从这里进入。"
         cta: "进入留言板"
         url: "/connect/message-board/"
+        image: "/images/liuyan.jpg"
       - title: "人间烟火气"
         summary: "保持对生活的爱与热忱，每天都活得热气腾腾。人间烟火，温暖你我"
         cta: "人间烟火气，最抚凡人心。"
@@ -28,6 +29,7 @@ sections:
         summary: "站点互动相关内容。"
         cta: "查看友链"
         url: "/connect/links/"
+        image: "/images/youlian.jpg"
 
 ---
 
