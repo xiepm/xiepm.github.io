@@ -1,0 +1,28 @@
+{{ with .Params.giscus }}
+  {{ $themeLight := .theme | default "light" }}
+  {{ $themeDark := .themeDark | default "dark_dimmed" }}
+  <div
+    class="giscus-host"
+    data-giscus-host
+    data-theme-light="{{ $themeLight }}"
+    data-theme-dark="{{ $themeDark }}">
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="{{ .repo }}"
+      data-repo-id="{{ .repoId }}"
+      data-category="{{ .category }}"
+      data-category-id="{{ .categoryId }}"
+      data-mapping="{{ .mapping | default "pathname" }}"
+      data-strict="{{ .strict | default "0" }}"
+      data-reactions-enabled="{{ .reactionsEnabled | default "1" }}"
+      data-emit-metadata="{{ .emitMetadata | default "0" }}"
+      data-input-position="{{ .inputPosition | default "bottom" }}"
+      data-theme="{{ $themeLight }}"
+      data-lang="{{ .lang | default "zh-CN" }}"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+{{ else }}
+  <p class="giscus-shell__empty">留言系统配置暂未完成，请稍后再来。</p>
+{{ end }}

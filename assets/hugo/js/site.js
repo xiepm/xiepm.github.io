@@ -3,12 +3,33 @@
   const storageKey = "xpm-theme";
   const readingKey = "xpm-reading-scale";
 
+  function syncGiscusTheme(theme) {
+    const iframe = document.querySelector("iframe.giscus-frame");
+    const host = document.querySelector("[data-giscus-host]");
+    if (!iframe || !host || !iframe.contentWindow) return;
+    const nextTheme = theme === "dark"
+      ? host.getAttribute("data-theme-dark") || "dark_dimmed"
+      : host.getAttribute("data-theme-light") || "light";
+
+    iframe.contentWindow.postMessage(
+      {
+        giscus: {
+          setConfig: {
+            theme: nextTheme
+          }
+        }
+      },
+      "https://giscus.app"
+    );
+  }
+
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     const button = document.querySelector("[data-theme-toggle]");
     if (button) {
       button.textContent = theme === "dark" ? "切换至日间模式" : "切换至夜间模式";
     }
+    syncGiscusTheme(theme);
   }
 
   function initTheme() {
@@ -44,5 +65,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();
     initReadingScale();
+    window.setTimeout(function () {
+      syncGiscusTheme(root.getAttribute("data-theme") || "light");
+    }, 1200);
   });
 })();

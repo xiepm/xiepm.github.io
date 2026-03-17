@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <section class="message-board-page">
+    <section class="message-hero">
+      <div class="message-hero__copy">
+        {{ with .Params.hero.eyebrow }}<span class="message-hero__eyebrow">{{ . }}</span>{{ end }}
+        <h1>{{ with .Params.hero.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+        {{ with .Params.hero.subtitle }}<p class="message-hero__subtitle">{{ . }}</p>{{ end }}
+        {{ with .Params.hero.summary }}<p class="message-hero__summary">{{ . }}</p>{{ end }}
+        <div class="message-hero__actions">
+          {{ with .Params.hero.primary }}
+            <a class="button button--primary" href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noreferrer"{{ end }}>{{ .label }}</a>
+          {{ end }}
+          {{ with .Params.hero.secondary }}
+            <a class="button button--ghost" href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noreferrer"{{ end }}>{{ .label }}</a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="message-hero__art">
+        <div class="message-hero__portrait">
+          <img src="{{ .Params.hero.image }}" alt="{{ .Params.hero.imageAlt | default .Title }}">
+        </div>
+      </div>
+    </section>
+
+    <section class="content-panel message-board-panel">
+      <div class="message-board-panel__head">
+        <div>
+          <span class="content-panel__kicker">{{ with .Params.kicker }}{{ . }}{{ else }}MESSAGE BOARD{{ end }}</span>
+          <h2>{{ .Title }}</h2>
+        </div>
+        {{ with .Params.lead }}<p class="message-board-panel__lead">{{ . }}</p>{{ end }}
+      </div>
+
+      <div class="content-prose message-board-prose">
+        {{ .Content }}
+      </div>
+
+      <div class="giscus-shell">
+        {{ partial "giscus.html" . }}
+      </div>
+    </section>
+  </section>
+{{ end }}

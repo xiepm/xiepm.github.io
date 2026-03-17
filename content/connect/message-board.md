@@ -1,17 +1,41 @@
 ---
 title: "留言板"
-kicker: "MESSAGE"
-lead: "这里作为站内统一留言入口，先把交流方式、入口说明和后续恢复评论系统的位置固定下来。"
+layout: "message-board"
+kicker: "MESSAGE BOARD"
+lead: "这里保留一个稳定的交流入口。欢迎通过 GitHub 登录留言、回复，或者留下你的来访记录与建议。"
+description: "Xpm 的留言板，使用 GitHub Discussions 承载评论与互动。"
 aliases:
   - "/message/"
+hero:
+  eyebrow: "Hi, I'm Xpm."
+  title: "Welcome to my message board!"
+  subtitle: "一个长期开放的交流角落，欢迎留下足迹。"
+  summary: "这里承接站内留言、互动和来访记录。你可以直接使用 GitHub 账号登录评论，也可以从这里进入仓库讨论区继续交流。"
+  image: "/images/yinghun8.jpg"
+  imageAlt: "留言板头图"
+  primary:
+    label: "GitHub"
+    url: "https://github.com/xiepm"
+  secondary:
+    label: "进入 Discussions"
+    url: "https://github.com/xiepm/xiepm.github.io/discussions"
+giscus:
+  repo: "xiepm/xiepm.github.io"
+  repoId: "R_kgDOKd1BRg"
+  category: "Announcements"
+  categoryId: "DIC_kwDOKd1BRs4C4kc2"
+  mapping: "pathname"
+  strict: "0"
+  reactionsEnabled: "1"
+  emitMetadata: "0"
+  inputPosition: "bottom"
+  theme: "light"
+  themeDark: "dark_dimmed"
+  lang: "zh-CN"
 ---
 
-这里先保留一个稳定的留言板入口页，避免再出现“按钮点进去没有页面”的情况。
+## 留言说明
 
-目前这页适合承接三类内容：
-
-- 留言说明
-- 联系方式或互动入口
-- 后续评论系统恢复说明
-
-如果之后要恢复以前那种可直接评论的留言板，可以继续在这页接入评论组件，而不需要再改动导航结构。
+- 使用 GitHub 账号即可登录和留言。
+- 留言、回复和表情互动会同步保存到仓库的 Discussions。
+- 如果你想反馈页面问题、交换友链，或者只是打个招呼，都可以直接写在下面。
