@@ -1,6 +1,6 @@
 {{ with . }}
   {{ $metricsLayout := .metricsLayout | default "grid" }}
-  <section class="hero-panel">
+  <section class="hero-panel{{ if eq $metricsLayout "feature" }} hero-panel--feature{{ end }}">
     <div class="hero-panel__main">
       {{ with .kicker }}<span class="hero-panel__kicker">{{ . }}</span>{{ end }}
       <h1>{{ .title }}</h1>
@@ -19,7 +19,13 @@
                 {{ $cardUrl := .url | default "" }}
                 {{ if $cardUrl }}<a class="metric-card__link" href="{{ $cardUrl }}">{{ end }}
                 <img class="metric-card__image" src="{{ .image }}" alt="{{ .alt | default .title }}">
-                {{ if ne $metricsLayout "feature" }}
+                {{ if eq $metricsLayout "feature" }}
+                  <span class="metric-card__wash"></span>
+                  <div class="metric-card__caption">
+                    {{ with .title }}<strong>{{ . }}</strong>{{ end }}
+                    {{ with .text }}<span>{{ . }}</span>{{ end }}
+                  </div>
+                {{ else }}
                   {{ with .title }}<strong>{{ . }}</strong>{{ end }}
                   {{ with .text }}<span>{{ . }}</span>{{ end }}
                 {{ end }}

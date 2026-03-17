@@ -4,7 +4,7 @@ description: "Xpm 的个人科技实验室首页"
 hero:
   kicker: "HOME"
   title: "一个持续生长的个人科技实验室"
-  lead: "这里把项目实践、知识沉淀、交流入口和关于信息收进统一门户，保留三栏阅读节奏，也让后续内容维护回到 Markdown。"
+  lead: "把项目实践、知识沉淀、交流入口和关于信息收进同一个明亮而稳定的入口里，让每次访问都更轻松、更耐看，也更适合长期维护。"
   primary:
     label: "进入项目区"
     url: "/projects/"
@@ -14,13 +14,13 @@ hero:
   metricsLayout: "feature"
   metrics:
     - title: "交流区"
-      text: "留言交流与进一步了解"
-      image: "/images/guowang9.png"
-      alt: "交流区封面"
-      url: "/about/"
+      text: "留言交流、友链入口与更多了解"
+      image: "/images/xing1.jpg"
+      alt: "首页主视觉封面"
+      url: "/connect/"
 sections:
   - kicker: "项目区"
-    title: "从卡片入口快速看我的项目与产出"
+    title: "从代表项目与作品里快速了解我正在做什么"
     lead: "项目区更偏向建设、实现和产出，适合先看整体能力、代表项目和开源方向。"
     cards:
       - tag: "Projects"
@@ -39,7 +39,7 @@ sections:
         cta: "进入页面"
         url: "/projects/open-source/"
   - kicker: "精选内容"
-    title: "从这里继续看我长期沉淀下来的重点页面"
+    title: "继续看看那些值得长期回访的重点页面"
     lead: "除了项目和专题入口，也保留一些代表性、实用性和建站过程记录。"
     cards:
       - tag: "学习专题"
