@@ -1,23 +1,132 @@
 {{ $current := partial "current-key.html" . }}
-{{ $rail := .Params.rail }}
-{{ if not $rail }}
-  {{ with index site.Data.rail.defaults $current }}
-    {{ $rail = index . "blocks" }}
+{{ if eq $current "home" }}
+  {{ $pages := site.RegularPages.ByLastmod.Reverse }}
+  {{ $oldestPages := site.RegularPages.ByLastmod }}
+  {{ $oldest := cond (gt (len $oldestPages) 0) (index $oldestPages 0) nil }}
+  {{ $latest := cond (gt (len $pages) 0) (index $pages 0) nil }}
+  {{ $stats := newScratch }}
+  {{ $stats.Set "words" 0 }}
+  {{ range $pages }}
+    {{ $stats.Add "words" .WordCount }}
   {{ end }}
-{{ end }}
-{{ with $rail }}
-  {{ range . }}
-    <section class="sidebar-card sidebar-card--rail">
-      <h3>{{ .title }}</h3>
-      {{ with .text }}<p>{{ . }}</p>{{ end }}
-      {{ with .items }}
-        <ul class="rail-list">
-          {{ range . }}
-            <li><a href="{{ .url }}">{{ .label }}</a></li>
-          {{ end }}
-        </ul>
-      {{ end }}
-    </section>
+  {{ $daysRunning := 0 }}
+  {{ if $oldest }}
+    {{ $daysRunning = div (sub now.Unix $oldest.Lastmod.Unix) 86400 }}
   {{ end }}
-{{ end }}
 
+  <section class="sidebar-card sidebar-card--rail sidebar-card--profile">
+    <div class="profile-weather">
+      <div class="profile-weather__avatar-wrap">
+        <img class="profile-weather__avatar" src="/images/portrait.jpg" alt="Xpm 头像">
+      </div>
+      <div class="profile-weather__panel" data-weather-card>
+        <span class="profile-weather__kicker">LIVE WEATHER</span>
+        <strong data-weather-temp>--°C</strong>
+        <span data-weather-summary>正在获取天气...</span>
+        <small data-weather-meta>默认城市：上海</small>
+      </div>
+    </div>
+
+    <div class="profile-weather__meta">
+      <div>
+        <span>文章</span>
+        <strong>{{ len $pages }}</strong>
+      </div>
+      <div>
+        <span>栏目</span>
+        <strong>{{ len site.Sections }}</strong>
+      </div>
+      <div>
+        <span>字数</span>
+        <strong>{{ printf "%.1fk" (div (float ($stats.Get "words")) 1000) }}</strong>
+      </div>
+    </div>
+
+    <a class="profile-weather__follow" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">GitHub Follow Me</a>
+
+    <div class="profile-weather__links">
+      <a href="{{ site.Params.github }}" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+      <a href="/connect/message-board/" aria-label="留言板">留言板</a>
+      <a href="/connect/links/" aria-label="友链">友链</a>
+      <a href="/about/upload-guide/" aria-label="说明">说明</a>
+    </div>
+  </section>
+
+  <section class="sidebar-card sidebar-card--rail sidebar-card--archive">
+    <div class="sidebar-card__headline">
+      <h3>归档</h3>
+      <span>{{ len $pages }}</span>
+    </div>
+    <div class="archive-list">
+      {{ range $index, $group := first 8 ($pages.GroupByDate "2006-01") }}
+        <details class="archive-group" {{ if eq $index 0 }}open{{ end }}>
+          <summary>
+            <span>{{ (index $group.Pages 0).Lastmod.Format "2006年1月" }}</span>
+            <strong>{{ len $group.Pages }}</strong>
+          </summary>
+          <ul>
+            {{ range first 6 $group.Pages }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </details>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="sidebar-card sidebar-card--rail sidebar-card--stats">
+    <div class="sidebar-card__headline">
+      <h3>网站信息</h3>
+      <span>LIVE</span>
+    </div>
+    <dl class="site-stats">
+      <div>
+        <dt>文章数目</dt>
+        <dd>{{ len $pages }}</dd>
+      </div>
+      <div>
+        <dt>运行时间</dt>
+        <dd>{{ $daysRunning }} 天</dd>
+      </div>
+      <div>
+        <dt>本站总字数</dt>
+        <dd>{{ printf "%.1fk" (div (float ($stats.Get "words")) 1000) }}</dd>
+      </div>
+      <div>
+        <dt>栏目数量</dt>
+        <dd>{{ len site.Sections }}</dd>
+      </div>
+      <div>
+        <dt>页面总数</dt>
+        <dd>{{ len site.Pages }}</dd>
+      </div>
+      <div>
+        <dt>最后更新时间</dt>
+        <dd>{{ with $latest }}{{ .Lastmod.Format "2006-01-02" }}{{ else }}--{{ end }}</dd>
+      </div>
+    </dl>
+    <p class="site-stats__note">访客数和浏览量如果后续要接入，也可以再挂一层统计脚本。</p>
+  </section>
+{{ else }}
+  {{ $rail := .Params.rail }}
+  {{ if not $rail }}
+    {{ with index site.Data.rail.defaults $current }}
+      {{ $rail = index . "blocks" }}
+    {{ end }}
+  {{ end }}
+  {{ with $rail }}
+    {{ range . }}
+      <section class="sidebar-card sidebar-card--rail">
+        <h3>{{ .title }}</h3>
+        {{ with .text }}<p>{{ . }}</p>{{ end }}
+        {{ with .items }}
+          <ul class="rail-list">
+            {{ range . }}
+              <li><a href="{{ .url }}">{{ .label }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ end }}
+{{ end }}
