@@ -7,7 +7,13 @@
       {{ with .cards }}
         <div class="card-grid">
           {{ range . }}
-            <a class="portal-card" href="{{ .url }}">
+            {{ $card := . }}
+            <a class="portal-card{{ if .image }} portal-card--media{{ end }}" href="{{ .url }}">
+              {{ with .image }}
+                <div class="portal-card__media">
+                  <img src="{{ . }}" alt="{{ $card.title | default "内容卡片图片" }}">
+                </div>
+              {{ end }}
               {{ with .tag }}<span class="portal-card__tag">{{ . }}</span>{{ end }}
               <h3>{{ .title }}</h3>
               {{ with .summary }}<p>{{ . }}</p>{{ end }}
@@ -16,7 +22,20 @@
           {{ end }}
         </div>
       {{ end }}
+      {{ with .gallery }}
+        <div class="gallery-grid">
+          {{ range . }}
+            <a class="gallery-card" href="{{ .url }}">
+              <img src="{{ .image }}" alt="{{ .title }}">
+              <div class="gallery-card__body">
+                {{ with .tag }}<span class="portal-card__tag">{{ . }}</span>{{ end }}
+                <h3>{{ .title }}</h3>
+                {{ with .summary }}<p>{{ . }}</p>{{ end }}
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
     </section>
   {{ end }}
 {{ end }}
-
