@@ -13,9 +13,9 @@ hero:
     url: "/study/"
   metricsLayout: "feature"
   metrics:
-    - title: "交流区"
-      text: "留言交流、友链入口与更多了解"
-      image: "/images/xing1.jpg"
+    - title: "连接与阅读"
+      text: "把交流、笔记与站点入口轻轻收在一起"
+      image: "/images/yinhun8.jpg"
       alt: "首页主视觉封面"
       url: "/connect/"
 sections:
