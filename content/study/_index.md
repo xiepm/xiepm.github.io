@@ -16,8 +16,8 @@ hero:
       text: "学习整理"
     - title: "效率"
       text: "高效精力时间管理"
-    - title: "政经"
-      text: "时代的烙印"
+    - title: "唠唠嗑"
+      text: "时代的痕迹"
 sections:
   - kicker: "学习地图"
     title: "技术分类不再挤在顶栏里，而是收进这里"
